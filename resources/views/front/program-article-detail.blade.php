@@ -146,13 +146,22 @@
                         </a>
                     </div>
 
-                    <!-- Hotline Support -->
+                    <!-- Hotline Support (4 Contacts per client instruction) -->
                     <div class="card border-0 shadow-sm p-4 rounded-4" style="background: #ffffff; border: 1px solid #E2E8F0 !important;">
-                        <h6 class="fw-bold text-dark mb-2">Hotline Konsultasi</h6>
-                        <p class="text-muted small mb-3">Senin - Jumat: 08.30 - 17.00 WIB</p>
+                        <h6 class="fw-bold text-dark mb-2">Pusat Hotline WhatsApp</h6>
+                        <p class="text-muted small mb-3">Layanan konsultasi cepat setiap hari via WhatsApp:</p>
                         <div class="d-flex flex-column gap-2">
-                            <a href="https://api.whatsapp.com/send?phone=628118500177" target="_blank" class="btn btn-sm btn-outline-success rounded-pill py-2">
-                                <i class="bi bi-whatsapp me-2"></i>Hotline WhatsApp: 0811-8500-177
+                            <a href="https://api.whatsapp.com/send?phone=628118500177" target="_blank" class="btn btn-sm btn-outline-success rounded-pill py-2 text-start px-3">
+                                <i class="bi bi-whatsapp me-2"></i>Hotline 1: 0811-8500-177
+                            </a>
+                            <a href="https://api.whatsapp.com/send?phone=6281399810272" target="_blank" class="btn btn-sm btn-outline-success rounded-pill py-2 text-start px-3">
+                                <i class="bi bi-whatsapp me-2"></i>Hotline 2: 0813-9981-0272
+                            </a>
+                            <a href="https://api.whatsapp.com/send?phone=6287894580806" target="_blank" class="btn btn-sm btn-outline-success rounded-pill py-2 text-start px-3">
+                                <i class="bi bi-whatsapp me-2"></i>Hotline 3: 0878-9458-0806
+                            </a>
+                            <a href="https://api.whatsapp.com/send?phone=6287894580649" target="_blank" class="btn btn-sm btn-outline-success rounded-pill py-2 text-start px-3">
+                                <i class="bi bi-whatsapp me-2"></i>Hotline 4: 0878-9458-0649
                             </a>
                         </div>
                     </div>

@@ -40,11 +40,11 @@
                     <div class="d-flex align-items-center gap-4 mt-4 pt-3 border-top border-primary-subtle text-muted small">
                         <div class="d-flex align-items-center gap-2">
                             <i class="bi bi-shield-fill-check text-success fs-5"></i>
-                            <span>Lisensi Resmi BNSP</span>
+                            <span>Standar Mutu SKKNI</span>
                         </div>
                         <div class="d-flex align-items-center gap-2">
                             <i class="bi bi-building-check text-primary fs-5"></i>
-                            <span>Terdaftar Resmi LPJK</span>
+                            <span>Standar Nasional Konstruksi</span>
                         </div>
                     </div>
                 </div>
@@ -68,8 +68,8 @@
                                 <div class="bg-white text-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3 shadow" style="width: 70px; height: 70px;">
                                     <i class="bi bi-shield-check display-6"></i>
                                 </div>
-                                <h4 class="fw-bold text-white mb-1">SKK Konstruksi BNSP</h4>
-                                <p class="small text-white-50 mb-0">Penjamin Mutu & Kompetensi Tenaga Ahli Nasional</p>
+                                <h4 class="fw-bold text-white mb-1">Sertifikasi SKK Konstruksi</h4>
+                                <p class="small text-white-50 mb-0">Penjamin Mutu & Kompetensi Tenaga Ahli Standar Nasional</p>
                             </div>
 
                             <!-- Benefits List -->
@@ -131,7 +131,7 @@
         <div class="card border-0 shadow-sm p-4 p-lg-4 rounded-4" style="background: #ffffff; border: 1px solid #BAE6FD !important;">
             <div class="row g-4 text-center divide-lg">
                 @foreach($statistics as $stat)
-                <div class="col-6 col-lg-3">
+                <div class="col-12 col-md-4">
                     <div class="d-flex flex-column align-items-center">
                         <div class="text-primary mb-2" style="font-size: 1.8rem;">
                             <i class="{{ $stat->icon ?: 'bi bi-award' }}"></i>

@@ -66,10 +66,10 @@ class ArticleContentGenerator
 
         $html .= '<h3 class="fw-bold text-dark mt-4 mb-2" style="font-size: 1.18rem;">1.5 Penyelesaian Sengketa Konstruksi Menurut UU No. 2 Tahun 2017 & Standar Kontrak FIDIC</h3>';
         $html .= '<p class="text-secondary" style="line-height: 1.85;">Pasal 88 Undang-Undang Jasa Konstruksi mengatur hierarki penyelesaian sengketa kontrak konstruksi guna melindungi investasi dan kepastian hukum penyedia serta pengguna jasa. Sengketa yang timbul dalam pelaksanaan kontrak di ' . htmlspecialchars($city) . ' wajib diselesaikan terlebih dahulu melalui musyawarah untuk mufakat. Apabila tidak tercapai kesepakatan, para pihak dapat menempuh tahapan alternatif penyelesaian sengketa (mediasi, konsiliasi, arbitrase konstruksi, atau pembentukan Dewan Sengketa / Dispute Board).</p>';
-        $html .= '<p class="text-secondary" style="line-height: 1.85;">Tenaga ahli yang memegang sertifikat ' . htmlspecialchars($schemeTitle) . ' dituntut memahami klausul kontrak standar internasional (seperti FIDIC Red Book untuk konstruksi konvensional, Yellow Book untuk Plant and Design-Build, serta Silver Book untuk EPC Turnkey) maupun standar kontrak nasional berbasis LKPP. Penguasaan terhadap prosedur pengajuan klaim perpanjangan waktu (Extension of Time / EoT) dan klaim kompensasi biaya (Cost Compensation) sesuai aturan kontrak menjadi salah satu materi asesmen mendalam oleh tim dewan asesor.</p>';
+        $html .= '<p class="text-secondary" style="line-height: 1.85;">Tenaga ahli yang memegang sertifikat ' . htmlspecialchars($schemeTitle) . ' dituntut memahami klausul kontrak standar internasional (seperti FIDIC Red Book untuk konstruksi konvensional, Yellow Book untuk Plant and Design-Build, serta Silver Book untuk EPC Turnkey) maupun standar kontrak nasional berbasis LKPP. Penguasaan terhadap prosedur pengajuan klaim perpanjangan waktu (Extension of Time / EoT) dan klaim kompensasi biaya (Cost Compensation) sesuai aturan kontrak menjadi salah satu materi asesmen mendalam dalam uji kompetensi keahlian.</p>';
 
-        $html .= '<h3 class="fw-bold text-dark mt-4 mb-2" style="font-size: 1.18rem;">1.6 Perbandingan Komprehensif: Sistem SKA/SKT Lama vs Sistem SKK Konstruksi BNSP</h3>';
-        $html .= '<p class="text-secondary" style="line-height: 1.85;">Peralihan dari rezim Sertifikat Keahlian (SKA) / Sertifikat Keterampilan (SKT) lama ke sistem Sertifikat Kompetensi Kerja (SKK) berbasis BNSP menghasilkan perubahan mendasar dalam tata kelola sertifikasi keteknikan Indonesia:</p>';
+        $html .= '<h3 class="fw-bold text-dark mt-4 mb-2" style="font-size: 1.18rem;">1.6 Perbandingan Komprehensif: Sistem SKA/SKT Lama vs Sistem SKK Konstruksi Standar Nasional</h3>';
+        $html .= '<p class="text-secondary" style="line-height: 1.85;">Peralihan dari rezim Sertifikat Keahlian (SKA) / Sertifikat Keterampilan (SKT) lama ke sistem Sertifikat Kompetensi Kerja (SKK) standar nasional menghasilkan perubahan mendasar dalam tata kelola sertifikasi keteknikan Indonesia:</p>';
 
         $html .= '<div class="table-responsive my-4">';
         $html .= '<table class="table table-bordered table-hover align-middle bg-white shadow-sm rounded-3 overflow-hidden">';
@@ -406,7 +406,7 @@ class ArticleContentGenerator
             ],
             [
                 'q' => 'Bagaimana cara mendaftar dan berkonsultasi mengenai kelengkapan berkas portofolio saya?',
-                'a' => 'Anda dapat langsung menghubungi tim sekretariat Tempat Uji Kompetensi (TUK) Training K3 Konstruksi di ' . $city . ' melalui hotline WhatsApp resmi di nomor <strong>0813-9981-0272</strong> atau <strong>0812-8362-4838</strong>. Tim konsultan teknis kami akan memeriksa berkas Anda tanpa dipungut biaya pra-konsultasi.'
+                'a' => 'Anda dapat langsung menghubungi tim sekretariat Tempat Uji Kompetensi (TUK) Training K3 Konstruksi di ' . $city . ' melalui 4 saluran hotline WhatsApp resmi kami: <strong>0811-8500-177</strong>, <strong>0813-9981-0272</strong>, <strong>0878-9458-0806</strong>, atau <strong>0878-9458-0649</strong>. Tim konsultan teknis kami akan memeriksa berkas Anda tanpa dipungut biaya pra-konsultasi.'
             ]
         ];
 
@@ -437,11 +437,12 @@ class ArticleContentGenerator
 
         $html .= '<div class="p-4 rounded-4 mt-4 text-white shadow-sm" style="background: linear-gradient(135deg, #0284C7 0%, #0EA5E9 100%);">';
         $html .= '<h4 class="fw-bold text-white mb-2">Konsultasi Portofolio & Pendaftaran Jadwal Uji Kompetensi</h4>';
-        $html .= '<p class="text-white-50 mb-3" style="line-height: 1.7; max-width: 850px;">Sekretariat TUK Wilayah ' . htmlspecialchars($city) . ', Provinsi ' . htmlspecialchars($province) . ' membuka layanan pendampingan pemberkasan setiap hari kerja. Hubungi narahubung resmi kami sekarang juga untuk memastikan jadwal asesmen terdekat:</p>';
-        $html .= '<div class="d-flex flex-wrap gap-3 align-items-center">';
-        $html .= '<a href="https://api.whatsapp.com/send?phone=628118500177&text=' . urlencode('Halo Tim Training K3 Konstruksi, saya ingin konsultasi pendaftaran SKK ' . $schemeTitle . ' di ' . $city) . '" target="_blank" class="btn btn-warning text-dark fw-bold rounded-pill px-4 py-2 shadow-sm">';
-        $html .= '<i class="bi bi-whatsapp me-2"></i> WhatsApp Konsultasi: 0811-8500-177';
-        $html .= '</a>';
+        $html .= '<p class="text-white-50 mb-3" style="line-height: 1.7; max-width: 850px;">Sekretariat TUK Wilayah ' . htmlspecialchars($city) . ', Provinsi ' . htmlspecialchars($province) . ' membuka layanan pendampingan pemberkasan setiap hari kerja. Hubungi narahubung resmi WhatsApp kami berikut ini untuk konsultasi cepat:</p>';
+        $html .= '<div class="row g-2">';
+        $html .= '<div class="col-sm-6"><a href="https://api.whatsapp.com/send?phone=628118500177&text=' . urlencode('Halo Tim Training K3 Konstruksi, saya ingin konsultasi pendaftaran SKK ' . $schemeTitle . ' di ' . $city) . '" target="_blank" class="btn btn-warning text-dark fw-bold rounded-pill w-100 py-2 shadow-sm text-start ps-3"><i class="bi bi-whatsapp me-2"></i>Hotline 1: 0811-8500-177</a></div>';
+        $html .= '<div class="col-sm-6"><a href="https://api.whatsapp.com/send?phone=6281399810272&text=' . urlencode('Halo Tim Training K3 Konstruksi, saya ingin konsultasi pendaftaran SKK ' . $schemeTitle . ' di ' . $city) . '" target="_blank" class="btn btn-warning text-dark fw-bold rounded-pill w-100 py-2 shadow-sm text-start ps-3"><i class="bi bi-whatsapp me-2"></i>Hotline 2: 0813-9981-0272</a></div>';
+        $html .= '<div class="col-sm-6"><a href="https://api.whatsapp.com/send?phone=6287894580806&text=' . urlencode('Halo Tim Training K3 Konstruksi, saya ingin konsultasi pendaftaran SKK ' . $schemeTitle . ' di ' . $city) . '" target="_blank" class="btn btn-warning text-dark fw-bold rounded-pill w-100 py-2 shadow-sm text-start ps-3"><i class="bi bi-whatsapp me-2"></i>Hotline 3: 0878-9458-0806</a></div>';
+        $html .= '<div class="col-sm-6"><a href="https://api.whatsapp.com/send?phone=6287894580649&text=' . urlencode('Halo Tim Training K3 Konstruksi, saya ingin konsultasi pendaftaran SKK ' . $schemeTitle . ' di ' . $city) . '" target="_blank" class="btn btn-warning text-dark fw-bold rounded-pill w-100 py-2 shadow-sm text-start ps-3"><i class="bi bi-whatsapp me-2"></i>Hotline 4: 0878-9458-0649</a></div>';
         $html .= '</div>';
         $html .= '</div>';
         $html .= '</section>';

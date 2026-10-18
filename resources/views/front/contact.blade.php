@@ -60,7 +60,7 @@
                         <div>
                             <h6 class="fw-bold text-dark mb-1">Alamat Kantor</h6>
                             <p class="text-muted small mb-0" style="line-height: 1.6;">
-                                Gedung Graha Konstruksi Lt. 3, Jl. Raya Pasar Minggu No. 17, Pejaten Timur, Pasar Minggu, Jakarta Selatan, DKI Jakarta 12780
+                                Gedung Graha Konstruksi, Jl. Raden Inten II, Duren Sawit, Jakarta Timur, DKI Jakarta
                             </p>
                         </div>
                     </div>
@@ -70,9 +70,9 @@
                             <i class="bi bi-telephone-fill fs-5"></i>
                         </div>
                         <div>
-                            <h6 class="fw-bold text-dark mb-1">Telepon Kantor</h6>
+                            <h6 class="fw-bold text-dark mb-1">Telepon Hotline</h6>
                             <p class="text-muted small mb-0">
-                                (021) 7919-4820 / (021) 7919-4821
+                                0811-8500-177
                             </p>
                         </div>
                     </div>
@@ -82,11 +82,20 @@
                             <i class="bi bi-whatsapp fs-5"></i>
                         </div>
                         <div>
-                            <h6 class="fw-bold text-dark mb-1">Hotline WhatsApp Asesor</h6>
+                            <h6 class="fw-bold text-dark mb-1">Pusat Hotline WhatsApp</h6>
                             <p class="text-muted small mb-2">Respon cepat konsultasi berkas & portofolio:</p>
                             <div class="d-flex flex-column gap-2">
                                 <a href="https://api.whatsapp.com/send?phone=628118500177&text=Halo%20Admin%20Training%20K3%20Konstruksi" target="_blank" class="btn btn-sm btn-outline-success rounded-pill text-start px-3">
-                                    <i class="bi bi-whatsapp me-2"></i>Hotline WhatsApp: 0811-8500-177
+                                    <i class="bi bi-whatsapp me-2"></i>Hotline 1: 0811-8500-177
+                                </a>
+                                <a href="https://api.whatsapp.com/send?phone=6281399810272&text=Halo%20Admin%20Training%20K3%20Konstruksi" target="_blank" class="btn btn-sm btn-outline-success rounded-pill text-start px-3">
+                                    <i class="bi bi-whatsapp me-2"></i>Hotline 2: 0813-9981-0272
+                                </a>
+                                <a href="https://api.whatsapp.com/send?phone=6287894580806&text=Halo%20Admin%20Training%20K3%20Konstruksi" target="_blank" class="btn btn-sm btn-outline-success rounded-pill text-start px-3">
+                                    <i class="bi bi-whatsapp me-2"></i>Hotline 3: 0878-9458-0806
+                                </a>
+                                <a href="https://api.whatsapp.com/send?phone=6287894580649&text=Halo%20Admin%20Training%20K3%20Konstruksi" target="_blank" class="btn btn-sm btn-outline-success rounded-pill text-start px-3">
+                                    <i class="bi bi-whatsapp me-2"></i>Hotline 4: 0878-9458-0649
                                 </a>
                             </div>
                         </div>
@@ -99,8 +108,8 @@
                         <div>
                             <h6 class="fw-bold text-dark mb-1">Email Resmi</h6>
                             <p class="text-muted small mb-0">
-                                info@trainingk3konstruksi.id<br>
-                                layanan@trainingk3konstruksi.id
+                                kontak@trainingk3konstruksi.com<br>
+                                sekretariat.trainingk3@gmail.com
                             </p>
                         </div>
                     </div>

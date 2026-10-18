@@ -315,8 +315,8 @@
                     <a href="https://api.whatsapp.com/send?phone=628118500177" target="_blank" class="text-secondary text-decoration-none">
                         <i class="bi bi-whatsapp me-1 text-success"></i> WA: {{ \App\Models\Setting::get('whatsapp', '08118500177') }}
                     </a>
-                    <a href="mailto:{{ \App\Models\Setting::get('email', 'info@trainingk3konstruksi.id') }}" class="text-secondary text-decoration-none">
-                        <i class="bi bi-envelope-fill me-1 text-info"></i> {{ \App\Models\Setting::get('email', 'info@trainingk3konstruksi.id') }}
+                    <a href="mailto:{{ \App\Models\Setting::get('email', 'kontak@trainingk3konstruksi.com') }}" class="text-secondary text-decoration-none">
+                        <i class="bi bi-envelope-fill me-1 text-info"></i> {{ \App\Models\Setting::get('email', 'kontak@trainingk3konstruksi.com') }}
                     </a>
                 </div>
             </div>
@@ -454,7 +454,7 @@
                     <h5>Sekretariat Pusat</h5>
                     <p class="small text-muted mb-2">
                         <i class="bi bi-geo-alt-fill text-danger me-2"></i>
-                        {{ \App\Models\Setting::get('address', 'Gedung Graha Konstruksi Lt. 3, Jl. Raya Pasar Minggu No. 17, Jakarta Selatan 12780') }}
+                        {{ \App\Models\Setting::get('address', 'Gedung Graha Konstruksi, Jl. Raden Inten II, Duren Sawit, Jakarta Timur, DKI Jakarta') }}
                     </p>
                     <p class="small text-muted mb-2">
                         <i class="bi bi-telephone-fill text-primary me-2"></i>
@@ -462,15 +462,11 @@
                     </p>
                     <p class="small text-muted mb-2">
                         <i class="bi bi-whatsapp text-success me-2"></i>
-                        Hotline 1: {{ \App\Models\Setting::get('whatsapp', '08118500177') }}
-                    </p>
-                    <p class="small text-muted mb-2">
-                        <i class="bi bi-whatsapp text-success me-2"></i>
-                        Hotline 2: {{ \App\Models\Setting::get('whatsapp_2', '08118500177') }}
+                        Hotline WhatsApp: {{ \App\Models\Setting::get('whatsapp', '08118500177') }}
                     </p>
                     <p class="small text-muted mb-0">
                         <i class="bi bi-envelope-fill text-info me-2"></i>
-                        Email: {{ \App\Models\Setting::get('email', 'info@trainingk3konstruksi.id') }}
+                        Email: {{ \App\Models\Setting::get('email', 'kontak@trainingk3konstruksi.com') }}
                     </p>
                 </div>
             </div>

@@ -62,12 +62,12 @@
 
             <div class="col-md-6">
                 <label for="email" class="form-label fw-bold text-dark small">Email Resmi Lembaga</label>
-                <input type="email" class="form-control py-2" id="email" name="email" value="{{ $settings['email'] ?? 'sekretariat@astekindo.org' }}">
+                <input type="email" class="form-control py-2" id="email" name="email" value="{{ $settings['email'] ?? 'kontak@trainingk3konstruksi.com' }}">
             </div>
 
             <div class="col-12">
                 <label for="address" class="form-label fw-bold text-dark small">Alamat Lengkap Kantor Pusat</label>
-                <textarea class="form-control" id="address" name="address" rows="2">{{ $settings['address'] ?? 'Gedung Astekindo Lt. 3, Jl. Raya Pasar Minggu No. 17, Jakarta Selatan 12780' }}</textarea>
+                <textarea class="form-control" id="address" name="address" rows="2">{{ $settings['address'] ?? 'Gedung Graha Konstruksi, Jl. Raden Inten II, Duren Sawit, Jakarta Timur, DKI Jakarta' }}</textarea>
             </div>
 
             <div class="col-12">
@@ -77,7 +77,7 @@
 
             <div class="col-12">
                 <label for="footer_text" class="form-label fw-bold text-dark small">Teks Hak Cipta Footer</label>
-                <input type="text" class="form-control py-2" id="footer_text" name="footer_text" value="{{ $settings['footer_text'] ?? '© 2026 LSP ASTEKINDO Konstruksi Mandiri. Lisensi Resmi BNSP & Terakreditasi LPJK Kementerian PUPR.' }}">
+                <input type="text" class="form-control py-2" id="footer_text" name="footer_text" value="{{ $settings['footer_text'] ?? 'Training K3 Konstruksi. Seluruh hak cipta dilindungi undang-undang.' }}">
             </div>
 
             <div class="col-12 pt-3 border-top">

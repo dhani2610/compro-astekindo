@@ -36,28 +36,28 @@ class DatabaseSeeder extends Seeder
         // 2. Settings
         $settings = [
             'site_name' => 'Training K3 Konstruksi',
-            'site_tagline' => 'Lembaga Pelatihan & Pembinaan Sertifikasi SKK Konstruksi Berlisensi BNSP & LPJK',
+            'site_tagline' => 'Lembaga Pelatihan & Pembinaan Sertifikasi SKK Konstruksi Berstandar SKKNI & SMKK',
             'company_name' => 'Training K3 Konstruksi',
-            'license_bnsp' => 'Lisensi Resmi BNSP & LPJK',
-            'license_lpjk' => 'Terdaftar Resmi LPJK',
+            'license_bnsp' => 'Standar Mutu SKKNI & SMKK',
+            'license_lpjk' => 'Standar Konstruksi Nasional',
             'phone' => '08118500177',
             'whatsapp' => '08118500177',
-            'whatsapp_2' => '08118500177',
-            'email' => 'info@trainingk3konstruksi.co.id',
+            'whatsapp_2' => '',
+            'email' => 'kontak@trainingk3konstruksi.com',
             'email_secondary' => 'sekretariat.trainingk3@gmail.com',
-            'address' => 'Gedung Pusat K3 Konstruksi, Jl. Raden Inten II No. 88, Duren Sawit, Jakarta Timur 13440',
+            'address' => 'Gedung Graha Konstruksi, Jl. Raden Inten II, Duren Sawit, Jakarta Timur, DKI Jakarta',
             'maps_embed' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.257544078498!2d106.91428237588325!3d-6.229737993758416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698cb0e252a1d9%3A0x6b24a3507d383b1!2sDuren%20Sawit%2C%20East%20Jakarta%20City%2C%20Jakarta!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid',
-            'office_hours' => 'Senin - Jumat: 08.30 - 17.00 WIB | Sabtu (Layanan TUK Asesmen): 09.00 - 14.00 WIB',
-            'hero_title' => 'Training K3 Konstruksi & Sertifikasi SKK Berlisensi BNSP & LPJK',
-            'hero_description' => 'Mewujudkan tenaga kerja konstruksi Indonesia yang unggul, kompeten, berdaya saing global, dan berlisensi resmi BNSP & LPJK.',
-            'footer_text' => 'Training K3 Konstruksi menyelenggarakan program pembinaan dan penyiapan sertifikasi kompetensi kerja di bawah lisensi resmi Badan Nasional Sertifikasi Profesi (BNSP) dan terdaftar di LPJK sesuai amanat UU No. 2 Tahun 2017 tentang Jasa Konstruksi.',
+            'office_hours' => 'Senin - Jumat: 08.30 - 17.00 WIB | Layanan Hotline: Setiap Hari',
+            'hero_title' => 'Training K3 Konstruksi & Sertifikasi Kompetensi Kerja (SKK)',
+            'hero_description' => 'Mewujudkan tenaga kerja konstruksi Indonesia yang unggul, kompeten, berdaya saing global, dan berstandar mutu keselamatan konstruksi nasional.',
+            'footer_text' => 'Training K3 Konstruksi menyelenggarakan program pembinaan dan penyiapan sertifikasi kompetensi kerja konstruksi berstandar SKKNI dan SMKK nasional.',
         ];
 
         foreach ($settings as $key => $val) {
             Setting::updateOrCreate(['key' => $key], ['value' => $val, 'group' => 'general']);
         }
 
-        // 3. Dynamic Statistics (Editable in Admin Panel)
+        // 3. Dynamic Statistics (Editable in Admin Panel - 340 Asesor Removed per client instruction)
         $statistics = [
             [
                 'key' => 'tenaga_kerja_tersertifikasi',
@@ -69,44 +69,36 @@ class DatabaseSeeder extends Seeder
                 'sort_order' => 1,
             ],
             [
-                'key' => 'asesor_kompetensi_bnsp',
-                'label' => 'Asesor Kompetensi Lisensi BNSP',
-                'value' => '340+',
-                'unit' => 'Asesor',
-                'icon' => 'bi-award-fill',
-                'description' => 'Asesor profesional independen berlisensi BNSP yang tersebar di seluruh Indonesia.',
-                'sort_order' => 2,
-            ],
-            [
                 'key' => 'skema_sertifikasi_aktif',
                 'label' => 'Skema Pelatihan & Sertifikasi',
                 'value' => '202',
                 'unit' => 'Skema',
                 'icon' => 'bi-card-checklist',
                 'description' => 'Meliputi Sumber Daya Air, Jalan Jembatan, SMKK K3, Gedung Geoteknik, dan Manajemen Proyek.',
-                'sort_order' => 3,
+                'sort_order' => 2,
             ],
             [
                 'key' => 'jaringan_tuk_provinsi',
-                'label' => 'Jaringan TUK se-Indonesia',
+                'label' => 'Jaringan Wilayah se-Indonesia',
                 'value' => '38',
                 'unit' => 'Provinsi',
                 'icon' => 'bi-geo-alt-fill',
-                'description' => 'Tempat Uji Kompetensi (TUK) mandiri dan sewaktu di 38 provinsi di Indonesia.',
-                'sort_order' => 4,
+                'description' => 'Pusat pelatihan teknis dan Tempat Uji Kompetensi (TUK) di 38 provinsi di Indonesia.',
+                'sort_order' => 3,
             ]
         ];
 
+        Statistic::truncate();
         foreach ($statistics as $stat) {
-            Statistic::updateOrCreate(['key' => $stat['key']], $stat);
+            Statistic::create($stat);
         }
 
-        // 4. Hero Slides
+        // 4. Hero Slides (BNSP & LPJK removed per client instruction)
         $slides = [
             [
-                'title' => 'Training K3 Konstruksi & Sertifikasi SKK Berlisensi BNSP & LPJK',
+                'title' => 'Training K3 Konstruksi & Sertifikasi Kompetensi Kerja (SKK)',
                 'subtitle' => 'Tingkatkan legalitas, kredibilitas profesional, dan syarat mutlak tender proyek konstruksi nasional.',
-                'badge' => 'Program Resmi Berlisensi BNSP & LPJK',
+                'badge' => 'Program Pelatihan & Sertifikasi Resmi',
                 'cta_text' => 'Lihat 202 Skema Pelatihan',
                 'cta_link' => '#skema-sertifikasi',
                 'cta2_text' => 'Konsultasi Syarat SKK',
@@ -116,8 +108,8 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'title' => 'Jaminan Standar Mutu Ahli Konstruksi Indonesia di Seluruh Provinsi',
-                'subtitle' => 'Melayani uji kompetensi Ahli Utama, Madya, Muda, Pelaksana Lapangan, dan Pengawas Struktur se-Indonesia.',
-                'badge' => 'Terdaftar Resmi LPJK',
+                'subtitle' => 'Melayani pelatihan dan sertifikasi Ahli Utama, Madya, Muda, Pelaksana Lapangan, dan Pengawas Struktur se-Indonesia.',
+                'badge' => 'Standar Mutu SKKNI Nasional',
                 'cta_text' => 'Jelajahi Wilayah TUK',
                 'cta_link' => '#wilayah-sertifikasi',
                 'cta2_text' => 'Hubungi Sekretariat',
@@ -127,7 +119,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'title' => 'Sistem Manajemen Keselamatan Konstruksi (SMKK) & Ahli K3',
-                'subtitle' => 'Lindungi proyek dari risiko fatal kecelakaan kerja dengan tenaga ahli K3 konstruksi bersertifikat BNSP.',
+                'subtitle' => 'Lindungi proyek dari risiko fatal kecelakaan kerja dengan tenaga ahli K3 konstruksi bersertifikasi resmi.',
                 'badge' => 'Kepatuhan Standar Keselamatan Konstruksi',
                 'cta_text' => 'Skema Ahli K3 Konstruksi',
                 'cta_link' => '/skema-sertifikasi',

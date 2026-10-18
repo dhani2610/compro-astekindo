@@ -253,7 +253,7 @@ class AstekindoSchemeService
             'city' => $cityName,
             'content' => $content,
             'word_count' => number_format($wordCount, 0, ',', '.') . ' Kata (Panduan Lengkap)',
-            'author' => 'Tim Dewan Asesor & Instruktur Training K3 Konstruksi',
+            'author' => 'Tim Instruktur Ahli & Litbang Training K3 Konstruksi',
             'published_at' => now()->format('d F Y'),
         ];
     }

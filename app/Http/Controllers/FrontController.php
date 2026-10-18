@@ -76,7 +76,14 @@ class FrontController extends Controller
      */
     public function programDetail($slug)
     {
-        $program = Program::where('slug', $slug)->firstOrFail();
+        $program = Program::where('slug', $slug)->first();
+        if (!$program) {
+            $program = Program::where('slug', 'like', "%{$slug}%")
+                ->orWhere('title', 'like', "%{$slug}%")
+                ->first()
+                ?: Program::where('is_active', true)->orderBy('sort_order')->first();
+        }
+        abort_unless($program, 404);
         $provinces = RegionService::getProvinces();
         $otherPrograms = Program::where('is_active', true)->where('id', '!=', $program->id)->take(4)->get();
 
