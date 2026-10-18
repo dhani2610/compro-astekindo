@@ -60,7 +60,7 @@
                         <div>
                             <h6 class="fw-bold text-dark mb-1">Alamat Kantor</h6>
                             <p class="text-muted small mb-0" style="line-height: 1.6;">
-                                Gedung Graha Konstruksi, Jl. Raden Inten II, Duren Sawit, Jakarta Timur, DKI Jakarta
+                                Jl. Raden Inten II, Duren Sawit, Jakarta Timur, DKI Jakarta
                             </p>
                         </div>
                     </div>
@@ -108,7 +108,7 @@
                         <div>
                             <h6 class="fw-bold text-dark mb-1">Email Resmi</h6>
                             <p class="text-muted small mb-0">
-                                kontak@trainingk3konstruksi.com<br>
+                                kontak@trainingk3konstruksi.my.id<br>
                                 sekretariat.trainingk3@gmail.com
                             </p>
                         </div>

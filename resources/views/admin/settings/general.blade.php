@@ -62,12 +62,12 @@
 
             <div class="col-md-6">
                 <label for="email" class="form-label fw-bold text-dark small">Email Resmi Lembaga</label>
-                <input type="email" class="form-control py-2" id="email" name="email" value="{{ $settings['email'] ?? 'kontak@trainingk3konstruksi.com' }}">
+                <input type="email" class="form-control py-2" id="email" name="email" value="{{ $settings['email'] ?? 'kontak@trainingk3konstruksi.my.id' }}">
             </div>
 
             <div class="col-12">
                 <label for="address" class="form-label fw-bold text-dark small">Alamat Lengkap Kantor Pusat</label>
-                <textarea class="form-control" id="address" name="address" rows="2">{{ $settings['address'] ?? 'Gedung Graha Konstruksi, Jl. Raden Inten II, Duren Sawit, Jakarta Timur, DKI Jakarta' }}</textarea>
+                <textarea class="form-control" id="address" name="address" rows="2">{{ $settings['address'] ?? 'Jl. Raden Inten II, Duren Sawit, Jakarta Timur, DKI Jakarta' }}</textarea>
             </div>
 
             <div class="col-12">
