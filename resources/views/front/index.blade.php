@@ -889,13 +889,14 @@
                         <div style="max-height: 120px; overflow-y: auto; padding-right: 6px; font-size: 0.8rem; line-height: 1.8;">
                             @foreach($prov['kabkot'] as $kk)
                                 @php
-                                    $kkSlug = Str::slug($kk);
+                                    $kkName = is_array($kk) ? $kk['name'] : $kk;
+                                    $kkSlug = is_array($kk) ? $kk['slug'] : Str::slug($kk);
                                     $provSlug = $prov['slug'];
                                 @endphp
                                 <a href="{{ route('program.region', ['sertifikasi-ahli-manajemen-proyek-konstruksi', $provSlug, $kkSlug]) }}" 
-                                   class="city-link-tag" data-cityname="{{ strtolower($kk) }}"
+                                   class="city-link-tag" data-cityname="{{ strtolower($kkName) }}"
                                    style="color: #cbd5e1; text-decoration: none; display: block; padding: 2px 0;">
-                                    &bull; {{ $kk }}
+                                    &bull; {{ $kkName }}
                                 </a>
                             @endforeach
                         </div>

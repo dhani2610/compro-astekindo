@@ -165,13 +165,14 @@
                             <div style="max-height: 120px; overflow-y: auto; font-size: 0.8rem; line-height: 1.8;">
                                 @foreach($prov['kabkot'] as $kk)
                                     @php
-                                        $kkSlug = Str::slug($kk);
+                                        $kkName = is_array($kk) ? $kk['name'] : $kk;
+                                        $kkSlug = is_array($kk) ? $kk['slug'] : Str::slug($kk);
                                         $provSlug = $prov['slug'];
                                     @endphp
                                     <a href="{{ route('program.region', [$program->slug, $provSlug, $kkSlug]) }}" 
-                                       class="scheme-city-link" data-city="{{ strtolower($kk) }}"
+                                       class="scheme-city-link" data-city="{{ strtolower($kkName) }}"
                                        style="color: var(--text-muted); text-decoration: none; display: block;">
-                                        &bull; {{ $kk }}
+                                        &bull; {{ $kkName }}
                                     </a>
                                 @endforeach
                             </div>
