@@ -23,6 +23,7 @@ Route::get('/skema-sertifikasi', [FrontController::class, 'programs'])->name('pr
 Route::get('/skema-sertifikasi/{slug}', [FrontController::class, 'programDetail'])->name('program.detail');
 Route::get('/skema-sertifikasi/{programSlug}/wilayah/{provinceSlug}/{citySlug}', [FrontController::class, 'programRegionDetail'])->name('program.region');
 Route::get('/skema-sertifikasi/{programSlug}/wilayah/{provinceSlug}/{citySlug}/{articleSlug}', [FrontController::class, 'programArticleDetail'])->name('program.region.article');
+Route::get('/wilayah/{provinceSlug}/{citySlug}', [FrontController::class, 'directRegionDetail'])->name('region.direct');
 
 Route::get('/proyek-sertifikasi', [FrontController::class, 'projects'])->name('projects');
 Route::get('/artikel-panduan', [FrontController::class, 'articles'])->name('articles');

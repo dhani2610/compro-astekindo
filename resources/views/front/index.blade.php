@@ -300,6 +300,7 @@
                             $visibleCities = array_slice($kabkotList, 0, 5);
                             $hiddenCities = array_slice($kabkotList, 5);
                             $provSlug = $prov['slug'];
+                            $defaultProgSlug = $programs->first()?->slug ?? 'training-pelaksana-pengeboran-air-tanah-level-4';
                         @endphp
 
                         @foreach($visibleCities as $kk)
@@ -307,7 +308,7 @@
                                 $kkName = is_array($kk) ? $kk['name'] : $kk;
                                 $kkSlug = is_array($kk) ? $kk['slug'] : Str::slug($kk);
                             @endphp
-                            <a href="{{ route('program.region', ['sertifikasi-ahli-manajemen-proyek-konstruksi', $provSlug, $kkSlug]) }}" 
+                            <a href="{{ route('program.region', [$defaultProgSlug, $provSlug, $kkSlug]) }}" 
                                class="city-pill-btn" 
                                data-cityname="{{ strtolower($kkName) }}">
                                 {{ $kkName }}
@@ -321,7 +322,7 @@
                                         $kkName = is_array($kk) ? $kk['name'] : $kk;
                                         $kkSlug = is_array($kk) ? $kk['slug'] : Str::slug($kk);
                                     @endphp
-                                    <a href="{{ route('program.region', ['sertifikasi-ahli-manajemen-proyek-konstruksi', $provSlug, $kkSlug]) }}" 
+                                    <a href="{{ route('program.region', [$defaultProgSlug, $provSlug, $kkSlug]) }}" 
                                        class="city-pill-btn" 
                                        data-cityname="{{ strtolower($kkName) }}">
                                         {{ $kkName }}

@@ -88,7 +88,10 @@ class FrontController extends Controller
      */
     public function programRegionDetail($programSlug, $provinceSlug, $citySlug)
     {
-        $program = Program::where('slug', $programSlug)->firstOrFail();
+        $program = Program::where('slug', $programSlug)->first() 
+            ?: Program::where('is_active', true)->orderBy('sort_order')->first();
+        abort_unless($program, 404);
+
         $province = RegionService::findProvinceBySlug($provinceSlug);
         abort_unless($province, 404);
 
@@ -128,11 +131,23 @@ class FrontController extends Controller
     }
 
     /**
+     * Direct Region Detail without specifying program in URL
+     */
+    public function directRegionDetail($provinceSlug, $citySlug)
+    {
+        $program = Program::where('is_active', true)->orderBy('sort_order')->first();
+        return $this->programRegionDetail($program ? $program->slug : 'training', $provinceSlug, $citySlug);
+    }
+
+    /**
      * Read Full Article in Region (6000-9000 words)
      */
     public function programArticleDetail($programSlug, $provinceSlug, $citySlug, $articleSlug)
     {
-        $program = Program::where('slug', $programSlug)->firstOrFail();
+        $program = Program::where('slug', $programSlug)->first() 
+            ?: Program::where('is_active', true)->orderBy('sort_order')->first();
+        abort_unless($program, 404);
+
         $province = RegionService::findProvinceBySlug($provinceSlug);
         abort_unless($province, 404);
 
