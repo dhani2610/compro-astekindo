@@ -1,7 +1,7 @@
 @extends('layouts.front')
 
-@section('title', 'Katalog 200 Artikel & Panduan Teknis SKKNI Konstruksi | LSP ASTEKINDO')
-@section('meta_description', 'Kumpulan 200 artikel referensi teknis sertifikasi kompetensi kerja (SKK) konstruksi BNSP, standar K3, manajemen proyek gedung, jalan, dan jembatan seluruh Indonesia.')
+@section('title', 'Katalog 202 Artikel & Panduan Pelatihan Teknis SKKNI | Training K3 Konstruksi')
+@section('meta_description', 'Kumpulan 202 artikel dan modul pelatihan teknis sertifikasi kompetensi kerja (SKK) konstruksi berstandar nasional di 38 provinsi seluruh Indonesia.')
 
 @section('content')
 <!-- Page Header (Modern Light Blue & White) -->
@@ -14,13 +14,13 @@
             </ol>
         </nav>
         <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2 rounded-pill fw-bold mb-3">
-            <i class="bi bi-journal-richtext me-1"></i> Direktori Resmi 200 Artikel SKKNI
+            <i class="bi bi-journal-richtext me-1"></i> Direktori Resmi 202 Pelatihan & Panduan Teknis
         </span>
         <h1 class="display-5 fw-bold text-dark mb-3" style="letter-spacing: -0.5px;">
             Pusat Panduan & Kajian Teknis Konstruksi
         </h1>
         <p class="lead text-muted mb-0" style="max-width: 780px; font-size: 1.05rem;">
-            Akses komprehensif 200 topik kajian ilmiah, standar pengawasan lapangan, K3 konstruksi, dan prosedur sertifikasi BNSP berstandar LPJK PUPR di 38 Provinsi & 514 Kota se-Indonesia.
+            Akses komprehensif 202 topik pelatihan teknis, standar pengawasan lapangan, K3 konstruksi, dan sertifikasi keahlian di 38 Provinsi & 514 Kota se-Indonesia.
         </p>
     </div>
 </section>
@@ -110,7 +110,7 @@
                     </span>
                     <h3 class="fw-bold text-white mb-2">Ingin Membaca Artikel Spesifik Wilayah Anda?</h3>
                     <p class="text-white-50 mb-3 mb-lg-0">
-                        Setiap program sertifikasi kami dilengkapi kajian teknis khusus yang disesuaikan dengan kondisi geoteknik, infrastruktur daerah, dan regulasi dinas PUPR di kota Anda.
+                        Setiap program sertifikasi kami dilengkapi kajian teknis khusus yang disesuaikan dengan kondisi geoteknik, infrastruktur daerah, dan regulasi teknis konstruksi di kota Anda.
                     </p>
                 </div>
                 <div class="col-lg-4 text-lg-end">
@@ -219,7 +219,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </h5>
 
                     <p class="text-muted small mb-4 flex-grow-1" style="line-height: 1.6;">
-                        Kajian teknis komprehensif pedoman implementasi lapangan, standar mutu K3 konstruksi, dan sertifikasi BNSP skema LPJK PUPR.
+                        Kajian teknis komprehensif pedoman implementasi lapangan, standar mutu K3 konstruksi, dan sertifikasi keahlian berstandar nasional.
                     </p>
 
                     <div class="d-flex justify-content-between align-items-center pt-3 border-top text-muted" style="font-size: 0.8rem;">

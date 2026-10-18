@@ -25,9 +25,9 @@ class DatabaseSeeder extends Seeder
     {
         // 1. Super Admin User
         User::firstOrCreate(
-            ['email' => 'admin@astekindo.com'],
+            ['email' => 'admin@trainingk3.com'],
             [
-                'name' => 'Super Administrator LSP ASTEKINDO',
+                'name' => 'Super Administrator Training K3 Konstruksi',
                 'password' => Hash::make('admin123'),
                 'email_verified_at' => now(),
             ]
@@ -35,22 +35,22 @@ class DatabaseSeeder extends Seeder
 
         // 2. Settings
         $settings = [
-            'site_name' => 'LSP ASTEKINDO Konstruksi Mandiri',
-            'site_tagline' => 'Lembaga Sertifikasi Profesi Jasa Konstruksi Berlisensi BNSP & Terakreditasi LPJK Kementerian PUPR',
-            'company_name' => 'LSP ASTEKINDO Konstruksi Mandiri',
-            'license_bnsp' => 'BNSP-LSP-1897-ID',
-            'license_lpjk' => 'LPJK-SKK-042/2021',
-            'phone' => '021-83701234',
-            'whatsapp' => '081399810272',
-            'whatsapp_2' => '081283624838',
-            'email' => 'info@astekindo-sertifikasi.co.id',
-            'email_secondary' => 'sekretariat.astekindo@gmail.com',
-            'address' => 'Gedung Asosiasi Tenaga Teknik Konstruksi Indonesia (ASTEKINDO), Jl. Raden Inten II No. 88, Duren Sawit, Jakarta Timur 13440',
+            'site_name' => 'Training K3 Konstruksi',
+            'site_tagline' => 'Lembaga Pelatihan & Pembinaan Sertifikasi SKK Konstruksi Berlisensi BNSP & LPJK',
+            'company_name' => 'Training K3 Konstruksi',
+            'license_bnsp' => 'Lisensi Resmi BNSP & LPJK',
+            'license_lpjk' => 'Terdaftar Resmi LPJK',
+            'phone' => '08118500177',
+            'whatsapp' => '08118500177',
+            'whatsapp_2' => '08118500177',
+            'email' => 'info@trainingk3konstruksi.co.id',
+            'email_secondary' => 'sekretariat.trainingk3@gmail.com',
+            'address' => 'Gedung Pusat K3 Konstruksi, Jl. Raden Inten II No. 88, Duren Sawit, Jakarta Timur 13440',
             'maps_embed' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.257544078498!2d106.91428237588325!3d-6.229737993758416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698cb0e252a1d9%3A0x6b24a3507d383b1!2sDuren%20Sawit%2C%20East%20Jakarta%20City%2C%20Jakarta!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid',
             'office_hours' => 'Senin - Jumat: 08.30 - 17.00 WIB | Sabtu (Layanan TUK Asesmen): 09.00 - 14.00 WIB',
-            'hero_title' => 'Lembaga Sertifikasi Profesi Konstruksi Terpercaya di Indonesia',
-            'hero_description' => 'Mewujudkan tenaga kerja konstruksi Indonesia yang unggul, kompeten, berdaya saing global, dan berlisensi resmi BNSP & LPJK Kementerian PUPR.',
-            'footer_text' => 'LSP ASTEKINDO Konstruksi Mandiri beroperasi di bawah pengawasan Badan Nasional Sertifikasi Profesi (BNSP) dan Lembaga Pengembangan Jasa Konstruksi (LPJK) Kementerian PUPR RI sesuai amanat UU No. 2 Tahun 2017 tentang Jasa Konstruksi.',
+            'hero_title' => 'Training K3 Konstruksi & Sertifikasi SKK Berlisensi BNSP & LPJK',
+            'hero_description' => 'Mewujudkan tenaga kerja konstruksi Indonesia yang unggul, kompeten, berdaya saing global, dan berlisensi resmi BNSP & LPJK.',
+            'footer_text' => 'Training K3 Konstruksi menyelenggarakan program pembinaan dan penyiapan sertifikasi kompetensi kerja di bawah lisensi resmi Badan Nasional Sertifikasi Profesi (BNSP) dan terdaftar di LPJK sesuai amanat UU No. 2 Tahun 2017 tentang Jasa Konstruksi.',
         ];
 
         foreach ($settings as $key => $val) {
@@ -79,11 +79,11 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'key' => 'skema_sertifikasi_aktif',
-                'label' => 'Skema SKK Konstruksi Terlisensi',
-                'value' => '64',
+                'label' => 'Skema Pelatihan & Sertifikasi',
+                'value' => '202',
                 'unit' => 'Skema',
                 'icon' => 'bi-card-checklist',
-                'description' => 'Meliputi Sipil Gedung, Jalan Jembatan, SMKK K3, SDA, Geoteknik, dan Tata Lingkungan.',
+                'description' => 'Meliputi Sumber Daya Air, Jalan Jembatan, SMKK K3, Gedung Geoteknik, dan Manajemen Proyek.',
                 'sort_order' => 3,
             ],
             [
@@ -104,20 +104,20 @@ class DatabaseSeeder extends Seeder
         // 4. Hero Slides
         $slides = [
             [
-                'title' => 'Sertifikasi Kompetensi Kerja (SKK) Konstruksi Berlisensi BNSP & LPJK',
+                'title' => 'Training K3 Konstruksi & Sertifikasi SKK Berlisensi BNSP & LPJK',
                 'subtitle' => 'Tingkatkan legalitas, kredibilitas profesional, dan syarat mutlak tender proyek konstruksi nasional.',
-                'badge' => 'Lisensi Resmi BNSP No. BNSP-LSP-1897-ID',
-                'cta_text' => 'Lihat Skema Sertifikasi',
+                'badge' => 'Program Resmi Berlisensi BNSP & LPJK',
+                'cta_text' => 'Lihat 202 Skema Pelatihan',
                 'cta_link' => '#skema-sertifikasi',
                 'cta2_text' => 'Konsultasi Syarat SKK',
-                'cta2_link' => 'https://api.whatsapp.com/send?phone=6281399810272',
+                'cta2_link' => 'https://api.whatsapp.com/send?phone=628118500177',
                 'image' => 'https://images.unsplash.com/photo-1541888946425-d0fbb18615f3?w=1600&auto=format&fit=crop&q=80',
                 'sort_order' => 1,
             ],
             [
                 'title' => 'Jaminan Standar Mutu Ahli Konstruksi Indonesia di Seluruh Provinsi',
                 'subtitle' => 'Melayani uji kompetensi Ahli Utama, Madya, Muda, Pelaksana Lapangan, dan Pengawas Struktur se-Indonesia.',
-                'badge' => 'Terakreditasi LPJK Kementerian PUPR',
+                'badge' => 'Terdaftar Resmi LPJK',
                 'cta_text' => 'Jelajahi Wilayah TUK',
                 'cta_link' => '#wilayah-sertifikasi',
                 'cta2_text' => 'Hubungi Sekretariat',
@@ -128,24 +128,32 @@ class DatabaseSeeder extends Seeder
             [
                 'title' => 'Sistem Manajemen Keselamatan Konstruksi (SMKK) & Ahli K3',
                 'subtitle' => 'Lindungi proyek dari risiko fatal kecelakaan kerja dengan tenaga ahli K3 konstruksi bersertifikat BNSP.',
-                'badge' => 'Kepatuhan UU Jasa Konstruksi No. 2/2017',
+                'badge' => 'Kepatuhan Standar Keselamatan Konstruksi',
                 'cta_text' => 'Skema Ahli K3 Konstruksi',
-                'cta_link' => '/program/sertifikasi-ahli-k3-konstruksi-smkk',
+                'cta_link' => '/skema-sertifikasi',
                 'cta2_text' => 'WhatsApp Konsultasi',
-                'cta2_link' => 'https://api.whatsapp.com/send?phone=6281399810272',
+                'cta2_link' => 'https://api.whatsapp.com/send?phone=628118500177',
                 'image' => 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=1600&auto=format&fit=crop&q=80',
                 'sort_order' => 3,
             ]
         ];
 
+        HeroSlide::truncate();
         foreach ($slides as $slide) {
             HeroSlide::create($slide);
         }
 
-        // 5. Programs (Skema Sertifikasi)
+        // 5. Programs (Skema Sertifikasi) - All 202 crawled schemes
+        \Illuminate\Support\Facades\Schema::disableForeignKeyConstraints();
+        Article::truncate();
+        Program::truncate();
+        \Illuminate\Support\Facades\Schema::enableForeignKeyConstraints();
+
         $masterSchemes = AstekindoSchemeService::getMasterSchemes();
+        $fillable = (new Program)->getFillable();
         foreach ($masterSchemes as $scheme) {
-            Program::updateOrCreate(['slug' => $scheme['slug']], $scheme);
+            $data = array_intersect_key($scheme, array_flip($fillable));
+            Program::create($data);
         }
 
         // 6. Projects (Our Projects)
@@ -166,7 +174,7 @@ class DatabaseSeeder extends Seeder
             [
                 'title' => 'Sertifikasi Personel Keselamatan Konstruksi SMKK Proyek IKN Nusantara',
                 'slug' => 'sertifikasi-smkk-ikn-nusantara',
-                'client_name' => 'Kementerian PUPR Satgas Pembangunan IKN & BUMN Karya',
+                'client_name' => 'Satgas Pembangunan IKN & BUMN Karya',
                 'category' => 'Ibu Kota Nusantara (IKN)',
                 'year' => '2024 - 2026',
                 'location' => 'Penajam Paser Utara, Kalimantan Timur',
@@ -236,7 +244,7 @@ class DatabaseSeeder extends Seeder
 
         // 7. Clients (Our Clients)
         $clients = [
-            ['name' => 'Kementerian PUPR RI', 'industry' => 'Regulator & Pengguna Jasa Nasional', 'sort_order' => 1],
+            ['name' => 'Lembaga Pengembangan Jasa Konstruksi (LPJK)', 'industry' => 'Regulator & Akreditasi Jasa Konstruksi', 'sort_order' => 1],
             ['name' => 'PT Wijaya Karya (Persero) Tbk', 'industry' => 'BUMN Konstruksi & Infrastruktur', 'sort_order' => 2],
             ['name' => 'PT Adhi Karya (Persero) Tbk', 'industry' => 'BUMN Konstruksi Rel & Gedung', 'sort_order' => 3],
             ['name' => 'PT Waskita Karya (Persero) Tbk', 'industry' => 'BUMN Konstruksi Jalan Tol & Transmisi', 'sort_order' => 4],
@@ -256,7 +264,7 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Ir. Hendra Gunawan, S.T., M.T., IPU',
                 'role' => 'Project Director Jalan Tol Trans Sumatera',
                 'company' => 'PT Hutama Karya Infrastruktur',
-                'content' => 'Proses asesmen di LSP ASTEKINDO sangat objektif, profesional, dan berstandar BNSP yang ketat. Seluruh tim insinyur proyek kami terbukti memiliki kompetensi unggul dan kepatuhan penuh terhadap standar keselamatan SMKK.',
+                'content' => 'Proses pembinaan dan sertifikasi di Training K3 Konstruksi sangat objektif, profesional, dan berstandar BNSP yang ketat. Seluruh tim insinyur proyek kami terbukti memiliki kompetensi unggul dan kepatuhan penuh terhadap standar keselamatan SMKK.',
                 'rating' => 5,
                 'scheme_name' => 'Ahli Manajemen Proyek Konstruksi (Jenjang 9)',
                 'sort_order' => 1,
@@ -265,7 +273,7 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Rian Hidayat, S.Tr.T.',
                 'role' => 'HSE Site Coordinator Proyek Sumbu Kebangsaan IKN',
                 'company' => 'KSO BUMN Karya IKN',
-                'content' => 'Sertifikat SKK Ahli K3 Konstruksi dari LSP ASTEKINDO menjadi paspor utama saya dalam memimpin tim safety di IKN Nusantara. Pelayanan cepat, asisten verifikasi portofolionya sangat membantu, dan sertifikat langsung terdaftar di sistem SIPJAKI PUPR.',
+                'content' => 'Sertifikat SKK Ahli K3 Konstruksi melalui Training K3 Konstruksi menjadi paspor utama saya dalam memimpin tim safety di IKN Nusantara. Pelayanan cepat, asisten verifikasi portofolionya sangat membantu, dan sertifikat langsung terdaftar di sistem resmi LPJK.',
                 'rating' => 5,
                 'scheme_name' => 'Ahli K3 Konstruksi (Jenjang 7)',
                 'sort_order' => 2,
@@ -274,7 +282,7 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Bambang Sudibyo, S.T.',
                 'role' => 'Kepala Pengawas Struktur High-Rise Building',
                 'company' => 'Konsultan Manajemen Konstruksi Nasional',
-                'content' => 'Materi uji kompetensi mencakup aspek praktis lapangan terkini seperti BIM dan metode pengecoran massal. LSP ASTEKINDO benar-benar menjamin bahwa pemegang sertifikat siap tempur di lapangan tanpa keraguan.',
+                'content' => 'Materi uji kompetensi mencakup aspek praktis lapangan terkini seperti BIM dan metode pengecoran massal. Training K3 Konstruksi benar-benar menjamin bahwa pemegang sertifikat siap tempur di lapangan tanpa keraguan.',
                 'rating' => 5,
                 'scheme_name' => 'Pengawas Struktur Bangunan Gedung (Jenjang 6)',
                 'sort_order' => 3,
@@ -283,13 +291,14 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Dra. Maya Anggraini',
                 'role' => 'General Manager Human Capital & Legal',
                 'company' => 'PT Jaya Cipta Konstruksi Utama',
-                'content' => 'Kerja sama batch sertifikasi korporat bersama LSP ASTEKINDO sangat memuaskan. Lebih dari 120 insinyur perusahaan kami tuntas tersertifikasi dengan tertib dan tepat waktu sebelum proses tender BUMN dibuka.',
+                'content' => 'Kerja sama batch sertifikasi korporat bersama Training K3 Konstruksi sangat memuaskan. Lebih dari 120 insinyur perusahaan kami tuntas tersertifikasi dengan tertib dan tepat waktu sebelum proses tender dibuka.',
                 'rating' => 5,
                 'scheme_name' => 'Sertifikasi Kolektif Badan Usaha',
                 'sort_order' => 4,
             ]
         ];
 
+        Testimonial::truncate();
         foreach ($testimonials as $t) {
             Testimonial::create($t);
         }
@@ -298,8 +307,8 @@ class DatabaseSeeder extends Seeder
         $firstProgram = Program::first();
         $sampleArticles = [
             [
-                'title' => 'Panduan Lengkap Penerapan Sistem Manajemen Keselamatan Konstruksi (SMKK) Sesuai Permen PUPR No 10 Tahun 2021',
-                'slug' => 'panduan-lengkap-penerapan-smkk-permen-pupr-10-2021',
+                'title' => 'Training Penerapan Sistem Manajemen Keselamatan Konstruksi (SMKK) Standar Nasional',
+                'slug' => 'training-penerapan-smkk-standar-nasional',
                 'category' => 'K3 Konstruksi',
                 'province' => 'DKI Jakarta',
                 'province_slug' => 'dki-jakarta',
@@ -308,15 +317,15 @@ class DatabaseSeeder extends Seeder
                 'program_id' => $firstProgram ? $firstProgram->id : null,
                 'excerpt' => 'Kajian mendalam aspek hukum, struktur Rencana Keselamatan Konstruksi (RKK), identifikasi bahaya IBPRP, serta alokasi biaya SMKK pada tender jasa konstruksi.',
                 'content' => AstekindoSchemeService::getOrGenerateRegionalArticle('DKI Jakarta', 'Kota Jakarta Pusat')['content'],
-                'author' => 'Dewan Asesor K3 LSP ASTEKINDO',
+                'author' => 'Dewan Instruktur Training K3 Konstruksi',
                 'read_time' => 25,
                 'views_count' => 1420,
                 'is_featured' => true,
                 'is_published' => true,
             ],
             [
-                'title' => 'Metode Erection Girder Precast Jembatan Bentang Panjang dengan Launcher Gantry Standar Bina Marga',
-                'slug' => 'metode-erection-girder-precast-jembatan-launcher-gantry',
+                'title' => 'Training Metode Erection Girder Precast Jembatan Bentang Panjang dengan Launcher Gantry Standar Bina Marga',
+                'slug' => 'training-metode-erection-girder-precast-jembatan-launcher-gantry',
                 'category' => 'Jalan & Jembatan',
                 'province' => 'Jawa Barat',
                 'province_slug' => 'jawa-barat',
@@ -325,7 +334,7 @@ class DatabaseSeeder extends Seeder
                 'program_id' => $firstProgram ? $firstProgram->id : null,
                 'excerpt' => 'Prosedur teknis peluncuran girder prategang jembatan, perhitungan beban counter-weight, stabilitas gantry, dan pengujian defleksi dinamis jembatan.',
                 'content' => AstekindoSchemeService::getOrGenerateRegionalArticle('Jawa Barat', 'Kota Bandung')['content'],
-                'author' => 'Tim Ahli Jembatan LSP ASTEKINDO',
+                'author' => 'Tim Ahli Jembatan Training K3 Konstruksi',
                 'read_time' => 28,
                 'views_count' => 980,
                 'is_featured' => true,
@@ -342,7 +351,7 @@ class DatabaseSeeder extends Seeder
                 'program_id' => $firstProgram ? $firstProgram->id : null,
                 'excerpt' => 'Rumus perhitungan Cost Variance (CV), Schedule Variance (SV), Cost Performance Index (CPI), dan estimasi penyelesaian akhir (EAC) proyek konstruksi.',
                 'content' => AstekindoSchemeService::getOrGenerateRegionalArticle('Jawa Timur', 'Kota Surabaya')['content'],
-                'author' => 'Tim Dewan Asesor Manajemen LSP ASTEKINDO',
+                'author' => 'Tim Dewan Instruktur Manajemen Training K3 Konstruksi',
                 'read_time' => 22,
                 'views_count' => 1150,
                 'is_featured' => true,
@@ -350,6 +359,7 @@ class DatabaseSeeder extends Seeder
             ],
         ];
 
+        Article::truncate();
         foreach ($sampleArticles as $art) {
             Article::updateOrCreate(['slug' => $art['slug']], $art);
         }

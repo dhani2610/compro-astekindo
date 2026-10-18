@@ -110,7 +110,7 @@ class FrontController extends Controller
                 'category' => $t['category'],
                 'read_time' => $t['read_time'] . ' Menit Baca',
                 'views' => $t['views'],
-                'excerpt' => "Panduan implementasi teknis {$t['title']} khusus wilayah {$cityName}, Provinsi {$provinceName} berstandar SKKNI dan regulasi keselamatan konstruksi PUPR.",
+                'excerpt' => "Panduan implementasi teknis {$t['title']} khusus wilayah {$cityName}, Provinsi {$provinceName} berstandar SKKNI dan regulasi keselamatan konstruksi nasional.",
             ];
         }
 

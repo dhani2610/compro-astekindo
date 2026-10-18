@@ -25,7 +25,7 @@
                 {{ $program->jenjang }}
             </span>
             <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 rounded-pill fw-bold">
-                <i class="bi bi-shield-check me-1"></i> Lisensi BNSP & LPJK PUPR
+                <i class="bi bi-shield-check me-1"></i> Standar SKKNI & SMKK
             </span>
             <span class="badge bg-info-subtle text-info border border-info-subtle px-3 py-2 rounded-pill fw-bold">
                 <i class="bi bi-book-half me-1"></i> {{ $articleData['word_count'] ?? '6.400+ Kata SKKNI' }}
@@ -39,7 +39,7 @@
         <div class="d-flex flex-wrap align-items-center gap-4 text-muted small">
             <span><i class="bi bi-person-fill text-primary me-1"></i> {{ $articleData['author'] }}</span>
             <span><i class="bi bi-calendar3 text-primary me-1"></i> {{ $articleData['published_at'] }}</span>
-            <span><i class="bi bi-check2-all text-success me-1"></i> Standar SKKNI & SMKK PUPR</span>
+            <span><i class="bi bi-check2-all text-success me-1"></i> Standar SKKNI & SMKK</span>
         </div>
     </div>
 </section>
@@ -88,7 +88,7 @@
                             </button>
                         </div>
                         <a href="{{ route('program.region', [$program->slug, $province['slug'], $kabkot['slug']]) }}" class="btn btn-outline-primary btn-sm rounded-pill px-3 py-1 fw-bold">
-                            <i class="bi bi-arrow-left me-1"></i> Kembali ke 200 Artikel {{ $cityName }}
+                            <i class="bi bi-arrow-left me-1"></i> Kembali ke 202 Program Pelatihan {{ $cityName }}
                         </a>
                     </div>
                 </div>
@@ -97,10 +97,10 @@
                 @if(count($sampleKecamatan) > 0)
                 <div class="card border-0 shadow-sm p-4 rounded-4 mb-4" style="background: #ffffff; border: 1px solid #E2E8F0 !important;">
                     <h5 class="fw-bold text-dark mb-2">
-                        <i class="bi bi-pin-map-fill text-primary me-2"></i>Jangkauan Kecamatan Uji Kompetensi di {{ $cityName }}
+                        <i class="bi bi-pin-map-fill text-primary me-2"></i>Jangkauan Kecamatan Pelatihan di {{ $cityName }}
                     </h5>
                     <p class="text-muted small mb-3">
-                        LSP ASTEKINDO melayani pendaftaran uji kompetensi dan konsultasi portofolio mencakup seluruh kecamatan di {{ $cityName }}:
+                        Layanan Training K3 Konstruksi menjangkau seluruh kecamatan di {{ $cityName }}:
                     </p>
                     <div class="d-flex flex-wrap gap-2">
                         @foreach($sampleKecamatan as $kec)
@@ -118,28 +118,28 @@
                 <div class="d-flex flex-column gap-4" style="position: sticky; top: 100px;">
                     <!-- Registration Card -->
                     <div class="card border-0 shadow-sm p-4 rounded-4 text-white" style="background: linear-gradient(135deg, #0284C7, #0EA5E9);">
-                        <span class="badge bg-white text-primary px-3 py-1 rounded-pill fw-bold mb-2 align-self-start">TUK Resmi Wilayah</span>
+                        <span class="badge bg-white text-primary px-3 py-1 rounded-pill fw-bold mb-2 align-self-start">Pusat Pelatihan Wilayah</span>
                         <h4 class="fw-bold mb-2">Pendaftaran di {{ $cityName }}</h4>
                         <p class="text-white-50 small mb-4" style="line-height: 1.6;">
-                            Konsultasikan kelengkapan berkas portofolio Anda bersama asesor verifikator LSP ASTEKINDO untuk memastikan kelulusan asesmen.
+                            Konsultasikan kelengkapan berkas portofolio Anda bersama tim verifikator Training K3 Konstruksi untuk pendaftaran pelatihan.
                         </p>
-                        <a href="https://api.whatsapp.com/send?phone=6281399810272&text={{ urlencode('Halo LSP ASTEKINDO, saya membaca panduan ' . $articleData['title'] . ' dan ingin konsultasi pendaftaran uji kompetensi.') }}" target="_blank" class="btn btn-warning text-dark fw-bold rounded-pill py-2 shadow-sm mb-2">
-                            <i class="bi bi-whatsapp me-2"></i> Chat WhatsApp Asesor
+                        <a href="https://api.whatsapp.com/send?phone=628118500177&text={{ urlencode('Halo Training K3 Konstruksi, saya membaca panduan ' . $articleData['title'] . ' dan ingin konsultasi pendaftaran.') }}" target="_blank" class="btn btn-warning text-dark fw-bold rounded-pill py-2 shadow-sm mb-2">
+                            <i class="bi bi-whatsapp me-2"></i> Chat WhatsApp Konsultan
                         </a>
                         <a href="{{ route('program.region', [$program->slug, $province['slug'], $kabkot['slug']]) }}" class="btn btn-outline-light rounded-pill py-2 small fw-semibold">
-                            <i class="bi bi-grid-fill me-1"></i> Lihat 200 Artikel {{ $cityName }}
+                            <i class="bi bi-grid-fill me-1"></i> Lihat 202 Program {{ $cityName }}
                         </a>
                     </div>
 
-                    <!-- LSP Credentials Card -->
+                    <!-- Credentials Card -->
                     <div class="card border-0 shadow-sm p-4 rounded-4" style="background: #ffffff; border: 1px solid #E2E8F0 !important;">
-                        <h5 class="fw-bold text-dark mb-3 border-bottom pb-2">Legalitas Penyelenggara</h5>
+                        <h5 class="fw-bold text-dark mb-3 border-bottom pb-2">Standar Penyelenggara</h5>
                         <ul class="list-unstyled small mb-3 d-flex flex-column gap-2 text-muted">
-                            <li><strong class="text-dark">Lembaga:</strong> LSP ASTEKINDO P-3</li>
-                            <li><strong class="text-dark">Lisensi BNSP:</strong> BNSP-LSP-1897-ID</li>
-                            <li><strong class="text-dark">Akreditasi LPJK:</strong> LPJK-SKK-042/2021</li>
+                            <li><strong class="text-dark">Program:</strong> Training K3 Konstruksi</li>
+                            <li><strong class="text-dark">Standar:</strong> SKKNI & SMKK Nasional</li>
+                            <li><strong class="text-dark">Kurikulum:</strong> Kompetensi Terpadu</li>
                             <li><strong class="text-dark">Masa Berlaku:</strong> 5 Tahun</li>
-                            <li><strong class="text-dark">Status:</strong> Terintegrasi SIPJAKI PUPR</li>
+                            <li><strong class="text-dark">Sertifikasi:</strong> Kompetensi Kerja Konstruksi</li>
                         </ul>
                         <a href="{{ route('about') }}" class="btn btn-sm btn-outline-primary rounded-pill w-100">
                             Profil & Legalitas Lengkap
@@ -151,11 +151,8 @@
                         <h6 class="fw-bold text-dark mb-2">Hotline Konsultasi</h6>
                         <p class="text-muted small mb-3">Senin - Jumat: 08.30 - 17.00 WIB</p>
                         <div class="d-flex flex-column gap-2">
-                            <a href="https://api.whatsapp.com/send?phone=6281399810272" target="_blank" class="btn btn-sm btn-outline-success rounded-pill py-2">
-                                <i class="bi bi-whatsapp me-2"></i>0813-9981-0272
-                            </a>
-                            <a href="https://api.whatsapp.com/send?phone=6281283624838" target="_blank" class="btn btn-sm btn-outline-success rounded-pill py-2">
-                                <i class="bi bi-whatsapp me-2"></i>0812-8362-4838
+                            <a href="https://api.whatsapp.com/send?phone=628118500177" target="_blank" class="btn btn-sm btn-outline-success rounded-pill py-2">
+                                <i class="bi bi-whatsapp me-2"></i>Hotline WhatsApp: 0811-8500-177
                             </a>
                         </div>
                     </div>

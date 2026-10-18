@@ -1,7 +1,7 @@
 @extends('layouts.front')
 
-@section('title', 'Tentang Perusahaan | Profil, Visi, Misi & Legalitas LSP ASTEKINDO')
-@section('meta_description', 'Profil lengkap Lembaga Sertifikasi Profesi (LSP) ASTEKINDO Konstruksi Mandiri. Visi, misi, sejarah, lisensi resmi BNSP dan LPJK Kementerian PUPR.')
+@section('title', 'Tentang Lembaga | Profil, Visi, Misi & Legalitas Training K3 Konstruksi')
+@section('meta_description', 'Profil lengkap Lembaga Penyelenggara Training K3 Konstruksi. Visi, misi, sejarah, lisensi resmi BNSP dan LPJK.')
 
 @section('content')
 
@@ -19,11 +19,11 @@
                 <i class="bi bi-info-circle-fill me-1"></i> Profil Lembaga
             </span>
             <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 rounded-pill fw-bold">
-                <i class="bi bi-shield-check me-1"></i> Lisensi BNSP-LSP-1897-ID
+                <i class="bi bi-shield-check me-1"></i> Lisensi Resmi BNSP & LPJK
             </span>
         </div>
         <h1 class="display-5 fw-bold text-dark mb-2" style="letter-spacing: -0.5px;">
-            LSP ASTEKINDO Konstruksi Mandiri
+            Training K3 Konstruksi
         </h1>
         <p class="lead text-muted mb-0" style="max-width: 820px; font-size: 1.05rem;">
             Membangun keandalan dan daya saing sumber daya manusia jasa konstruksi Indonesia melalui pengakuan kompetensi kerja berstandar nasional dan internasional.
@@ -42,10 +42,10 @@
                     Dedikasi untuk Keunggulan Jasa Konstruksi Nasional
                 </h2>
                 <p class="text-muted mb-3" style="line-height: 1.8; font-size: 1rem;">
-                    LSP ASTEKINDO Konstruksi Mandiri didirikan sebagai tindak lanjut atas amanat <strong>Undang-Undang Nomor 2 Tahun 2017 tentang Jasa Konstruksi</strong> yang mewajibkan setiap tenaga kerja konstruksi memiliki Sertifikat Kompetensi Kerja (SKK). Dibentuk di bawah naungan <strong>Asosiasi Tenaga Teknik Konstruksi Indonesia (ASTEKINDO)</strong>, lembaga ini telah memperoleh lisensi resmi dari <strong>Badan Nasional Sertifikasi Profesi (BNSP)</strong> dengan nomor lisensi <code>BNSP-LSP-1897-ID</code> dan tercatat di <strong>Lembaga Pengembangan Jasa Konstruksi (LPJK) Kementerian PUPR</strong>.
+                    Lembaga Penyelenggara Training K3 Konstruksi didirikan sebagai tindak lanjut atas amanat <strong>Undang-Undang Nomor 2 Tahun 2017 tentang Jasa Konstruksi</strong> yang mewajibkan setiap tenaga kerja konstruksi memiliki Sertifikat Kompetensi Kerja (SKK). Lembaga ini telah berlisensi resmi dari <strong>Badan Nasional Sertifikasi Profesi (BNSP)</strong> dan tercatat di <strong>Lembaga Pengembangan Jasa Konstruksi (LPJK)</strong>.
                 </p>
                 <p class="text-muted mb-0" style="line-height: 1.8; font-size: 1rem;">
-                    Sejak awal berdirinya, LSP ASTEKINDO telah menyertifikasi lebih dari 48.000 tenaga kerja yang tersebar di 38 provinsi di seluruh Indonesia, mulai dari jenjang pelaksana teknisi lapangan hingga penanggung jawab teknis badan usaha (PJTBU) pada proyek-proyek strategis nasional BUMN dan swasta.
+                    Sejak awal berdirinya, lembaga kami telah menyertifikasi lebih dari 48.000 tenaga kerja yang tersebar di 38 provinsi di seluruh Indonesia, mulai dari jenjang pelaksana teknisi lapangan hingga penanggung jawab teknis badan usaha (PJTBU) pada proyek-proyek strategis nasional BUMN dan swasta.
                 </p>
             </div>
             <div class="col-lg-5">
@@ -56,19 +56,19 @@
                     <div class="d-flex flex-column gap-3 small">
                         <div>
                             <span class="text-muted d-block" style="font-size: 0.78rem;">Nama Lembaga:</span>
-                            <strong class="text-dark fs-6">LSP ASTEKINDO Konstruksi Mandiri</strong>
+                            <strong class="text-dark fs-6">Training K3 Konstruksi</strong>
                         </div>
                         <div>
-                            <span class="text-muted d-block" style="font-size: 0.78rem;">Nomor Lisensi BNSP:</span>
-                            <strong class="text-success fs-6"><i class="bi bi-patch-check-fill me-1"></i>BNSP-LSP-1897-ID</strong>
+                            <span class="text-muted d-block" style="font-size: 0.78rem;">Status Lisensi BNSP:</span>
+                            <strong class="text-success fs-6"><i class="bi bi-patch-check-fill me-1"></i>Lisensi Resmi BNSP</strong>
                         </div>
                         <div>
-                            <span class="text-muted d-block" style="font-size: 0.78rem;">Registrasi LPJK PUPR:</span>
-                            <strong class="text-primary fs-6"><i class="bi bi-building-fill-check me-1"></i>LPJK-SKK-042/2021</strong>
+                            <span class="text-muted d-block" style="font-size: 0.78rem;">Registrasi LPJK:</span>
+                            <strong class="text-primary fs-6"><i class="bi bi-building-fill-check me-1"></i>Terdaftar Resmi LPJK</strong>
                         </div>
                         <div>
-                            <span class="text-muted d-block" style="font-size: 0.78rem;">Jenis LSP:</span>
-                            <strong class="text-dark">LSP Pihak Ketiga (P-3) Terbuka untuk Umum</strong>
+                            <span class="text-muted d-block" style="font-size: 0.78rem;">Jenis Layanan:</span>
+                            <strong class="text-dark">Pelatihan & Fasilitasi Sertifikasi Kompetensi Terbuka</strong>
                         </div>
                         <div>
                             <span class="text-muted d-block" style="font-size: 0.78rem;">Standar Penjaminan Mutu:</span>
@@ -115,7 +115,7 @@
             <span class="badge bg-primary-subtle text-primary px-3 py-1 rounded-pill fw-bold mb-2">Nilai Luhur</span>
             <h3 class="display-6 fw-bold text-dark mb-2">Komitmen Integritas & Kode Etik Asesor</h3>
             <p class="text-muted">
-                LSP ASTEKINDO memegang teguh prinsip 5K (Kejujuran, Keadilan, Kredibilitas, Kepatuhan, dan Keselamatan) dalam seluruh rantai asesmen.
+                Training K3 Konstruksi memegang teguh prinsip 5K (Kejujuran, Keadilan, Kredibilitas, Kepatuhan, dan Keselamatan) dalam seluruh rantai asesmen dan pelatihan.
             </p>
         </div>
 

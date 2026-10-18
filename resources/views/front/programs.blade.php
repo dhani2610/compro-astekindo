@@ -1,7 +1,7 @@
 @extends('layouts.front')
 
-@section('title', 'Daftar Skema Sertifikasi SKK Konstruksi | LSP ASTEKINDO')
-@section('meta_description', 'Katalog lengkap Skema Sertifikasi Kompetensi Kerja (SKK) Konstruksi lisensi resmi BNSP & LPJK PUPR: Gedung, Jalan Jembatan, Ahli K3 Konstruksi SMKK, dan Manajemen Proyek.')
+@section('title', 'Daftar 202 Skema Pelatihan & Sertifikasi | Training K3 Konstruksi')
+@section('meta_description', 'Katalog lengkap 202 Program Pelatihan dan Skema Sertifikasi Kompetensi Konstruksi: Gedung, Jalan Jembatan, Ahli K3 Konstruksi SMKK, dan Manajemen Proyek.')
 
 @section('content')
 
@@ -19,7 +19,7 @@
                 <i class="bi bi-award-fill me-1"></i> Standar SKKNI & KKNI
             </span>
             <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 rounded-pill fw-bold">
-                <i class="bi bi-shield-check me-1"></i> Lisensi BNSP & LPJK PUPR
+                <i class="bi bi-shield-check me-1"></i> Standar SKKNI & SMKK
             </span>
         </div>
         <h1 class="display-5 fw-bold text-dark mb-2" style="letter-spacing: -0.5px;">
@@ -64,7 +64,7 @@
                             {{ $prog->category }}
                         </span>
                         <span class="badge bg-light text-muted border px-2 py-1 rounded-pill small">
-                            {{ $prog->code ?? 'SKK-ASTEK' }}
+                            {{ $prog->code ?? 'SKK-K3' }}
                         </span>
                     </div>
 

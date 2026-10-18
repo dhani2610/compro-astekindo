@@ -1,7 +1,7 @@
 @extends('layouts.front')
 
-@section('title', 'Hubungi Sekretariat & Tempat Uji Kompetensi | LSP ASTEKINDO')
-@section('meta_description', 'Kontak resmi Sekretariat LSP ASTEKINDO Konstruksi Mandiri. Alamat kantor, Google Maps, hotline WhatsApp, dan formulir konsultasi sertifikasi BNSP & LPJK.')
+@section('title', 'Hubungi Sekretariat & Tempat Uji Kompetensi | Training K3 Konstruksi')
+@section('meta_description', 'Kontak resmi Sekretariat Training K3 Konstruksi. Alamat kantor, Google Maps, hotline WhatsApp, dan formulir konsultasi sertifikasi BNSP & LPJK.')
 
 @section('content')
 <!-- Header Banner (Modern Light Blue & White) -->
@@ -22,7 +22,7 @@
             </span>
         </div>
         <h1 class="display-5 fw-bold text-dark mb-2" style="letter-spacing: -0.5px;">
-            Hubungi Sekretariat LSP ASTEKINDO
+            Hubungi Sekretariat Training K3 Konstruksi
         </h1>
         <p class="lead text-muted mb-0" style="max-width: 820px; font-size: 1.05rem;">
             Konsultasikan kebutuhan sertifikasi kompetensi tenaga kerja konstruksi Anda, verifikasi portofolio, jadwal asesmen, atau kemitraan TUK mandiri di seluruh Indonesia.
@@ -60,7 +60,7 @@
                         <div>
                             <h6 class="fw-bold text-dark mb-1">Alamat Kantor</h6>
                             <p class="text-muted small mb-0" style="line-height: 1.6;">
-                                Gedung Astekindo Mandiri Lt. 3, Jl. Raya Pasar Minggu No. 17, Pejaten Timur, Pasar Minggu, Jakarta Selatan, DKI Jakarta 12780
+                                Gedung Graha Konstruksi Lt. 3, Jl. Raya Pasar Minggu No. 17, Pejaten Timur, Pasar Minggu, Jakarta Selatan, DKI Jakarta 12780
                             </p>
                         </div>
                     </div>
@@ -85,11 +85,8 @@
                             <h6 class="fw-bold text-dark mb-1">Hotline WhatsApp Asesor</h6>
                             <p class="text-muted small mb-2">Respon cepat konsultasi berkas & portofolio:</p>
                             <div class="d-flex flex-column gap-2">
-                                <a href="https://api.whatsapp.com/send?phone=6281399810272&text=Halo%20Admin%20LSP%20ASTEKINDO" target="_blank" class="btn btn-sm btn-outline-success rounded-pill text-start px-3">
-                                    <i class="bi bi-whatsapp me-2"></i>Hotline 1: 0813-9981-0272
-                                </a>
-                                <a href="https://api.whatsapp.com/send?phone=6281283624838&text=Halo%20Admin%20LSP%20ASTEKINDO" target="_blank" class="btn btn-sm btn-outline-success rounded-pill text-start px-3">
-                                    <i class="bi bi-whatsapp me-2"></i>Hotline 2: 0812-8362-4838
+                                <a href="https://api.whatsapp.com/send?phone=628118500177&text=Halo%20Admin%20Training%20K3%20Konstruksi" target="_blank" class="btn btn-sm btn-outline-success rounded-pill text-start px-3">
+                                    <i class="bi bi-whatsapp me-2"></i>Hotline WhatsApp: 0811-8500-177
                                 </a>
                             </div>
                         </div>
@@ -102,8 +99,8 @@
                         <div>
                             <h6 class="fw-bold text-dark mb-1">Email Resmi</h6>
                             <p class="text-muted small mb-0">
-                                sekretariat@astekindo.org<br>
-                                sertifikasi@astekindo.org
+                                info@trainingk3konstruksi.id<br>
+                                layanan@trainingk3konstruksi.id
                             </p>
                         </div>
                     </div>

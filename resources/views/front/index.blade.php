@@ -1,7 +1,7 @@
 @extends('layouts.front')
 
-@section('title', 'LSP ASTEKINDO Konstruksi Mandiri | Sertifikasi SKK Konstruksi Resmi BNSP & LPJK PUPR')
-@section('meta_description', 'LSP ASTEKINDO Konstruksi Mandiri menyelenggarakan Uji Kompetensi Sertifikat Kompetensi Kerja (SKK) Konstruksi resmi berlisensi BNSP & terakreditasi LPJK Kementerian PUPR di 38 provinsi di Indonesia.')
+@section('title', 'Training K3 Konstruksi | Sertifikasi SKK Konstruksi Berlisensi BNSP & LPJK')
+@section('meta_description', 'Penyelenggara Training K3 Konstruksi dan Fasilitasi Uji Kompetensi Sertifikat Kompetensi Kerja (SKK) Konstruksi resmi berlisensi BNSP & terdaftar LPJK di 38 provinsi di Indonesia.')
 
 @section('content')
 
@@ -31,7 +31,7 @@
                         <a href="{{ $slide->cta_link ?: '#skema-sertifikasi' }}" class="btn btn-primary fw-bold px-4 py-3 rounded-pill shadow-sm" style="background: linear-gradient(135deg, #0284C7, #0EA5E9); border: none; font-size: 0.95rem;">
                             <i class="bi bi-award-fill me-2"></i>{{ $slide->cta_text ?: 'Lihat Skema Sertifikasi' }}
                         </a>
-                        <a href="{{ $slide->cta2_link ?: 'https://api.whatsapp.com/send?phone=6281399810272' }}" target="_blank" class="btn btn-outline-primary fw-bold px-4 py-3 rounded-pill" style="border-color: #0284C7; color: #0284C7; font-size: 0.95rem;">
+                        <a href="{{ $slide->cta2_link ?: 'https://api.whatsapp.com/send?phone=628118500177' }}" target="_blank" class="btn btn-outline-primary fw-bold px-4 py-3 rounded-pill" style="border-color: #0284C7; color: #0284C7; font-size: 0.95rem;">
                             <i class="bi bi-whatsapp me-2"></i>{{ $slide->cta2_text ?: 'Konsultasi Syarat SKK' }}
                         </a>
                     </div>
@@ -40,11 +40,11 @@
                     <div class="d-flex align-items-center gap-4 mt-4 pt-3 border-top border-primary-subtle text-muted small">
                         <div class="d-flex align-items-center gap-2">
                             <i class="bi bi-shield-fill-check text-success fs-5"></i>
-                            <span>Lisensi BNSP-LSP-1897-ID</span>
+                            <span>Lisensi Resmi BNSP</span>
                         </div>
                         <div class="d-flex align-items-center gap-2">
                             <i class="bi bi-building-check text-primary fs-5"></i>
-                            <span>Akreditasi LPJK PUPR</span>
+                            <span>Terdaftar Resmi LPJK</span>
                         </div>
                     </div>
                 </div>
@@ -56,7 +56,7 @@
                         <div class="card border-0 shadow-lg p-4 p-md-5 rounded-4" style="background: #ffffff; border: 1px solid #BAE6FD !important;">
                             <div class="d-flex justify-content-between align-items-center mb-4">
                                 <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2 rounded-pill fw-bold">
-                                    <i class="bi bi-award-fill me-1"></i> Standar Resmi PUPR
+                                    <i class="bi bi-award-fill me-1"></i> Standar Nasional SMKK
                                 </span>
                                 <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 rounded-pill fw-bold">
                                     <i class="bi bi-check-circle-fill me-1"></i> SIPJAKI Terintegrasi
@@ -148,21 +148,21 @@
     </div>
 </section>
 
-<!-- 3. KEUNGGULAN LSP ASTEKINDO -->
+<!-- 3. KEUNGGULAN TRAINING K3 KONSTRUKSI -->
 <section class="py-5 bg-white">
     <div class="container py-4">
         <div class="text-center max-w-700 mx-auto mb-5">
             <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill fw-bold mb-2">
                 Mengapa Memilih Kami?
             </span>
-            <h2 class="display-6 fw-bold text-dark mb-3">Keunggulan Layanan Asesmen LSP ASTEKINDO</h2>
+            <h2 class="display-6 fw-bold text-dark mb-3">Keunggulan Layanan Training K3 Konstruksi</h2>
             <p class="text-muted">
-                Sebagai LSP Pihak Ketiga (LSP-P3) resmi, kami memberikan kepastian proses sertifikasi yang kredibel, cepat, dan diakui secara legal dalam lelang proyek pemerintah maupun swasta.
+                Sebagai penyelenggara sertifikasi dan pelatihan kompetensi resmi, kami memberikan kepastian proses yang kredibel, cepat, dan diakui secara legal dalam tender proyek konstruksi nasional.
             </p>
         </div>
 
         <div class="row g-4">
-            <div class="col-md-6 col-lg-3">
+            <div class="col-md-6">
                 <div class="card h-100 border-0 shadow-sm p-4 rounded-4 text-center" style="background: #F0F9FF; border: 1px solid #BAE6FD !important;">
                     <div class="bg-white text-primary rounded-circle d-inline-flex align-items-center justify-content-center mx-auto mb-3 shadow-sm" style="width: 58px; height: 58px;">
                         <i class="bi bi-patch-check-fill fs-3 text-primary"></i>
@@ -172,33 +172,13 @@
                 </div>
             </div>
 
-            <div class="col-md-6 col-lg-3">
+            <div class="col-md-6">
                 <div class="card h-100 border-0 shadow-sm p-4 rounded-4 text-center" style="background: #F0F9FF; border: 1px solid #BAE6FD !important;">
                     <div class="bg-white text-primary rounded-circle d-inline-flex align-items-center justify-content-center mx-auto mb-3 shadow-sm" style="width: 58px; height: 58px;">
                         <i class="bi bi-geo-alt-fill fs-3 text-primary"></i>
                     </div>
                     <h5 class="fw-bold mb-2">Jaringan 38 Provinsi</h5>
                     <p class="text-muted small mb-0">Tempat Uji Kompetensi (TUK) hadir di seluruh provinsi dan kota untuk kemudahan asesmen.</p>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-3">
-                <div class="card h-100 border-0 shadow-sm p-4 rounded-4 text-center" style="background: #F0F9FF; border: 1px solid #BAE6FD !important;">
-                    <div class="bg-white text-primary rounded-circle d-inline-flex align-items-center justify-content-center mx-auto mb-3 shadow-sm" style="width: 58px; height: 58px;">
-                        <i class="bi bi-qr-code-scan fs-3 text-primary"></i>
-                    </div>
-                    <h5 class="fw-bold mb-2">Validasi QR Code LPJK</h5>
-                    <p class="text-muted small mb-0">Sertifikat terintegrasi SIPJAKI Kementerian PUPR, dapat diverifikasi langsung secara real-time.</p>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-3">
-                <div class="card h-100 border-0 shadow-sm p-4 rounded-4 text-center" style="background: #F0F9FF; border: 1px solid #BAE6FD !important;">
-                    <div class="bg-white text-primary rounded-circle d-inline-flex align-items-center justify-content-center mx-auto mb-3 shadow-sm" style="width: 58px; height: 58px;">
-                        <i class="bi bi-people-fill fs-3 text-primary"></i>
-                    </div>
-                    <h5 class="fw-bold mb-2">Asesor Bersertifikat</h5>
-                    <p class="text-muted small mb-0">Asesor berpengalaman puluhan tahun di mega proyek konstruksi nasional dan BUMN Karya.</p>
                 </div>
             </div>
         </div>
@@ -395,7 +375,7 @@
                             <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1 rounded-pill small">
                                 <i class="bi bi-check-circle-fill me-1"></i>Terverifikasi
                             </span>
-                            <a href="https://api.whatsapp.com/send?phone=6281399810272&text={{ urlencode('Halo LSP ASTEKINDO, saya ingin konsultasi sertifikasi untuk proyek seperti ' . $p->title) }}" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                            <a href="https://api.whatsapp.com/send?phone=628118500177&text={{ urlencode('Halo Training K3 Konstruksi, saya ingin konsultasi sertifikasi untuk proyek seperti ' . $p->title) }}" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill px-3">
                                 Konsultasi <i class="bi bi-whatsapp ms-1"></i>
                             </a>
                         </div>

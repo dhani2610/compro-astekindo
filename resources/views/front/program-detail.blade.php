@@ -1,6 +1,6 @@
 @extends('layouts.front')
 
-@section('title', $program->title . ' | LSP ASTEKINDO')
+@section('title', $program->title . ' | Training K3 Konstruksi')
 @section('meta_description', Str::limit(strip_tags($program->short_description), 160))
 
 @section('content')
@@ -12,19 +12,19 @@
             <ol class="breadcrumb mb-2" style="font-size: 0.85rem;">
                 <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-primary text-decoration-none">Beranda</a></li>
                 <li class="breadcrumb-item"><a href="{{ route('programs') }}" class="text-primary text-decoration-none">Skema Sertifikasi</a></li>
-                <li class="breadcrumb-item active text-dark" aria-current="page">{{ $program->code ?? 'SKK-ASTEK' }}</li>
+                <li class="breadcrumb-item active text-dark" aria-current="page">{{ $program->code ?? 'SKK-K3' }}</li>
             </ol>
         </nav>
 
         <div class="d-flex flex-wrap gap-2 mb-3">
             <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2 rounded-pill fw-bold">
-                Kode: {{ $program->code ?? 'SKK-ASTEK' }}
+                Kode: {{ $program->code ?? 'SKK-K3' }}
             </span>
             <span class="badge bg-info-subtle text-info border border-info-subtle px-3 py-2 rounded-pill fw-bold">
                 {{ $program->jenjang }}
             </span>
             <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 rounded-pill fw-bold">
-                <i class="bi bi-shield-check me-1"></i> Lisensi BNSP & LPJK PUPR
+                <i class="bi bi-shield-check me-1"></i> Standar SKKNI & SMKK
             </span>
         </div>
 
@@ -105,10 +105,10 @@
                         <span class="badge bg-white text-primary px-3 py-1 rounded-pill fw-bold mb-2 align-self-start">Pendaftaran Resmi</span>
                         <h4 class="fw-bold mb-2">Konsultasi Portofolio</h4>
                         <p class="text-white-50 small mb-4" style="line-height: 1.6;">
-                            Konsultasikan kecukupan berkas proyek Anda bersama verifikator resmi LSP ASTEKINDO sebelum proses uji kompetensi.
+                            Konsultasikan kecukupan berkas proyek Anda bersama verifikator resmi Training K3 Konstruksi sebelum proses uji kompetensi.
                         </p>
-                        <a href="https://api.whatsapp.com/send?phone=6281399810272&text={{ urlencode('Halo LSP ASTEKINDO, saya ingin konsultasi pendaftaran skema ' . $program->title) }}" target="_blank" class="btn btn-warning text-dark fw-bold rounded-pill py-2 shadow-sm mb-2">
-                            <i class="bi bi-whatsapp me-2"></i> WhatsApp Asesor
+                        <a href="https://api.whatsapp.com/send?phone=628118500177&text={{ urlencode('Halo Training K3 Konstruksi, saya ingin konsultasi pendaftaran skema ' . $program->title) }}" target="_blank" class="btn btn-warning text-dark fw-bold rounded-pill py-2 shadow-sm mb-2">
+                            <i class="bi bi-whatsapp me-2"></i> WhatsApp Konsultan
                         </a>
                         <a href="{{ route('contact') }}" class="btn btn-outline-light rounded-pill py-2 small fw-semibold">
                             <i class="bi bi-envelope me-1"></i> Form Kontak
@@ -139,7 +139,7 @@
                 </span>
                 <h3 class="display-6 fw-bold text-dark mb-2">Pilih Wilayah Uji Kompetensi untuk Skema Ini</h3>
                 <p class="text-muted small">
-                    Pilih kota tempat Anda berdomisili untuk mengakses jadwal Tempat Uji Kompetensi (TUK) serta <strong>200 artikel panduan teknis</strong> khusus wilayah tersebut.
+                    Pilih kota tempat Anda berdomisili untuk mengakses jadwal Tempat Uji Kompetensi (TUK) serta <strong>202 program pelatihan & panduan teknis</strong> khusus wilayah tersebut.
                 </p>
             </div>
 

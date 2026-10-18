@@ -1,6 +1,6 @@
 @extends('layouts.front')
 
-@section('title', $article->title . ' | LSP ASTEKINDO')
+@section('title', $article->title . ' | Training K3 Konstruksi')
 @section('meta_description', Str::limit(strip_tags(is_object($article) ? ($article->excerpt ?? $article->content ?? '') : ''), 160))
 
 @section('content')
@@ -20,7 +20,7 @@
                 <i class="bi bi-tag-fill me-1"></i> {{ $article->category ?? 'Konstruksi & K3' }}
             </span>
             <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 rounded-pill fw-bold">
-                <i class="bi bi-shield-check me-1"></i> Lisensi BNSP & LPJK PUPR
+                <i class="bi bi-shield-check me-1"></i> Standar SKKNI & SMKK Nasional
             </span>
             @if(isset($article->word_count))
             <span class="badge bg-info-subtle text-info border border-info-subtle px-3 py-2 rounded-pill fw-bold">
@@ -34,7 +34,7 @@
         </h1>
 
         <div class="d-flex flex-wrap align-items-center gap-4 text-muted small">
-            <span><i class="bi bi-person-fill text-primary me-1"></i> Tim Litbang LSP ASTEKINDO</span>
+            <span><i class="bi bi-person-fill text-primary me-1"></i> Tim Litbang & Instruktur Ahli</span>
             <span><i class="bi bi-calendar3 text-primary me-1"></i> {{ isset($article->published_at) ? \Carbon\Carbon::parse($article->published_at)->isoFormat('D MMMM Y') : 'Terbit Resmi' }}</span>
             <span><i class="bi bi-eye-fill text-success me-1"></i> {{ $article->views ?? '1.240' }} Pembaca</span>
             <span><i class="bi bi-clock-fill text-info me-1"></i> {{ $article->read_time ?? '25 Menit Baca' }}</span>
@@ -82,15 +82,15 @@
                 </div>
 
                 <!-- Consultation CTA Box -->
-                <div class="card border-0 shadow-sm p-4 text-white" style="background: linear-gradient(135deg, #0A192F, #1D4ED8); border-radius: 18px;">
+                <div class="card border-0 shadow-sm p-4 text-white" style="background: linear-gradient(135deg, #0284C7, #0EA5E9); border-radius: 18px;">
                     <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
                         <div>
                             <span class="badge bg-warning text-dark px-3 py-1 rounded-pill fw-bold mb-2">Konsultasi Portofolio</span>
-                            <h4 class="fw-bold mb-1">Butuh Uji Kompetensi & Sertifikat BNSP Resmi?</h4>
-                            <p class="text-white-50 small mb-0">Hubungi asesor dan tim verifikasi berkas LSP ASTEKINDO untuk pendampingan pendaftaran skema.</p>
+                            <h4 class="fw-bold mb-1">Butuh Pelatihan & Sertifikasi Resmi?</h4>
+                            <p class="text-white-50 small mb-0">Hubungi tim konsultan dan instruktur ahli untuk pendampingan pendaftaran skema.</p>
                         </div>
                         <div>
-                            <a href="https://api.whatsapp.com/send?phone=6281399810272&text={{ urlencode('Halo LSP ASTEKINDO, saya membaca artikel ' . $article->title . ' dan ingin konsultasi uji kompetensi sertifikasi BNSP.') }}" target="_blank" class="btn btn-warning text-dark fw-bold px-4 py-2 rounded-pill shadow-sm text-nowrap">
+                            <a href="https://api.whatsapp.com/send?phone=628118500177&text={{ urlencode('Halo Training K3 Konstruksi, saya membaca artikel ' . $article->title . ' dan ingin konsultasi sertifikasi keahlian.') }}" target="_blank" class="btn btn-warning text-dark fw-bold px-4 py-2 rounded-pill shadow-sm text-nowrap">
                                 <i class="bi bi-whatsapp me-1"></i> Chat WhatsApp
                             </a>
                         </div>
@@ -100,24 +100,24 @@
 
             <!-- Right Sidebar -->
             <div class="col-lg-4">
-                <!-- LSP Accreditation Card -->
+                <!-- Training Center Info Card -->
                 <div class="card border-0 shadow-sm p-4 mb-4" style="border-radius: 16px; background: #fff;">
                     <div class="d-flex align-items-center gap-3 mb-3">
                         <div class="bg-primary-subtle text-primary p-3 rounded-circle">
                             <i class="bi bi-award-fill fs-3"></i>
                         </div>
                         <div>
-                            <h6 class="fw-bold mb-0 text-dark">LSP ASTEKINDO</h6>
-                            <small class="text-muted">Konstruksi Mandiri</small>
+                            <h6 class="fw-bold mb-0 text-dark">Training K3 Konstruksi</h6>
+                            <small class="text-muted">Pusat Sertifikasi & Pelatihan</small>
                         </div>
                     </div>
                     <p class="text-muted small mb-3">
-                        Lembaga Sertifikasi Profesi Pihak Ketiga (LSP-P3) terlisensi resmi Badan Nasional Sertifikasi Profesi (BNSP) dan terakreditasi LPJK Kementerian PUPR.
+                        Pusat pelatihan teknis dan sertifikasi kompetensi konstruksi berstandar SKKNI nasional dengan instruktur ahli berpengalaman.
                     </p>
                     <ul class="list-unstyled small mb-3">
-                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Lisensi BNSP-LSP-1897-ID</li>
-                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Akreditasi LPJK-SKK-042/2021</li>
-                        <li><i class="bi bi-check-circle-fill text-success me-2"></i>38 Provinsi Jaringan TUK</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>202 Skema Pelatihan Resmi</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Kurikulum SKKNI & SMKK</li>
+                        <li><i class="bi bi-check-circle-fill text-success me-2"></i>38 Provinsi Jaringan Pelatihan</li>
                     </ul>
                     <a href="{{ route('about') }}" class="btn btn-outline-primary btn-sm rounded-pill w-100">
                         Profil & Legalitas Lengkap
@@ -148,11 +148,8 @@
                     <h6 class="fw-bold text-dark mb-2">Pusat Layanan Konsultasi</h6>
                     <p class="text-muted small mb-3">Senin - Jumat: 08.00 - 17.00 WIB</p>
                     <div class="d-flex flex-column gap-2">
-                        <a href="https://api.whatsapp.com/send?phone=6281399810272" target="_blank" class="btn btn-sm btn-outline-success rounded-pill py-2">
-                            <i class="bi bi-whatsapp me-2"></i>Hotline 1: 0813-9981-0272
-                        </a>
-                        <a href="https://api.whatsapp.com/send?phone=6281283624838" target="_blank" class="btn btn-sm btn-outline-success rounded-pill py-2">
-                            <i class="bi bi-whatsapp me-2"></i>Hotline 2: 0812-8362-4838
+                        <a href="https://api.whatsapp.com/send?phone=628118500177" target="_blank" class="btn btn-sm btn-outline-success rounded-pill py-2">
+                            <i class="bi bi-whatsapp me-2"></i>Hotline WhatsApp: 0811-8500-177
                         </a>
                     </div>
                 </div>

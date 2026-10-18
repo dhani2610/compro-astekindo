@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'LSP ASTEKINDO Konstruksi Mandiri | Sertifikasi SKK Konstruksi Resmi BNSP & LPJK')</title>
-    <meta name="description" content="@yield('meta_description', 'Lembaga Sertifikasi Profesi (LSP) ASTEKINDO Konstruksi Mandiri berlisensi resmi BNSP dan terakreditasi LPJK Kementerian PUPR. Layanan Sertifikasi Kompetensi Kerja (SKK) Konstruksi Ahli Utama, Madya, Muda dan Pelaksana Lapangan se-Indonesia.')">
-    <meta name="keywords" content="LSP Astekindo, SKK Konstruksi, sertifikasi BNSP, LPJK PUPR, sertifikasi insinyur sipil, ahli K3 konstruksi, manajemen proyek konstruksi, sertifikasi arsitektur, TUK Astekindo, jasa konstruksi Indonesia">
-    <meta name="author" content="LSP ASTEKINDO Konstruksi Mandiri">
+    <title>@yield('title', 'Training K3 Konstruksi | Sertifikasi SKK Konstruksi Berlisensi BNSP & LPJK')</title>
+    <meta name="description" content="@yield('meta_description', 'Layanan Training K3 Konstruksi dan Sertifikasi Kompetensi Kerja (SKK) Konstruksi resmi berlisensi BNSP & terdaftar LPJK untuk Tenaga Ahli dan Pelaksana Lapangan se-Indonesia.')">
+    <meta name="keywords" content="Training K3 Konstruksi, SKK Konstruksi, sertifikasi BNSP, LPJK, sertifikasi insinyur sipil, ahli K3 konstruksi, manajemen proyek konstruksi, SMKK, jasa konstruksi Indonesia">
+    <meta name="author" content="Training K3 Konstruksi">
     <link rel="canonical" href="{{ url()->current() }}">
 
     <!-- Google Fonts: Plus Jakarta Sans -->
@@ -309,14 +309,14 @@
                     </span>
                 </div>
                 <div class="d-flex align-items-center gap-4 small">
-                    <a href="tel:{{ \App\Models\Setting::get('phone', '(021) 7919-4820') }}" class="text-secondary text-decoration-none">
-                        <i class="bi bi-telephone-fill me-1 text-primary"></i> {{ \App\Models\Setting::get('phone', '(021) 7919-4820') }}
+                    <a href="tel:{{ \App\Models\Setting::get('phone', '08118500177') }}" class="text-secondary text-decoration-none">
+                        <i class="bi bi-telephone-fill me-1 text-primary"></i> {{ \App\Models\Setting::get('phone', '08118500177') }}
                     </a>
-                    <a href="https://api.whatsapp.com/send?phone=6281399810272" target="_blank" class="text-secondary text-decoration-none">
-                        <i class="bi bi-whatsapp me-1 text-success"></i> WA: {{ \App\Models\Setting::get('whatsapp', '081399810272') }}
+                    <a href="https://api.whatsapp.com/send?phone=628118500177" target="_blank" class="text-secondary text-decoration-none">
+                        <i class="bi bi-whatsapp me-1 text-success"></i> WA: {{ \App\Models\Setting::get('whatsapp', '08118500177') }}
                     </a>
-                    <a href="mailto:{{ \App\Models\Setting::get('email', 'sekretariat@astekindo.org') }}" class="text-secondary text-decoration-none">
-                        <i class="bi bi-envelope-fill me-1 text-info"></i> {{ \App\Models\Setting::get('email', 'sekretariat@astekindo.org') }}
+                    <a href="mailto:{{ \App\Models\Setting::get('email', 'info@trainingk3konstruksi.id') }}" class="text-secondary text-decoration-none">
+                        <i class="bi bi-envelope-fill me-1 text-info"></i> {{ \App\Models\Setting::get('email', 'info@trainingk3konstruksi.id') }}
                     </a>
                 </div>
             </div>
@@ -333,8 +333,8 @@
                         <i class="bi bi-building-check"></i>
                     </div>
                     <div class="brand-title-box">
-                        <h1>{{ \App\Models\Setting::get('site_name', 'LSP ASTEKINDO') }}</h1>
-                        <span>KONSTRUKSI MANDIRI &bull; RESMI BNSP & LPJK</span>
+                        <h1>{{ \App\Models\Setting::get('site_name', 'Training K3 Konstruksi') }}</h1>
+                        <span>SERTIFIKASI SKK &bull; RESMI BNSP & LPJK</span>
                     </div>
                 </a>
 
@@ -347,7 +347,7 @@
                     <li><a href="{{ route('articles') }}" class="{{ request()->routeIs('articles*') ? 'active' : '' }}">Artikel & Wilayah</a></li>
                     <li><a href="{{ route('contact') }}" class="{{ request()->routeIs('contact*') ? 'active' : '' }}">Kontak</a></li>
                     <li>
-                        <a href="https://api.whatsapp.com/send?phone=6281399810272&text=Halo%20LSP%20ASTEKINDO,%20saya%20ingin%20konsultasi%20syarat%20SKK%20Konstruksi" target="_blank" class="btn-cta-nav">
+                        <a href="https://api.whatsapp.com/send?phone=628118500177&text=Halo%20Training%20K3%20Konstruksi,%20saya%20ingin%20konsultasi%20syarat%20SKK%20Konstruksi" target="_blank" class="btn-cta-nav">
                             Konsultasi SKK
                         </a>
                     </li>
@@ -369,7 +369,7 @@
                 <div class="brand-icon-box" style="width: 36px; height: 36px; font-size: 1.1rem;">
                     <i class="bi bi-building-check"></i>
                 </div>
-                <strong class="text-dark">LSP ASTEKINDO</strong>
+                <strong class="text-dark">Training K3 Konstruksi</strong>
             </div>
             <button class="btn btn-sm btn-light border-0" id="closeMobileDrawerBtn">
                 <i class="bi bi-x-lg fs-5"></i>
@@ -384,7 +384,7 @@
             <li><a href="{{ route('contact') }}" class="d-block py-2 px-3 rounded text-decoration-none fw-semibold {{ request()->routeIs('contact*') ? 'bg-primary-subtle text-primary' : 'text-dark' }}">Kontak</a></li>
         </ul>
         <div class="mt-auto">
-            <a href="https://api.whatsapp.com/send?phone=6281399810272" target="_blank" class="btn btn-primary w-100 rounded-pill py-2 fw-bold" style="background: var(--sky-primary); border-color: var(--sky-primary);">
+            <a href="https://api.whatsapp.com/send?phone=628118500177" target="_blank" class="btn btn-primary w-100 rounded-pill py-2 fw-bold" style="background: var(--sky-primary); border-color: var(--sky-primary);">
                 <i class="bi bi-whatsapp me-2"></i> Chat WhatsApp
             </a>
         </div>
@@ -406,19 +406,19 @@
                             <i class="bi bi-building-check"></i>
                         </div>
                         <div>
-                            <h5 class="mb-0">{{ \App\Models\Setting::get('site_name', 'LSP ASTEKINDO') }}</h5>
-                            <small class="text-primary fw-bold" style="font-size: 0.72rem;">KONSTRUKSI MANDIRI &bull; RESMI BNSP & LPJK</small>
+                            <h5 class="mb-0">{{ \App\Models\Setting::get('site_name', 'Training K3 Konstruksi') }}</h5>
+                            <small class="text-primary fw-bold" style="font-size: 0.72rem;">SERTIFIKASI SKK &bull; RESMI BNSP & LPJK</small>
                         </div>
                     </div>
                     <p class="small text-muted mb-3" style="line-height: 1.7;">
-                        {{ \App\Models\Setting::get('footer_text', 'Lembaga Sertifikasi Profesi (LSP-P3) terlisensi resmi BNSP dan terakreditasi LPJK Kementerian PUPR untuk sertifikasi kompetensi tenaga ahli dan pengawas konstruksi seluruh Indonesia.') }}
+                        {{ \App\Models\Setting::get('footer_text', 'Penyelenggara Training K3 Konstruksi dan Fasilitasi Uji Kompetensi Sertifikat Kompetensi Kerja (SKK) Konstruksi resmi berlisensi BNSP & terdaftar LPJK di 38 provinsi di Indonesia.') }}
                     </p>
                     <div class="d-flex flex-wrap gap-2">
                         <span class="badge bg-light text-secondary border px-3 py-2">
-                            Lisensi: {{ \App\Models\Setting::get('license_bnsp', 'BNSP-LSP-1897-ID') }}
+                            Lisensi: {{ \App\Models\Setting::get('license_bnsp', 'Resmi BNSP') }}
                         </span>
                         <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2">
-                            Akreditasi: {{ \App\Models\Setting::get('license_lpjk', 'LPJK-SKK-042/2021') }}
+                            Registrasi: {{ \App\Models\Setting::get('license_lpjk', 'Terdaftar LPJK') }}
                         </span>
                     </div>
                 </div>
@@ -454,30 +454,30 @@
                     <h5>Sekretariat Pusat</h5>
                     <p class="small text-muted mb-2">
                         <i class="bi bi-geo-alt-fill text-danger me-2"></i>
-                        {{ \App\Models\Setting::get('address', 'Gedung Astekindo Lt. 3, Jl. Raya Pasar Minggu No. 17, Jakarta Selatan 12780') }}
+                        {{ \App\Models\Setting::get('address', 'Gedung Graha Konstruksi Lt. 3, Jl. Raya Pasar Minggu No. 17, Jakarta Selatan 12780') }}
                     </p>
                     <p class="small text-muted mb-2">
                         <i class="bi bi-telephone-fill text-primary me-2"></i>
-                        Telp: {{ \App\Models\Setting::get('phone', '(021) 7919-4820') }}
+                        Telp: {{ \App\Models\Setting::get('phone', '08118500177') }}
                     </p>
                     <p class="small text-muted mb-2">
                         <i class="bi bi-whatsapp text-success me-2"></i>
-                        Hotline 1: {{ \App\Models\Setting::get('whatsapp', '081399810272') }}
+                        Hotline 1: {{ \App\Models\Setting::get('whatsapp', '08118500177') }}
                     </p>
                     <p class="small text-muted mb-2">
                         <i class="bi bi-whatsapp text-success me-2"></i>
-                        Hotline 2: {{ \App\Models\Setting::get('whatsapp_2', '081283624838') }}
+                        Hotline 2: {{ \App\Models\Setting::get('whatsapp_2', '08118500177') }}
                     </p>
                     <p class="small text-muted mb-0">
                         <i class="bi bi-envelope-fill text-info me-2"></i>
-                        Email: {{ \App\Models\Setting::get('email', 'sekretariat@astekindo.org') }}
+                        Email: {{ \App\Models\Setting::get('email', 'info@trainingk3konstruksi.id') }}
                     </p>
                 </div>
             </div>
 
             <div class="pt-4 border-top d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 small text-muted">
                 <div>
-                    &copy; {{ date('Y') }} <strong>{{ \App\Models\Setting::get('site_name', 'LSP ASTEKINDO Konstruksi Mandiri') }}</strong>. Seluruh hak cipta dilindungi undang-undang.
+                    &copy; {{ date('Y') }} <strong>{{ \App\Models\Setting::get('site_name', 'Training K3 Konstruksi') }}</strong>. Seluruh hak cipta dilindungi undang-undang.
                 </div>
                 <div class="d-flex align-items-center gap-3">
                     <span>Standar BNSP ISO/IEC 17024</span>
@@ -490,7 +490,7 @@
     </footer>
 
     <!-- Floating WhatsApp Action -->
-    <a href="https://api.whatsapp.com/send?phone=6281399810272&text=Halo%20LSP%20ASTEKINDO,%20saya%20ingin%20konsultasi%20sertifikasi%20SKK%20Konstruksi" target="_blank" class="floating-wa-btn" title="Chat WhatsApp Hotline">
+    <a href="https://api.whatsapp.com/send?phone=628118500177&text=Halo%20Training%20K3%20Konstruksi,%20saya%20ingin%20konsultasi%20sertifikasi%20SKK%20Konstruksi" target="_blank" class="floating-wa-btn" title="Chat WhatsApp Hotline">
         <i class="bi bi-whatsapp"></i>
         <span>Konsultasi SKK</span>
     </a>

@@ -1,7 +1,7 @@
 @extends('layouts.front')
 
-@section('title', $program->title . ' di ' . $cityName . ' | 200 Panduan SKK Konstruksi LSP ASTEKINDO')
-@section('meta_description', 'Direktori 200 panduan teknis dan layanan Uji Kompetensi Asesmen SKK ' . $program->title . ' di ' . $cityName . ', Provinsi ' . $provinceName . '. Lisensi Resmi BNSP & LPJK Kementerian PUPR.')
+@section('title', $program->title . ' di ' . $cityName . ' | 202 Program Pelatihan & Sertifikasi K3')
+@section('meta_description', 'Direktori 202 program pelatihan dan sertifikasi kompetensi ' . $program->title . ' di ' . $cityName . ', Provinsi ' . $provinceName . '. Berstandar Resmi SKKNI & SMKK.')
 
 @section('content')
 
@@ -19,16 +19,16 @@
 
         <div class="d-flex flex-wrap gap-2 mb-3">
             <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2 rounded-pill fw-bold">
-                <i class="bi bi-geo-alt-fill me-1"></i> TUK Wilayah {{ $cityName }}
+                <i class="bi bi-geo-alt-fill me-1"></i> Wilayah {{ $cityName }}
             </span>
             <span class="badge bg-light text-dark border px-3 py-2 rounded-pill fw-bold">
                 Provinsi {{ $provinceName }}
             </span>
             <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 rounded-pill fw-bold">
-                <i class="bi bi-shield-check me-1"></i> Lisensi BNSP & LPJK PUPR
+                <i class="bi bi-shield-check me-1"></i> Standar SKKNI & SMKK
             </span>
             <span class="badge bg-info-subtle text-info border border-info-subtle px-3 py-2 rounded-pill fw-bold">
-                <i class="bi bi-journal-check me-1"></i> 200 Artikel Panduan Lengkap
+                <i class="bi bi-journal-check me-1"></i> 202 Program Pelatihan Lengkap
             </span>
         </div>
 
@@ -36,16 +36,16 @@
             {{ $program->title }} di {{ $cityName }}
         </h1>
         <p class="lead text-muted mb-0" style="max-width: 850px; font-size: 1.05rem;">
-            Akses resmi 200 panduan kajian ilmiah, standar pengawasan lapangan, K3 konstruksi, dan prosedur asesmen portofolio Tempat Uji Kompetensi (TUK) di {{ $cityName }}, Provinsi {{ $provinceName }}.
+            Akses resmi 202 program pelatihan teknis, standar pengawasan lapangan, K3 konstruksi, dan prosedur sertifikasi di {{ $cityName }}, Provinsi {{ $provinceName }}.
         </p>
     </div>
 </section>
 
-<!-- Content Body with Fast Client-Side JavaScript for 200 Articles -->
+<!-- Content Body with Fast Client-Side JavaScript for 202 Articles -->
 <section class="py-5" style="background: #F8FAFC;">
     <div class="container">
         <div class="row g-4">
-            <!-- Left: 200 Articles with Fast JS Filter & Pagination -->
+            <!-- Left: 202 Articles with Fast JS Filter & Pagination -->
             <div class="col-lg-8">
                 <!-- Interactive Filter Toolbar -->
                 <div class="card border-0 shadow-sm p-4 rounded-4 mb-4" style="background: #ffffff; border: 1px solid #BAE6FD !important;">
@@ -53,12 +53,12 @@
                         <div class="col-md-6">
                             <div class="input-group">
                                 <span class="input-group-text bg-white border-end-0 text-muted ps-3"><i class="bi bi-search"></i></span>
-                                <input type="text" id="regionalSearchInput" class="form-control border-start-0 py-2" placeholder="Cari dari 200 topik teknis di {{ $cityName }}...">
+                                <input type="text" id="regionalSearchInput" class="form-control border-start-0 py-2" placeholder="Cari dari 202 program pelatihan di {{ $cityName }}...">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="d-flex flex-wrap gap-2" id="regionalCatGroup">
-                                <button class="btn btn-sm btn-primary rounded-pill px-3 py-1 reg-cat-btn active" data-cat="all">Semua (200)</button>
+                                <button class="btn btn-sm btn-primary rounded-pill px-3 py-1 reg-cat-btn active" data-cat="all">Semua (202)</button>
                                 <button class="btn btn-sm btn-outline-secondary rounded-pill px-3 py-1 reg-cat-btn" data-cat="K3 Konstruksi">K3</button>
                                 <button class="btn btn-sm btn-outline-secondary rounded-pill px-3 py-1 reg-cat-btn" data-cat="Gedung & Sipil">Gedung</button>
                                 <button class="btn btn-sm btn-outline-secondary rounded-pill px-3 py-1 reg-cat-btn" data-cat="Jalan & Jembatan">Jalan</button>
@@ -85,7 +85,7 @@
                         <i class="bi bi-geo-alt-fill text-primary me-2"></i>Cakupan Wilayah Kecamatan di {{ $cityName }}
                     </h4>
                     <p class="text-muted small mb-3">
-                        Layanan konsultasi berkas portofolio dan jadwal uji kompetensi LSP ASTEKINDO menjangkau seluruh kecamatan di {{ $cityName }}:
+                        Layanan konsultasi berkas portofolio dan jadwal uji kompetensi Training K3 Konstruksi menjangkau seluruh kecamatan di {{ $cityName }}:
                     </p>
                     <div class="d-flex flex-wrap gap-2">
                         @foreach($sampleKecamatan as $kec)
@@ -108,7 +108,7 @@
                         <p class="text-white-50 small mb-4" style="line-height: 1.6;">
                             Tim verifikator TUK {{ $cityName }}, Provinsi {{ $provinceName }} siap membantu pengecekan portofolio teknis Anda secara gratis sebelum jadwal asesmen.
                         </p>
-                        <a href="https://api.whatsapp.com/send?phone=6281399810272&text={{ urlencode('Halo LSP ASTEKINDO, saya ingin daftar uji kompetensi ' . $program->title . ' di ' . $cityName) }}" target="_blank" class="btn btn-warning text-dark fw-bold rounded-pill py-2 mb-2 shadow-sm">
+                        <a href="https://api.whatsapp.com/send?phone=628118500177&text={{ urlencode('Halo Training K3 Konstruksi, saya ingin daftar uji kompetensi ' . $program->title . ' di ' . $cityName) }}" target="_blank" class="btn btn-warning text-dark fw-bold rounded-pill py-2 mb-2 shadow-sm">
                             <i class="bi bi-whatsapp me-2"></i> Chat WhatsApp TUK
                         </a>
                         <a href="{{ route('program.detail', $program->slug) }}" class="btn btn-outline-light rounded-pill py-2 small fw-semibold">
@@ -124,7 +124,7 @@
                             <li><strong class="text-dark">Kategori:</strong> {{ $program->category }}</li>
                             <li><strong class="text-dark">Jenjang KKNI:</strong> {{ $program->jenjang }}</li>
                             <li><strong class="text-dark">Durasi:</strong> {{ $program->duration ?: '3 Hari' }}</li>
-                            <li><strong class="text-dark">Lisensi:</strong> BNSP & LPJK PUPR</li>
+                            <li><strong class="text-dark">Standar:</strong> SKKNI & SMKK Nasional</li>
                         </ul>
                     </div>
 
@@ -133,11 +133,8 @@
                         <h6 class="fw-bold text-dark mb-2">Bantuan Konsultasi</h6>
                         <p class="text-muted small mb-3">Layanan konsultasi asesmen via telepon dan WhatsApp resmi:</p>
                         <div class="d-flex flex-column gap-2">
-                            <a href="https://api.whatsapp.com/send?phone=6281399810272" target="_blank" class="btn btn-sm btn-outline-success rounded-pill py-2">
-                                <i class="bi bi-whatsapp me-2"></i>0813-9981-0272 (Hotline 1)
-                            </a>
-                            <a href="https://api.whatsapp.com/send?phone=6281283624838" target="_blank" class="btn btn-sm btn-outline-success rounded-pill py-2">
-                                <i class="bi bi-whatsapp me-2"></i>0812-8362-4838 (Hotline 2)
+                            <a href="https://api.whatsapp.com/send?phone=628118500177" target="_blank" class="btn btn-sm btn-outline-success rounded-pill py-2">
+                                <i class="bi bi-whatsapp me-2"></i>Hotline WhatsApp: 0811-8500-177
                             </a>
                         </div>
                     </div>
@@ -225,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 <div class="pt-3 border-top d-flex justify-content-between align-items-center">
                     <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1 rounded-pill" style="font-size: 0.72rem;">
-                        <i class="bi bi-shield-check me-1"></i> Standar SKKNI & SMKK PUPR
+                        <i class="bi bi-shield-check me-1"></i> Standar SKKNI & SMKK
                     </span>
                     <a href="${articleUrl}" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 fw-bold">
                         Buka Panduan Lengkap <i class="bi bi-arrow-right ms-1"></i>

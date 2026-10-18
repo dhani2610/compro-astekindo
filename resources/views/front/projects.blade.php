@@ -1,7 +1,7 @@
 @extends('layouts.front')
 
-@section('title', 'Portofolio Proyek Sertifikasi Nasional | LSP ASTEKINDO')
-@section('meta_description', 'Dokumentasi keterlibatan sertifikasi tenaga ahli dan pengawas konstruksi LSP ASTEKINDO pada proyek strategis nasional (PSN) se-Indonesia.')
+@section('title', 'Portofolio Proyek Sertifikasi Nasional | Training K3 Konstruksi')
+@section('meta_description', 'Dokumentasi keterlibatan sertifikasi tenaga ahli dan pengawas Training K3 Konstruksi pada proyek strategis nasional (PSN) se-Indonesia.')
 
 @section('content')
 <!-- Header Banner (Modern Light Blue & White) -->
@@ -25,7 +25,7 @@
             Proyek Strategis Nasional & Konstruksi Unggulan
         </h1>
         <p class="lead text-muted mb-0" style="max-width: 820px; font-size: 1.05rem;">
-            Komitmen LSP ASTEKINDO dalam menjamin kompetensi ribuan personil ahli madya, utama, dan pelaksana pada proyek-proyek mega infrastruktur di Indonesia.
+            Komitmen Training K3 Konstruksi dalam menjamin kompetensi ribuan personil ahli madya, utama, dan pelaksana pada proyek-proyek mega infrastruktur di Indonesia.
         </p>
     </div>
 </section>
@@ -67,9 +67,9 @@
 
                         <div class="pt-3 border-top d-flex justify-content-between align-items-center">
                             <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-1 rounded-pill small">
-                                <i class="bi bi-shield-check me-1"></i>Terverifikasi BNSP
+                                <i class="bi bi-shield-check me-1"></i>Standar SKKNI & SMKK
                             </span>
-                            <a href="https://api.whatsapp.com/send?phone=6281399810272&text={{ urlencode('Halo LSP ASTEKINDO, saya ingin konsultasi sertifikasi untuk proyek seperti ' . $p->title) }}" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill px-3 fw-bold">
+                            <a href="https://api.whatsapp.com/send?phone=628118500177&text={{ urlencode('Halo Training K3 Konstruksi, saya ingin konsultasi sertifikasi untuk proyek seperti ' . $p->title) }}" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill px-3 fw-bold">
                                 Konsultasi <i class="bi bi-whatsapp ms-1"></i>
                             </a>
                         </div>
@@ -87,10 +87,10 @@
         <div class="mt-5 p-4 p-md-5 rounded-4 text-white text-center position-relative overflow-hidden shadow-sm" style="background: linear-gradient(135deg, #0284C7 0%, #0EA5E9 100%);">
             <h2 class="fw-bold mb-3">Butuh Sertifikasi Kolektif Tenaga Ahli untuk Proyek Anda?</h2>
             <p class="text-white-50 mx-auto mb-4" style="max-width: 700px; font-size: 1.02rem; line-height: 1.7;">
-                LSP ASTEKINDO menyediakan skema Uji Kompetensi In-House / On-Site di Tempat Uji Kompetensi (TUK) Sewaktu untuk BUMN Karya, Kontraktor, dan Konsultan Manajemen Konstruksi.
+                Training K3 Konstruksi menyediakan skema pelatihan dan Uji Kompetensi In-House / On-Site di Tempat Uji Kompetensi (TUK) Sewaktu untuk BUMN Karya, Kontraktor, dan Konsultan Manajemen Konstruksi.
             </p>
             <div class="d-flex justify-content-center gap-3 flex-wrap">
-                <a href="https://api.whatsapp.com/send?phone=6281399810272&text=Halo%20LSP%20ASTEKINDO,%20kami%20ingin%20mengajukan%20kerjasama%20sertifikasi%20kolektif%20perusahaan" target="_blank" class="btn btn-warning text-dark fw-bold px-4 py-3 rounded-pill shadow-sm">
+                <a href="https://api.whatsapp.com/send?phone=628118500177&text=Halo%20Training%20K3%20Konstruksi,%20kami%20ingin%20mengajukan%20kerjasama%20pelatihan%20dan%20sertifikasi%20kolektif%20perusahaan" target="_blank" class="btn btn-warning text-dark fw-bold px-4 py-3 rounded-pill shadow-sm">
                     <i class="bi bi-whatsapp me-2"></i>Hubungi Tim Kemitraan Korporasi
                 </a>
                 <a href="{{ route('contact') }}" class="btn btn-outline-light fw-bold px-4 py-3 rounded-pill">

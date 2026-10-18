@@ -50,19 +50,14 @@
 
             <!-- Kontak & WhatsApp -->
             <div class="col-md-6">
-                <label for="whatsapp" class="form-label fw-bold text-dark small">Hotline WhatsApp 1</label>
-                <input type="text" class="form-control py-2" id="whatsapp" name="whatsapp" value="{{ $settings['whatsapp'] ?? '081399810272' }}">
+                <label for="whatsapp" class="form-label fw-bold text-dark small">Hotline WhatsApp</label>
+                <input type="text" class="form-control py-2" id="whatsapp" name="whatsapp" value="{{ $settings['whatsapp'] ?? '08118500177' }}">
                 <small class="text-muted">Nomor yang terhubung ke tombol chat WhatsApp terapung di website.</small>
             </div>
 
             <div class="col-md-6">
-                <label for="whatsapp_2" class="form-label fw-bold text-dark small">Hotline WhatsApp 2</label>
-                <input type="text" class="form-control py-2" id="whatsapp_2" name="whatsapp_2" value="{{ $settings['whatsapp_2'] ?? '081283624838' }}">
-            </div>
-
-            <div class="col-md-6">
-                <label for="phone" class="form-label fw-bold text-dark small">Nomor Telepon Kantor (PABX)</label>
-                <input type="text" class="form-control py-2" id="phone" name="phone" value="{{ $settings['phone'] ?? '(021) 7919-4820' }}">
+                <label for="phone" class="form-label fw-bold text-dark small">Nomor Telepon Kantor / Hotline</label>
+                <input type="text" class="form-control py-2" id="phone" name="phone" value="{{ $settings['phone'] ?? '08118500177' }}">
             </div>
 
             <div class="col-md-6">
