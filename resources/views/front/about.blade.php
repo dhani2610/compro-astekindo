@@ -5,131 +5,156 @@
 
 @section('content')
 
-    <!-- Header Banner -->
-    <section style="background: linear-gradient(135deg, var(--primary-navy-dark), var(--primary-navy)); padding: 60px 0; color: #fff; border-bottom: 1px solid rgba(255,255,255,0.08);">
-        <div class="container">
-            <span style="background: rgba(245, 158, 11, 0.15); color: var(--safety-gold); font-size: 0.78rem; font-weight: 800; padding: 5px 12px; border-radius: 20px; text-transform: uppercase;">
-                <i class="bi bi-info-circle-fill"></i> Profil Lembaga
+<!-- Header Banner (Modern Light Blue & White) -->
+<section class="py-5" style="background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 50%, #FFFFFF 100%); border-bottom: 1px solid #BAE6FD;">
+    <div class="container py-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-2" style="font-size: 0.85rem;">
+                <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-primary text-decoration-none">Beranda</a></li>
+                <li class="breadcrumb-item active text-dark" aria-current="page">Tentang Kami</li>
+            </ol>
+        </nav>
+        <div class="d-flex flex-wrap gap-2 mb-3">
+            <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2 rounded-pill fw-bold">
+                <i class="bi bi-info-circle-fill me-1"></i> Profil Lembaga
             </span>
-            <h1 style="font-size: 2.6rem; font-weight: 900; margin: 12px 0 8px; letter-spacing: -0.5px;">Tentang LSP ASTEKINDO Konstruksi Mandiri</h1>
-            <p style="color: #94a3b8; font-size: 1.05rem; max-width: 650px;">
-                Membangun keandalan dan daya saing sumber daya manusia jasa konstruksi Indonesia melalui pengakuan kompetensi kerja berstandar nasional dan internasional.
-            </p>
+            <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 rounded-pill fw-bold">
+                <i class="bi bi-shield-check me-1"></i> Lisensi BNSP-LSP-1897-ID
+            </span>
         </div>
-    </section>
+        <h1 class="display-5 fw-bold text-dark mb-2" style="letter-spacing: -0.5px;">
+            LSP ASTEKINDO Konstruksi Mandiri
+        </h1>
+        <p class="lead text-muted mb-0" style="max-width: 820px; font-size: 1.05rem;">
+            Membangun keandalan dan daya saing sumber daya manusia jasa konstruksi Indonesia melalui pengakuan kompetensi kerja berstandar nasional dan internasional.
+        </p>
+    </div>
+</section>
 
-    <!-- Content Section -->
-    <section style="padding: 80px 0;">
-        <div class="container">
-            <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 50px; align-items: center; margin-bottom: 80px;">
-                <div>
-                    <span style="color: var(--safety-gold-dark); font-weight: 800; font-size: 0.84rem; text-transform: uppercase; letter-spacing: 0.5px;">Sejarah & Latar Belakang</span>
-                    <h2 style="font-size: 2rem; font-weight: 900; color: var(--primary-navy); margin: 8px 0 18px; line-height: 1.3;">
-                        Dedikasi untuk Keunggulan Jasa Konstruksi Nasional
-                    </h2>
-                    <p style="color: #475569; font-size: 0.96rem; line-height: 1.8; margin-bottom: 16px;">
-                        LSP ASTEKINDO Konstruksi Mandiri didirikan sebagai tindak lanjut atas amanat <strong>Undang-Undang Nomor 2 Tahun 2017 tentang Jasa Konstruksi</strong> yang mewajibkan setiap tenaga kerja konstruksi memiliki Sertifikat Kompetensi Kerja (SKK). Dibentuk di bawah naungan <strong>Asosiasi Tenaga Teknik Konstruksi Indonesia (ASTEKINDO)</strong>, lembaga ini telah memperoleh lisensi resmi dari <strong>Badan Nasional Sertifikasi Profesi (BNSP)</strong> dengan nomor lisensi <code>BNSP-LSP-1897-ID</code> dan tercatat di <strong>Lembaga Pengembangan Jasa Konstruksi (LPJK) Kementerian PUPR</strong>.
-                    </p>
-                    <p style="color: #475569; font-size: 0.96rem; line-height: 1.8;">
-                        Sejak awal berdirinya, LSP ASTEKINDO telah menyertifikasi lebih dari 48.000 tenaga kerja yang tersebar di 38 provinsi, mulai dari jenjang pelaksana teknisi lapangan hingga penanggung jawab teknis badan usaha (PJTBU) pada proyek-proyek strategis BUMN dan swasta.
-                    </p>
-                </div>
-                <div>
-                    <div style="background: #ffffff; border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 35px; box-shadow: var(--shadow-card);">
-                        <h4 style="font-size: 1.15rem; font-weight: 800; color: var(--primary-navy); margin-bottom: 20px; border-bottom: 2px solid var(--safety-gold); padding-bottom: 10px;">
-                            Identitas Kelembagaan
-                        </h4>
-                        <div style="display: flex; flex-direction: column; gap: 14px; font-size: 0.9rem;">
-                            <div>
-                                <span style="color: var(--text-muted); display: block; font-size: 0.8rem;">Nama Lembaga:</span>
-                                <strong>LSP ASTEKINDO Konstruksi Mandiri</strong>
-                            </div>
-                            <div>
-                                <span style="color: var(--text-muted); display: block; font-size: 0.8rem;">Nomor Lisensi BNSP:</span>
-                                <strong style="color: #059669;"><i class="bi bi-patch-check-fill"></i> BNSP-LSP-1897-ID</strong>
-                            </div>
-                            <div>
-                                <span style="color: var(--text-muted); display: block; font-size: 0.8rem;">Registrasi LPJK PUPR:</span>
-                                <strong style="color: var(--blueprint-blue);"><i class="bi bi-building-fill-check"></i> LPJK-SKK-042/2021</strong>
-                            </div>
-                            <div>
-                                <span style="color: var(--text-muted); display: block; font-size: 0.8rem;">Jenis LSP:</span>
-                                <strong>LSP Pihak Ketiga (P-3) Terbuka untuk Umum</strong>
-                            </div>
-                            <div>
-                                <span style="color: var(--text-muted); display: block; font-size: 0.8rem;">Standar Mutu:</span>
-                                <strong>Pedoman BNSP 201 & ISO/IEC 17024</strong>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Visi & Misi Box -->
-            <div style="background: linear-gradient(135deg, var(--primary-navy), var(--primary-navy-dark)); color: #fff; border-radius: var(--radius-lg); padding: 50px 40px; margin-bottom: 70px;">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
-                    <div>
-                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-                            <div style="width: 44px; height: 44px; border-radius: 10px; background: rgba(245, 158, 11, 0.2); color: var(--safety-gold); display: flex; align-items: center; justify-content: center; font-size: 1.4rem;">
-                                <i class="bi bi-eye-fill"></i>
-                            </div>
-                            <h3 style="font-size: 1.5rem; font-weight: 800; color: #fff;">Visi Lembaga</h3>
-                        </div>
-                        <p style="color: #cbd5e1; font-size: 1rem; line-height: 1.75;">
-                            Menjadi Lembaga Sertifikasi Profesi Jasa Konstruksi yang independen, profesional, kredibel, dan berstandar internasional dalam menjamin kompetensi tenaga kerja konstruksi Indonesia menuju pembangunan nasional yang berkualitas, kokoh, dan andal.
-                        </p>
-                    </div>
-
-                    <div>
-                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-                            <div style="width: 44px; height: 44px; border-radius: 10px; background: rgba(37, 99, 235, 0.2); color: #60a5fa; display: flex; align-items: center; justify-content: center; font-size: 1.4rem;">
-                                <i class="bi bi-compass-fill"></i>
-                            </div>
-                            <h3 style="font-size: 1.5rem; font-weight: 800; color: #fff;">Misi Lembaga</h3>
-                        </div>
-                        <ul style="color: #cbd5e1; font-size: 0.94rem; line-height: 1.7; display: flex; flex-direction: column; gap: 10px; padding-left: 20px;">
-                            <li>Menyelenggarakan proses uji kompetensi secara objektif, adil, transparan, dan bebas konflik kepentingan.</li>
-                            <li>Mengembangkan skema sertifikasi SKKNI yang selaras dengan kemajuan teknologi digital konstruksi & BIM.</li>
-                            <li>Mengoptimalkan jaringan Tempat Uji Kompetensi (TUK) di 38 provinsi di seluruh wilayah Indonesia.</li>
-                            <li>Membina korps asesor kompetensi berlisensi BNSP yang berintegritas dan profesional tinggi.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Kode Etik & Nilai Budaya -->
-            <div style="text-align: center; max-width: 750px; margin: 0 auto 40px;">
-                <span class="section-tag"><i class="bi bi-bookmark-check-fill"></i> Nilai Luhur</span>
-                <h3 class="section-title">Komitmen Integritas & Kode Etik Asesor</h3>
-                <p class="section-desc">
-                    LSP ASTEKINDO memegang teguh prinsip 5K (Kejujuran, Keadilan, Kredibilitas, Kepatuhan, dan Keselamatan) dalam seluruh rantai asesmen.
+<!-- Content Section -->
+<section class="py-5" style="background: #F8FAFC;">
+    <div class="container">
+        <!-- Sejarah & Identitas -->
+        <div class="row g-5 align-items-center mb-5">
+            <div class="col-lg-7">
+                <span class="badge bg-primary-subtle text-primary px-3 py-1 rounded-pill fw-bold mb-2">Sejarah & Latar Belakang</span>
+                <h2 class="display-6 fw-bold text-dark mb-3">
+                    Dedikasi untuk Keunggulan Jasa Konstruksi Nasional
+                </h2>
+                <p class="text-muted mb-3" style="line-height: 1.8; font-size: 1rem;">
+                    LSP ASTEKINDO Konstruksi Mandiri didirikan sebagai tindak lanjut atas amanat <strong>Undang-Undang Nomor 2 Tahun 2017 tentang Jasa Konstruksi</strong> yang mewajibkan setiap tenaga kerja konstruksi memiliki Sertifikat Kompetensi Kerja (SKK). Dibentuk di bawah naungan <strong>Asosiasi Tenaga Teknik Konstruksi Indonesia (ASTEKINDO)</strong>, lembaga ini telah memperoleh lisensi resmi dari <strong>Badan Nasional Sertifikasi Profesi (BNSP)</strong> dengan nomor lisensi <code>BNSP-LSP-1897-ID</code> dan tercatat di <strong>Lembaga Pengembangan Jasa Konstruksi (LPJK) Kementerian PUPR</strong>.
+                </p>
+                <p class="text-muted mb-0" style="line-height: 1.8; font-size: 1rem;">
+                    Sejak awal berdirinya, LSP ASTEKINDO telah menyertifikasi lebih dari 48.000 tenaga kerja yang tersebar di 38 provinsi di seluruh Indonesia, mulai dari jenjang pelaksana teknisi lapangan hingga penanggung jawab teknis badan usaha (PJTBU) pada proyek-proyek strategis nasional BUMN dan swasta.
                 </p>
             </div>
+            <div class="col-lg-5">
+                <div class="card border-0 shadow-sm p-4 rounded-4" style="background: #ffffff; border: 1px solid #BAE6FD !important;">
+                    <h4 class="fw-bold text-dark mb-3 border-bottom pb-2" style="font-size: 1.15rem;">
+                        <i class="bi bi-award-fill text-primary me-2"></i>Identitas Kelembagaan
+                    </h4>
+                    <div class="d-flex flex-column gap-3 small">
+                        <div>
+                            <span class="text-muted d-block" style="font-size: 0.78rem;">Nama Lembaga:</span>
+                            <strong class="text-dark fs-6">LSP ASTEKINDO Konstruksi Mandiri</strong>
+                        </div>
+                        <div>
+                            <span class="text-muted d-block" style="font-size: 0.78rem;">Nomor Lisensi BNSP:</span>
+                            <strong class="text-success fs-6"><i class="bi bi-patch-check-fill me-1"></i>BNSP-LSP-1897-ID</strong>
+                        </div>
+                        <div>
+                            <span class="text-muted d-block" style="font-size: 0.78rem;">Registrasi LPJK PUPR:</span>
+                            <strong class="text-primary fs-6"><i class="bi bi-building-fill-check me-1"></i>LPJK-SKK-042/2021</strong>
+                        </div>
+                        <div>
+                            <span class="text-muted d-block" style="font-size: 0.78rem;">Jenis LSP:</span>
+                            <strong class="text-dark">LSP Pihak Ketiga (P-3) Terbuka untuk Umum</strong>
+                        </div>
+                        <div>
+                            <span class="text-muted d-block" style="font-size: 0.78rem;">Standar Penjaminan Mutu:</span>
+                            <strong class="text-dark">Pedoman BNSP 201, 202 & ISO/IEC 17024</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
-                <div style="background: #ffffff; padding: 26px; border-radius: 12px; border: 1px solid var(--border-light); box-shadow: var(--shadow-subtle);">
-                    <i class="bi bi-scale" style="font-size: 2rem; color: var(--safety-gold-dark); margin-bottom: 12px; display: block;"></i>
-                    <h4 style="font-size: 1.1rem; font-weight: 800; color: var(--primary-navy); margin-bottom: 8px;">Objektivitas Mutlak</h4>
-                    <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
+        <!-- Visi & Misi Modern Card -->
+        <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 mb-5 text-white" style="background: linear-gradient(135deg, #0284C7 0%, #0EA5E9 100%);">
+            <div class="row g-4">
+                <div class="col-md-6 border-end-md border-white-subtle">
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <span class="badge bg-white text-primary p-2 rounded-circle fs-5" style="width: 42px; height: 42px; display: inline-flex; align-items: center; justify-content: center;">
+                            <i class="bi bi-eye-fill"></i>
+                        </span>
+                        <h3 class="fw-bold mb-0 text-white">Visi Lembaga</h3>
+                    </div>
+                    <p class="text-white-50 mb-0" style="line-height: 1.8; font-size: 1.02rem;">
+                        Menjadi Lembaga Sertifikasi Profesi Jasa Konstruksi yang independen, profesional, kredibel, dan berstandar internasional dalam menjamin kompetensi tenaga kerja konstruksi Indonesia menuju pembangunan nasional yang berkualitas, kokoh, dan andal.
+                    </p>
+                </div>
+                <div class="col-md-6 ps-md-4">
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <span class="badge bg-white text-primary p-2 rounded-circle fs-5" style="width: 42px; height: 42px; display: inline-flex; align-items: center; justify-content: center;">
+                            <i class="bi bi-compass-fill"></i>
+                        </span>
+                        <h3 class="fw-bold mb-0 text-white">Misi Lembaga</h3>
+                    </div>
+                    <ul class="text-white-50 mb-0 ps-3 d-flex flex-column gap-2" style="line-height: 1.7; font-size: 0.95rem;">
+                        <li>Menyelenggarakan proses uji kompetensi secara objektif, adil, transparan, dan bebas konflik kepentingan.</li>
+                        <li>Mengembangkan skema sertifikasi SKKNI yang selaras dengan kemajuan teknologi digital konstruksi & BIM.</li>
+                        <li>Mengoptimalkan jaringan Tempat Uji Kompetensi (TUK) di 38 provinsi di seluruh wilayah Indonesia.</li>
+                        <li>Membina korps asesor kompetensi berlisensi BNSP yang berintegritas dan profesional tinggi.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nilai Integritas & Kode Etik -->
+        <div class="text-center max-w-750 mx-auto mb-4">
+            <span class="badge bg-primary-subtle text-primary px-3 py-1 rounded-pill fw-bold mb-2">Nilai Luhur</span>
+            <h3 class="display-6 fw-bold text-dark mb-2">Komitmen Integritas & Kode Etik Asesor</h3>
+            <p class="text-muted">
+                LSP ASTEKINDO memegang teguh prinsip 5K (Kejujuran, Keadilan, Kredibilitas, Kepatuhan, dan Keselamatan) dalam seluruh rantai asesmen.
+            </p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm p-4 rounded-4" style="background: #ffffff; border: 1px solid #E2E8F0 !important;">
+                    <div class="bg-primary-subtle text-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 50px; height: 50px;">
+                        <i class="bi bi-scale fs-4"></i>
+                    </div>
+                    <h5 class="fw-bold text-dark mb-2">Objektivitas Mutlak</h5>
+                    <p class="text-muted small mb-0" style="line-height: 1.65;">
                         Keputusan kompetensi murni didasarkan atas bukti portofolio valid, asli, terkini, dan memadai (VATM) tanpa intervensi pihak luar.
                     </p>
                 </div>
-                <div style="background: #ffffff; padding: 26px; border-radius: 12px; border: 1px solid var(--border-light); box-shadow: var(--shadow-subtle);">
-                    <i class="bi bi-file-earmark-check" style="font-size: 2rem; color: var(--blueprint-blue); margin-bottom: 12px; display: block;"></i>
-                    <h4 style="font-size: 1.1rem; font-weight: 800; color: var(--primary-navy); margin-bottom: 8px;">Kerahasiaan Dokumen</h4>
-                    <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm p-4 rounded-4" style="background: #ffffff; border: 1px solid #E2E8F0 !important;">
+                    <div class="bg-info-subtle text-info rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 50px; height: 50px;">
+                        <i class="bi bi-file-earmark-check fs-4"></i>
+                    </div>
+                    <h5 class="fw-bold text-dark mb-2">Kerahasiaan Dokumen</h5>
+                    <p class="text-muted small mb-0" style="line-height: 1.65;">
                         Seluruh data teknis proyek, gambar DED, dan dokumen perusahaan asesi dilindungi dengan standar kerahasiaan ketat ISO/IEC 17024.
                     </p>
                 </div>
-                <div style="background: #ffffff; padding: 26px; border-radius: 12px; border: 1px solid var(--border-light); box-shadow: var(--shadow-subtle);">
-                    <i class="bi bi-shield-shaded" style="font-size: 2rem; color: #059669; margin-bottom: 12px; display: block;"></i>
-                    <h4 style="font-size: 1.1rem; font-weight: 800; color: var(--primary-navy); margin-bottom: 8px;">Bebas Gratifikasi</h4>
-                    <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm p-4 rounded-4" style="background: #ffffff; border: 1px solid #E2E8F0 !important;">
+                    <div class="bg-success-subtle text-success rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 50px; height: 50px;">
+                        <i class="bi bi-shield-shaded fs-4"></i>
+                    </div>
+                    <h5 class="fw-bold text-dark mb-2">Bebas Gratifikasi</h5>
+                    <p class="text-muted small mb-0" style="line-height: 1.65;">
                         Penegakan pakta integritas zero toleransi terhadap suap, gratifikasi, atau percaloan blanko sertifikat kompetensi.
                     </p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
 @endsection

@@ -4,47 +4,52 @@
 @section('meta_description', Str::limit(strip_tags(is_object($article) ? ($article->excerpt ?? $article->content ?? '') : ''), 160))
 
 @section('content')
-<!-- Header Banner -->
-<section style="background: linear-gradient(135deg, var(--primary-navy-dark), var(--primary-navy)); padding: 60px 0 50px; color: #fff; border-bottom: 1px solid rgba(255,255,255,0.08);">
-    <div class="container">
-        <div style="display: flex; gap: 8px; font-size: 0.82rem; color: #94a3b8; margin-bottom: 16px; align-items: center; flex-wrap: wrap;">
-            <a href="{{ route('home') }}" style="color: #94a3b8; text-decoration: none;">Beranda</a>
-            <i class="bi bi-chevron-right"></i>
-            <a href="{{ route('articles') }}" style="color: #94a3b8; text-decoration: none;">Artikel & Panduan</a>
-            <i class="bi bi-chevron-right"></i>
-            <span style="color: var(--safety-gold);">Kajian Teknis</span>
+<!-- Header Banner (Modern Light Blue & White) -->
+<section class="py-5" style="background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 50%, #FFFFFF 100%); border-bottom: 1px solid #BAE6FD;">
+    <div class="container py-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-2" style="font-size: 0.85rem;">
+                <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-primary text-decoration-none">Beranda</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('articles') }}" class="text-primary text-decoration-none">Artikel & Panduan</a></li>
+                <li class="breadcrumb-item active text-dark" aria-current="page">Kajian Teknis</li>
+            </ol>
+        </nav>
+
+        <div class="d-flex flex-wrap gap-2 mb-3">
+            <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2 rounded-pill fw-bold">
+                <i class="bi bi-tag-fill me-1"></i> {{ $article->category ?? 'Konstruksi & K3' }}
+            </span>
+            <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 rounded-pill fw-bold">
+                <i class="bi bi-shield-check me-1"></i> Lisensi BNSP & LPJK PUPR
+            </span>
+            @if(isset($article->word_count))
+            <span class="badge bg-info-subtle text-info border border-info-subtle px-3 py-2 rounded-pill fw-bold">
+                <i class="bi bi-book-half me-1"></i> {{ $article->word_count }}
+            </span>
+            @endif
         </div>
 
-        <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 14px; flex-wrap: wrap;">
-            <span style="background: rgba(245, 158, 11, 0.15); color: var(--safety-gold); font-size: 0.76rem; font-weight: 800; padding: 4px 12px; border-radius: 20px;">
-                <i class="bi bi-tag-fill"></i> {{ $article->category ?? 'Konstruksi & K3' }}
-            </span>
-            <span style="background: rgba(16, 185, 129, 0.2); color: #34d399; font-size: 0.76rem; font-weight: 800; padding: 4px 12px; border-radius: 20px;">
-                <i class="bi bi-shield-check"></i> Lisensi BNSP & LPJK PUPR
-            </span>
-        </div>
-
-        <h1 style="font-size: 2.2rem; font-weight: 900; line-height: 1.3; margin-bottom: 16px; letter-spacing: -0.5px; max-width: 950px;">
+        <h1 class="display-6 fw-bold text-dark mb-3" style="letter-spacing: -0.5px; max-width: 950px; line-height: 1.3;">
             {{ $article->title }}
         </h1>
 
-        <div style="display: flex; gap: 20px; font-size: 0.84rem; color: #cbd5e1; align-items: center; flex-wrap: wrap;">
-            <span><i class="bi bi-person-fill" style="color: var(--safety-gold);"></i> Tim Litbang LSP ASTEKINDO</span>
-            <span><i class="bi bi-calendar3" style="color: var(--safety-gold);"></i> {{ isset($article->published_at) ? \Carbon\Carbon::parse($article->published_at)->isoFormat('D MMMM Y') : 'Terbit Resmi' }}</span>
-            <span><i class="bi bi-eye-fill" style="color: #34d399;"></i> {{ $article->views ?? '1.240' }} Pembaca</span>
-            <span><i class="bi bi-clock-fill" style="color: #60a5fa;"></i> {{ $article->read_time ?? '8 Menit Baca' }}</span>
+        <div class="d-flex flex-wrap align-items-center gap-4 text-muted small">
+            <span><i class="bi bi-person-fill text-primary me-1"></i> Tim Litbang LSP ASTEKINDO</span>
+            <span><i class="bi bi-calendar3 text-primary me-1"></i> {{ isset($article->published_at) ? \Carbon\Carbon::parse($article->published_at)->isoFormat('D MMMM Y') : 'Terbit Resmi' }}</span>
+            <span><i class="bi bi-eye-fill text-success me-1"></i> {{ $article->views ?? '1.240' }} Pembaca</span>
+            <span><i class="bi bi-clock-fill text-info me-1"></i> {{ $article->read_time ?? '25 Menit Baca' }}</span>
         </div>
     </div>
 </section>
 
 <!-- Reading Body -->
-<section style="padding: 60px 0 90px; background: #f8fafc;">
+<section class="py-5" style="background: #F8FAFC;">
     <div class="container">
         <div class="row g-4">
             <!-- Main Content Reader -->
             <div class="col-lg-8">
                 <!-- Article Content Card -->
-                <div class="card border-0 shadow-sm p-4 p-md-5 mb-4" style="border-radius: 18px; line-height: 1.85; font-size: 1.02rem; color: #1e293b; background: #fff;">
+                <div class="card border-0 shadow-sm p-4 p-md-5 mb-4 rounded-4" style="line-height: 1.85; font-size: 1.02rem; color: #1E293B; background: #FFFFFF; border: 1px solid #E2E8F0 !important;">
                     @if(isset($article->thumbnail) && $article->thumbnail)
                     <div class="mb-4">
                         <img src="{{ asset('storage/' . $article->thumbnail) }}" alt="{{ $article->title }}" class="img-fluid rounded-4 w-100" style="max-height: 420px; object-fit: cover;">
@@ -52,8 +57,8 @@
                     @endif
 
                     <!-- Content body -->
-                    <div class="article-body-text" style="white-space: pre-line; font-family: 'Plus Jakarta Sans', sans-serif;">
-                        {!! nl2br(e($article->content)) !!}
+                    <div class="article-rich-content" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+                        {!! $article->content !!}
                     </div>
 
                     <!-- Share & Keywords -->

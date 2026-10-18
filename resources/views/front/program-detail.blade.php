@@ -5,212 +5,261 @@
 
 @section('content')
 
-    <!-- Scheme Hero Header -->
-    <section style="background: linear-gradient(135deg, var(--primary-navy-dark), var(--primary-navy)); padding: 60px 0; color: #fff; border-bottom: 1px solid rgba(255,255,255,0.08);">
-        <div class="container">
-            <div style="display: flex; gap: 8px; font-size: 0.82rem; color: #94a3b8; margin-bottom: 16px; align-items: center; flex-wrap: wrap;">
-                <a href="{{ route('home') }}" style="color: #94a3b8; text-decoration: none;">Beranda</a>
-                <i class="bi bi-chevron-right"></i>
-                <a href="{{ route('programs') }}" style="color: #94a3b8; text-decoration: none;">Skema Sertifikasi</a>
-                <i class="bi bi-chevron-right"></i>
-                <span style="color: var(--safety-gold);">{{ $program->title }}</span>
-            </div>
+<!-- Scheme Hero Header (Modern Light Blue & White) -->
+<section class="py-5" style="background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 50%, #FFFFFF 100%); border-bottom: 1px solid #BAE6FD;">
+    <div class="container py-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-2" style="font-size: 0.85rem;">
+                <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-primary text-decoration-none">Beranda</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('programs') }}" class="text-primary text-decoration-none">Skema Sertifikasi</a></li>
+                <li class="breadcrumb-item active text-dark" aria-current="page">{{ $program->code ?? 'SKK-ASTEK' }}</li>
+            </ol>
+        </nav>
 
-            <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 12px; flex-wrap: wrap;">
-                <span style="background: rgba(245, 158, 11, 0.15); color: var(--safety-gold); font-size: 0.78rem; font-weight: 800; padding: 4px 12px; border-radius: 20px;">
-                    Kode: {{ $program->code }}
-                </span>
-                <span style="background: rgba(37, 99, 235, 0.2); color: #60a5fa; font-size: 0.78rem; font-weight: 800; padding: 4px 12px; border-radius: 20px;">
-                    {{ $program->jenjang }}
-                </span>
-                <span style="background: rgba(16, 185, 129, 0.2); color: #34d399; font-size: 0.78rem; font-weight: 800; padding: 4px 12px; border-radius: 20px;">
-                    <i class="bi bi-shield-check"></i> {{ $program->certification_body }}
-                </span>
-            </div>
-
-            <h1 style="font-size: 2.5rem; font-weight: 900; line-height: 1.25; margin-bottom: 16px; letter-spacing: -0.5px;">
-                {{ $program->title }}
-            </h1>
-            <p style="color: #cbd5e1; font-size: 1.05rem; max-width: 800px; line-height: 1.7;">
-                {{ $program->short_description }}
-            </p>
+        <div class="d-flex flex-wrap gap-2 mb-3">
+            <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2 rounded-pill fw-bold">
+                Kode: {{ $program->code ?? 'SKK-ASTEK' }}
+            </span>
+            <span class="badge bg-info-subtle text-info border border-info-subtle px-3 py-2 rounded-pill fw-bold">
+                {{ $program->jenjang }}
+            </span>
+            <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 rounded-pill fw-bold">
+                <i class="bi bi-shield-check me-1"></i> Lisensi BNSP & LPJK PUPR
+            </span>
         </div>
-    </section>
 
-    <!-- Main Content Grid -->
-    <section style="padding: 70px 0 90px;">
-        <div class="container">
-            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 40px; margin-bottom: 70px;">
-                <!-- Left Details -->
-                <div>
-                    <!-- Deskripsi Lengkap -->
-                    <div style="background: #ffffff; border-radius: var(--radius-lg); padding: 35px; border: 1px solid var(--border-light); box-shadow: var(--shadow-subtle); margin-bottom: 30px;">
-                        <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--primary-navy); margin-bottom: 16px; display: flex; align-items: center; gap: 10px;">
-                            <i class="bi bi-file-text-fill" style="color: var(--safety-gold-dark);"></i> Deskripsi Lengkap Skema
-                        </h3>
-                        <p style="color: #334155; font-size: 0.98rem; line-height: 1.8; margin-bottom: 18px;">
-                            {{ $program->full_description }}
-                        </p>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; padding-top: 20px; border-top: 1px solid #f1f5f9;">
-                            <div>
-                                <span style="font-size: 0.8rem; color: var(--text-muted); display: block;">Masa Berlaku Sertifikat:</span>
-                                <strong style="font-size: 0.95rem; color: var(--primary-navy);"><i class="bi bi-calendar-check"></i> 5 (Lima) Tahun</strong>
-                            </div>
-                            <div>
-                                <span style="font-size: 0.8rem; color: var(--text-muted); display: block;">Durasi Asesmen:</span>
-                                <strong style="font-size: 0.95rem; color: var(--primary-navy);"><i class="bi bi-clock-history"></i> {{ $program->duration ?: '2 - 3 Hari Uji Portofolio' }}</strong>
-                            </div>
+        <h1 class="display-5 fw-bold text-dark mb-3" style="letter-spacing: -0.5px; max-width: 920px; line-height: 1.25;">
+            {{ $program->title }}
+        </h1>
+        <p class="lead text-muted mb-0" style="max-width: 820px; font-size: 1.05rem;">
+            {{ $program->short_description }}
+        </p>
+    </div>
+</section>
+
+<!-- Main Content Grid -->
+<section class="py-5" style="background: #F8FAFC;">
+    <div class="container">
+        <div class="row g-4 mb-5">
+            <!-- Left Details -->
+            <div class="col-lg-8">
+                <!-- Deskripsi Lengkap -->
+                <div class="card border-0 shadow-sm p-4 p-md-5 rounded-4 mb-4" style="background: #ffffff; border: 1px solid #E2E8F0 !important;">
+                    <h3 class="fw-bold text-dark mb-3" style="font-size: 1.35rem;">
+                        <i class="bi bi-file-text-fill text-primary me-2"></i>Deskripsi Lengkap Skema
+                    </h3>
+                    <p class="text-secondary mb-4" style="line-height: 1.8; font-size: 1rem;">
+                        {{ $program->full_description }}
+                    </p>
+                    <div class="row g-3 pt-3 border-top text-muted small">
+                        <div class="col-sm-6">
+                            <span class="d-block" style="font-size: 0.8rem;">Masa Berlaku Sertifikat:</span>
+                            <strong class="text-dark fs-6"><i class="bi bi-calendar-check text-success me-1"></i>5 (Lima) Tahun Penuh</strong>
+                        </div>
+                        <div class="col-sm-6">
+                            <span class="d-block" style="font-size: 0.8rem;">Durasi Asesmen Uji:</span>
+                            <strong class="text-dark fs-6"><i class="bi bi-clock-history text-primary me-1"></i>{{ $program->duration ?: '3 Hari Asesmen' }}</strong>
                         </div>
                     </div>
-
-                    <!-- Unit Kompetensi / Kurikulum -->
-                    @if($program->curriculum && count($program->curriculum) > 0)
-                        <div style="background: #ffffff; border-radius: var(--radius-lg); padding: 35px; border: 1px solid var(--border-light); box-shadow: var(--shadow-subtle); margin-bottom: 30px;">
-                            <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--primary-navy); margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
-                                <i class="bi bi-check2-all" style="color: var(--blueprint-blue);"></i> Unit Kompetensi SKKNI yang Diujikan
-                            </h3>
-                            <div style="display: flex; flex-direction: column; gap: 12px;">
-                                @foreach($program->curriculum as $idx => $cur)
-                                    <div style="display: flex; align-items: flex-start; gap: 12px; padding: 12px 16px; background: var(--bg-light); border-radius: 8px; border: 1px solid var(--border-light);">
-                                        <span style="width: 28px; height: 28px; border-radius: 50%; background: var(--safety-gold); color: #0b1a30; font-weight: 800; font-size: 0.8rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                            {{ $idx + 1 }}
-                                        </span>
-                                        <span style="font-size: 0.94rem; color: #1e293b; font-weight: 600; line-height: 1.5;">{{ $cur }}</span>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </div>
-                    @endif
-
-                    <!-- Persyaratan Portofolio -->
-                    @if($program->requirements && count($program->requirements) > 0)
-                        <div style="background: #ffffff; border-radius: var(--radius-lg); padding: 35px; border: 1px solid var(--border-light); box-shadow: var(--shadow-subtle);">
-                            <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--primary-navy); margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
-                                <i class="bi bi-folder-check" style="color: #059669;"></i> Persyaratan Dokumen & Portofolio
-                            </h3>
-                            <ul style="display: flex; flex-direction: column; gap: 10px; padding-left: 20px; color: #334155; font-size: 0.95rem; line-height: 1.7;">
-                                @foreach($program->requirements as $req)
-                                    <li>{{ $req }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
                 </div>
 
-                <!-- Right Sidebar Sticky -->
-                <div>
-                    <div style="position: sticky; top: 100px; display: flex; flex-direction: column; gap: 24px;">
-                        <!-- Hotline Box -->
-                        <div style="background: linear-gradient(135deg, var(--primary-navy), var(--primary-navy-dark)); color: #fff; padding: 30px; border-radius: var(--radius-lg); box-shadow: var(--shadow-card);">
-                            <h4 style="font-size: 1.2rem; font-weight: 800; margin-bottom: 10px; color: #fff;">Daftar Uji Kompetensi</h4>
-                            <p style="color: #94a3b8; font-size: 0.88rem; line-height: 1.6; margin-bottom: 20px;">
-                                Konsultasikan jadwal terdekat, panduan pengisian borang APL-01 & APL-02, serta biaya sertifikasi langsung dengan tim sekretariat TUK.
-                            </p>
-                            <a href="https://api.whatsapp.com/send?phone=6281399810272&text=Halo%20LSP%20ASTEKINDO,%20saya%20ingin%20daftar%20skema%20{{ urlencode($program->title) }}" target="_blank" class="btn-gold" style="width: 100%; justify-content: center; margin-bottom: 12px;">
-                                <i class="bi bi-whatsapp"></i> Chat WhatsApp Hotline
-                            </a>
-                            <a href="{{ route('contact') }}" class="btn-outline-white" style="width: 100%; justify-content: center; font-size: 0.88rem;">
-                                <i class="bi bi-envelope"></i> Kirim Form Permohonan
-                            </a>
-                        </div>
-
-                        <!-- Skema Terkait -->
-                        <div style="background: #ffffff; padding: 26px; border-radius: var(--radius-lg); border: 1px solid var(--border-light); box-shadow: var(--shadow-subtle);">
-                            <h4 style="font-size: 1.05rem; font-weight: 800; color: var(--primary-navy); margin-bottom: 16px; border-bottom: 2px solid var(--safety-gold); padding-bottom: 8px;">
-                                Skema Terkait Lainnya
-                            </h4>
-                            <div style="display: flex; flex-direction: column; gap: 12px;">
-                                @foreach($otherPrograms as $op)
-                                    <a href="{{ route('program.detail', $op->slug) }}" style="text-decoration: none; display: block; padding: 10px; border-radius: 8px; background: var(--bg-light); border: 1px solid var(--border-light); transition: var(--transition);"
-                                       onmouseover="this.style.borderColor='var(--blueprint-blue)'" onmouseout="this.style.borderColor='var(--border-light)'">
-                                        <div style="font-size: 0.74rem; font-weight: 700; color: var(--blueprint-blue); margin-bottom: 2px;">{{ $op->jenjang }}</div>
-                                        <div style="font-size: 0.88rem; font-weight: 800; color: var(--primary-navy); line-height: 1.35;">{{ $op->title }}</div>
-                                    </a>
-                                @endforeach
+                <!-- Kurikulum Unit Kompetensi -->
+                @if(is_array($program->curriculum) && count($program->curriculum) > 0)
+                <div class="card border-0 shadow-sm p-4 p-md-5 rounded-4 mb-4" style="background: #ffffff; border: 1px solid #E2E8F0 !important;">
+                    <h3 class="fw-bold text-dark mb-3" style="font-size: 1.35rem;">
+                        <i class="bi bi-journal-bookmark-fill text-primary me-2"></i>Materi Uji & Unit Kompetensi SKKNI
+                    </h3>
+                    <div class="d-flex flex-column gap-3">
+                        @foreach($program->curriculum as $index => $curr)
+                        <div class="d-flex align-items-start gap-3 p-3 rounded-3" style="background: #F8FAFC; border: 1px solid #E2E8F0;">
+                            <span class="badge bg-primary text-white rounded-circle p-2 px-3 fw-bold">{{ $index + 1 }}</span>
+                            <div class="fw-semibold text-dark" style="font-size: 0.98rem; line-height: 1.5;">
+                                {{ $curr }}
                             </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+                @endif
+
+                <!-- Persyaratan Berkas -->
+                @if(is_array($program->requirements) && count($program->requirements) > 0)
+                <div class="card border-0 shadow-sm p-4 p-md-5 rounded-4 mb-4" style="background: #ffffff; border: 1px solid #E2E8F0 !important;">
+                    <h3 class="fw-bold text-dark mb-3" style="font-size: 1.35rem;">
+                        <i class="bi bi-check2-circle text-success me-2"></i>Persyaratan Permohonan & Portofolio
+                    </h3>
+                    <ul class="d-flex flex-column gap-2 mb-0 text-secondary" style="line-height: 1.8;">
+                        @foreach($program->requirements as $req)
+                        <li class="fw-medium">{{ $req }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
+            </div>
+
+            <!-- Right Sidebar -->
+            <div class="col-lg-4">
+                <div class="d-flex flex-column gap-4" style="position: sticky; top: 100px;">
+                    <!-- Registration Box -->
+                    <div class="card border-0 shadow-sm p-4 rounded-4 text-white" style="background: linear-gradient(135deg, #0284C7 0%, #0EA5E9 100%);">
+                        <span class="badge bg-white text-primary px-3 py-1 rounded-pill fw-bold mb-2 align-self-start">Pendaftaran Resmi</span>
+                        <h4 class="fw-bold mb-2">Konsultasi Portofolio</h4>
+                        <p class="text-white-50 small mb-4" style="line-height: 1.6;">
+                            Konsultasikan kecukupan berkas proyek Anda bersama verifikator resmi LSP ASTEKINDO sebelum proses uji kompetensi.
+                        </p>
+                        <a href="https://api.whatsapp.com/send?phone=6281399810272&text={{ urlencode('Halo LSP ASTEKINDO, saya ingin konsultasi pendaftaran skema ' . $program->title) }}" target="_blank" class="btn btn-warning text-dark fw-bold rounded-pill py-2 shadow-sm mb-2">
+                            <i class="bi bi-whatsapp me-2"></i> WhatsApp Asesor
+                        </a>
+                        <a href="{{ route('contact') }}" class="btn btn-outline-light rounded-pill py-2 small fw-semibold">
+                            <i class="bi bi-envelope me-1"></i> Form Kontak
+                        </a>
+                    </div>
+
+                    <!-- Skema Terkait -->
+                    <div class="card border-0 shadow-sm p-4 rounded-4" style="background: #ffffff; border: 1px solid #E2E8F0 !important;">
+                        <h5 class="fw-bold text-dark mb-3 border-bottom pb-2">Skema Lainnya</h5>
+                        <div class="d-flex flex-column gap-2">
+                            @foreach($otherPrograms as $op)
+                            <a href="{{ route('program.detail', $op->slug) }}" class="p-2 px-3 rounded-3 text-decoration-none border transition-all" style="background: #F8FAFC; border-color: #E2E8F0 !important;">
+                                <div class="text-primary fw-bold small">{{ $op->jenjang }}</div>
+                                <div class="text-dark small fw-semibold text-truncate">{{ $op->title }}</div>
+                            </a>
+                            @endforeach
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- REGIONAL EXPLORER FOR THIS SCHEME (38 PROVINCES & 514 KAB/KOTA) -->
-            <div style="background: #ffffff; border-radius: var(--radius-lg); border: 1px solid var(--border-light); padding: 45px 35px; box-shadow: var(--shadow-card);">
-                <div style="text-align: center; max-width: 700px; margin: 0 auto 35px;">
-                    <span class="section-tag"><i class="bi bi-geo-alt-fill"></i> Jaringan TUK Seluruh Indonesia</span>
-                    <h3 style="font-size: 1.85rem; font-weight: 900; color: var(--primary-navy); margin: 8px 0 10px;">
-                        Pilih Wilayah Uji Kompetensi untuk Skema Ini
-                    </h3>
-                    <p style="color: var(--text-muted); font-size: 0.94rem;">
-                        Klik pada nama Kabupaten / Kota Anda di bawah ini untuk melihat jadwal TUK, syarat lokal, dan modul artikel panduan teknis konstruksi di daerah tersebut.
-                    </p>
+        <!-- MODERN REGIONAL DIRECTORY (NO UGLY SCROLLBARS, MODERN PILL BUTTONS) -->
+        <div class="card border-0 shadow-sm p-4 p-md-5 rounded-4 mb-4" style="background: #ffffff; border: 1px solid #BAE6FD !important;">
+            <div class="text-center max-w-750 mx-auto mb-4">
+                <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill fw-bold mb-2">
+                    <i class="bi bi-geo-alt-fill me-1"></i> Jaringan TUK 38 Provinsi
+                </span>
+                <h3 class="display-6 fw-bold text-dark mb-2">Pilih Wilayah Uji Kompetensi untuk Skema Ini</h3>
+                <p class="text-muted small">
+                    Pilih kota tempat Anda berdomisili untuk mengakses jadwal Tempat Uji Kompetensi (TUK) serta <strong>200 artikel panduan teknis</strong> khusus wilayah tersebut.
+                </p>
+            </div>
+
+            <!-- Live Search Bar -->
+            <div class="max-w-500 mx-auto mb-4" style="max-width: 480px;">
+                <div class="input-group">
+                    <span class="input-group-text bg-white border-end-0 text-muted ps-3"><i class="bi bi-search"></i></span>
+                    <input type="text" id="schemeCitySearch" class="form-control border-start-0 py-2 rounded-end-pill" placeholder="Cari kota Anda (misal: Medan, Surabaya, Makassar)...">
                 </div>
+            </div>
 
-                <!-- Live City Search Filter inside Scheme -->
-                <div style="max-width: 500px; margin: 0 auto 30px; position: relative;">
-                    <input type="text" id="schemeCitySearch" placeholder="Cari Kota / Kabupaten Anda (misal: Medan, Semarang, Makassar)..."
-                           style="width: 100%; padding: 12px 18px 12px 42px; border-radius: 30px; border: 1px solid var(--border-light); background: var(--bg-light); font-size: 0.92rem; outline: none;">
-                    <i class="bi bi-search" style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
-                </div>
-
-                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 18px;" id="schemeProvincesGrid">
-                    @foreach($provinces as $prov)
-                        <div class="scheme-prov-box" data-prov="{{ strtolower($prov['name']) }}"
-                             style="border: 1px solid var(--border-light); border-radius: 12px; padding: 18px; background: var(--bg-light);">
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                                <strong style="font-size: 0.98rem; color: var(--primary-navy);">{{ $prov['name'] }}</strong>
-                                <span style="font-size: 0.72rem; color: var(--blueprint-blue); background: #eff6ff; padding: 2px 8px; border-radius: 4px; font-weight: 700;">
-                                    {{ count($prov['kabkot']) }} Kota
+            <!-- Modern Regional Grid -->
+            <div class="row g-3" id="schemeProvincesGrid">
+                @foreach($provinces as $prov)
+                    @php
+                        $provSlug = $prov['slug'];
+                        $kabkots = $prov['kabkot'] ?? [];
+                        $visibleCities = array_slice($kabkots, 0, 4);
+                        $hiddenCities = array_slice($kabkots, 4);
+                    @endphp
+                    <div class="col-md-6 col-lg-4 scheme-prov-col" data-provname="{{ strtolower($prov['name']) }}">
+                        <div class="province-card p-3 rounded-4 h-100 bg-white" style="border: 1px solid #E2E8F0; transition: border-color 0.2s ease;">
+                            <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                                <h6 class="fw-bold mb-0 text-dark" style="font-size: 0.95rem;">
+                                    <i class="bi bi-pin-map text-primary me-1"></i>{{ $prov['name'] }}
+                                </h6>
+                                <span class="badge bg-primary-subtle text-primary rounded-pill small" style="font-size: 0.72rem;">
+                                    {{ count($kabkots) }} Kota
                                 </span>
                             </div>
-                            <div style="max-height: 120px; overflow-y: auto; font-size: 0.8rem; line-height: 1.8;">
-                                @foreach($prov['kabkot'] as $kk)
+
+                            <div class="cities-pill-wrapper d-flex flex-wrap gap-1">
+                                @foreach($visibleCities as $kk)
                                     @php
                                         $kkName = is_array($kk) ? $kk['name'] : $kk;
                                         $kkSlug = is_array($kk) ? $kk['slug'] : Str::slug($kk);
-                                        $provSlug = $prov['slug'];
                                     @endphp
                                     <a href="{{ route('program.region', [$program->slug, $provSlug, $kkSlug]) }}" 
-                                       class="scheme-city-link" data-city="{{ strtolower($kkName) }}"
-                                       style="color: var(--text-muted); text-decoration: none; display: block;">
-                                        &bull; {{ $kkName }}
+                                       class="city-pill-btn" 
+                                       data-cityname="{{ strtolower($kkName) }}">
+                                        {{ $kkName }}
                                     </a>
                                 @endforeach
+
+                                @if(count($hiddenCities) > 0)
+                                    <div class="extra-cities-container d-none flex-wrap gap-1 w-100 mt-1" id="extra-scheme-{{ $provSlug }}">
+                                        @foreach($hiddenCities as $kk)
+                                            @php
+                                                $kkName = is_array($kk) ? $kk['name'] : $kk;
+                                                $kkSlug = is_array($kk) ? $kk['slug'] : Str::slug($kk);
+                                            @endphp
+                                            <a href="{{ route('program.region', [$program->slug, $provSlug, $kkSlug]) }}" 
+                                               class="city-pill-btn" 
+                                               data-cityname="{{ strtolower($kkName) }}">
+                                                {{ $kkName }}
+                                            </a>
+                                        @endforeach
+                                    </div>
+
+                                    <button class="btn btn-sm btn-outline-secondary rounded-pill toggle-cities-btn mt-2 py-1 px-3 w-100" 
+                                            type="button" 
+                                            onclick="toggleMoreCitiesScheme('{{ $provSlug }}', this)">
+                                        +{{ count($hiddenCities) }} Kota Lainnya
+                                    </button>
+                                @endif
                             </div>
                         </div>
-                    @endforeach
-                </div>
+                    </div>
+                @endforeach
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
 @endsection
 
 @push('scripts')
 <script>
+    function toggleMoreCitiesScheme(provSlug, btn) {
+        const extraContainer = document.getElementById('extra-scheme-' + provSlug);
+        if (extraContainer) {
+            if (extraContainer.classList.contains('d-none')) {
+                extraContainer.classList.remove('d-none');
+                extraContainer.classList.add('d-flex');
+                btn.innerText = 'Sembunyikan';
+            } else {
+                extraContainer.classList.remove('d-flex');
+                extraContainer.classList.add('d-none');
+                btn.innerText = '+' + extraContainer.children.length + ' Kota Lainnya';
+            }
+        }
+    }
+
+    // Live Search Filter for Cities
     const cityInput = document.getElementById('schemeCitySearch');
     if (cityInput) {
         cityInput.addEventListener('input', function() {
             const query = this.value.toLowerCase().trim();
-            const provBoxes = document.querySelectorAll('.scheme-prov-box');
+            const cols = document.querySelectorAll('.scheme-prov-col');
 
-            provBoxes.forEach(box => {
-                const provName = box.dataset.prov || '';
-                const cityLinks = box.querySelectorAll('.scheme-city-link');
-                let match = provName.includes(query);
+            cols.forEach(col => {
+                const provName = col.dataset.provname || '';
+                const pills = col.querySelectorAll('.city-pill-btn');
+                let hasMatch = provName.includes(query);
 
-                cityLinks.forEach(link => {
-                    const cityName = link.dataset.city || '';
-                    if (cityName.includes(query)) {
-                        link.style.color = '#1d4ed8';
-                        link.style.fontWeight = 'bold';
-                        match = true;
+                pills.forEach(pill => {
+                    const cityName = pill.dataset.cityname || '';
+                    if (query && cityName.includes(query)) {
+                        pill.style.background = '#0284C7';
+                        pill.style.color = '#ffffff';
+                        pill.style.borderColor = '#0284C7';
+                        hasMatch = true;
                     } else {
-                        link.style.color = 'var(--text-muted)';
-                        link.style.fontWeight = 'normal';
+                        pill.style.background = '';
+                        pill.style.color = '';
+                        pill.style.borderColor = '';
                     }
                 });
 
-                box.style.display = (query === '' || match) ? '' : 'none';
+                col.style.display = (query === '' || hasMatch) ? '' : 'none';
             });
         });
     }

@@ -98,17 +98,17 @@ class FrontController extends Controller
         $cityName = $kabkot['name'];
         $provinceName = $province['name'];
 
-        // Get 10 specific regional topics for this program and region
+        // Get 200 specific regional topics for this program and region
         $articles = [];
         $topics = AstekindoSchemeService::get200ConstructionTopics();
-        $slice = array_slice($topics, 0, 10);
 
-        foreach ($slice as $t) {
+        foreach ($topics as $t) {
             $articles[] = [
+                'id' => $t['id'],
                 'title' => "{$t['title']} di {$cityName}, {$provinceName}",
                 'slug' => Str::slug("{$t['title']}-{$cityName}"),
                 'category' => $t['category'],
-                'read_time' => $t['read_time'],
+                'read_time' => $t['read_time'] . ' Menit Baca',
                 'views' => $t['views'],
                 'excerpt' => "Panduan implementasi teknis {$t['title']} khusus wilayah {$cityName}, Provinsi {$provinceName} berstandar SKKNI dan regulasi keselamatan konstruksi PUPR.",
             ];
@@ -142,7 +142,7 @@ class FrontController extends Controller
         $cityName = $kabkot['name'];
         $provinceName = $province['name'];
 
-        $articleData = AstekindoSchemeService::getOrGenerateRegionalArticle($provinceName, $cityName, $programSlug);
+        $articleData = AstekindoSchemeService::getOrGenerateRegionalArticle($provinceName, $cityName, $programSlug, $articleSlug);
         $sampleKecamatan = RegionService::getSampleKecamatan($cityName);
         $relatedTopics = array_slice(AstekindoSchemeService::get200ConstructionTopics(), 10, 5);
 

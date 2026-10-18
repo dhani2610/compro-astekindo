@@ -4,20 +4,27 @@
 @section('meta_description', 'Kontak resmi Sekretariat LSP ASTEKINDO Konstruksi Mandiri. Alamat kantor, Google Maps, hotline WhatsApp, dan formulir konsultasi sertifikasi BNSP & LPJK.')
 
 @section('content')
-<!-- Header Banner -->
-<section class="py-5 text-white position-relative" style="background: linear-gradient(135deg, #0A192F 0%, #172A46 100%);">
-    <div class="container py-4 position-relative" style="z-index: 2;">
+<!-- Header Banner (Modern Light Blue & White) -->
+<section class="py-5" style="background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 50%, #FFFFFF 100%); border-bottom: 1px solid #BAE6FD;">
+    <div class="container py-3">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb mb-2" style="font-size: 0.85rem;">
-                <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-white-50 text-decoration-none">Beranda</a></li>
-                <li class="breadcrumb-item active text-white" aria-current="page">Kontak</li>
+                <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-primary text-decoration-none">Beranda</a></li>
+                <li class="breadcrumb-item active text-dark" aria-current="page">Kontak</li>
             </ol>
         </nav>
-        <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold mb-3">
-            <i class="bi bi-chat-square-dots-fill me-1"></i> Layanan Informasi Resmi
-        </span>
-        <h1 class="display-5 fw-bold text-white mb-3">Hubungi Sekretariat LSP ASTEKINDO</h1>
-        <p class="lead text-white-50 mb-0" style="max-width: 780px;">
+        <div class="d-flex flex-wrap gap-2 mb-3">
+            <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2 rounded-pill fw-bold">
+                <i class="bi bi-chat-square-dots-fill me-1"></i> Layanan Informasi Resmi
+            </span>
+            <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 rounded-pill fw-bold">
+                <i class="bi bi-clock-history me-1"></i> Respon Cepat 24 Jam
+            </span>
+        </div>
+        <h1 class="display-5 fw-bold text-dark mb-2" style="letter-spacing: -0.5px;">
+            Hubungi Sekretariat LSP ASTEKINDO
+        </h1>
+        <p class="lead text-muted mb-0" style="max-width: 820px; font-size: 1.05rem;">
             Konsultasikan kebutuhan sertifikasi kompetensi tenaga kerja konstruksi Anda, verifikasi portofolio, jadwal asesmen, atau kemitraan TUK mandiri di seluruh Indonesia.
         </p>
     </div>

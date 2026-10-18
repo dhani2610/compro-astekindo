@@ -367,9 +367,9 @@ class AstekindoSchemeService
     }
 
     /**
-     * Get or Generate rich 6000-9000 word article for a specific region
+     * Get or Generate rich 6000-9000 word article for a specific region & topic
      */
-    public static function getOrGenerateRegionalArticle(string $provinceName, string $cityName, ?string $programSlug = null): array
+    public static function getOrGenerateRegionalArticle(string $provinceName, string $cityName, ?string $programSlug = null, ?string $articleSlug = null): array
     {
         $schemes = static::getMasterSchemes();
         $selectedScheme = $schemes[0];
@@ -382,205 +382,41 @@ class AstekindoSchemeService
             }
         }
 
-        $title = "Sertifikasi SKK {$selectedScheme['title']} di {$cityName}, Provinsi {$provinceName} | Lisensi BNSP & LPJK PUPR";
-        $slug = Str::slug("sertifikasi-skk-{$selectedScheme['slug']}-{$cityName}");
+        $selectedTopic = null;
+        if ($articleSlug) {
+            $topics = static::get200ConstructionTopics();
+            foreach ($topics as $t) {
+                $regionalSlug = Str::slug("{$t['title']}-{$cityName}");
+                if ($regionalSlug === $articleSlug || $t['slug'] === $articleSlug || str_contains($articleSlug, $t['slug'])) {
+                    $selectedTopic = $t;
+                    break;
+                }
+            }
+        }
 
-        // Generate full 6000-9000 word rich content
-        $content = static::generateFull6000WordContent($selectedScheme, $provinceName, $cityName);
+        if ($selectedTopic) {
+            $title = "{$selectedTopic['title']} di {$cityName}, Provinsi {$provinceName} | Panduan Teknis SKK Konstruksi";
+            $slug = Str::slug("{$selectedTopic['title']}-{$cityName}");
+        } else {
+            $title = "Sertifikasi SKK {$selectedScheme['title']} di {$cityName}, Provinsi {$provinceName} | Lisensi BNSP & LPJK PUPR";
+            $slug = Str::slug("sertifikasi-skk-{$selectedScheme['slug']}-{$cityName}");
+        }
+
+        // Generate full 6000-9000 word rich HTML technical dossier
+        $content = ArticleContentGenerator::generate($selectedScheme, $provinceName, $cityName, $selectedTopic);
+        $wordCount = str_word_count(strip_tags($content));
 
         return [
             'title' => $title,
             'slug' => $slug,
             'scheme' => $selectedScheme,
+            'topic' => $selectedTopic,
             'province' => $provinceName,
             'city' => $cityName,
             'content' => $content,
-            'word_count' => 'Panduan Komprehensif SKKNI',
+            'word_count' => number_format($wordCount, 0, ',', '.') . ' Kata (Panduan Lengkap)',
             'author' => 'Tim Dewan Asesor LSP ASTEKINDO Konstruksi Mandiri',
             'published_at' => now()->format('d F Y'),
         ];
-    }
-
-    /**
-     * Generate 6000-9000 word comprehensive technical construction guide
-     */
-    protected static function generateFull6000WordContent(array $scheme, string $province, string $city): string
-    {
-        $title = $scheme['title'];
-        $code = $scheme['code'];
-        $jenjang = $scheme['jenjang'];
-        $category = $scheme['category'];
-
-        return <<<TEXT
-PANDUAN LENGKAP SERTIFIKASI KOMPETENSI KERJA (SKK) KONSTRUKSI
-SKEMA: {$title} ({$code})
-KLASIFIKASI: {$category} | KUALIFIKASI: {$jenjang}
-WILAYAH KERJA & TEMPAT UJI KOMPETENSI (TUK): {$city}, PROVINSI {$province}
-LEMBAGA SERTIFIKASI PROFESI (LSP) ASTEKINDO KONSTRUKSI MANDIRI
-LISENSI BADAN NASIONAL SERTIFIKASI PROFESI (BNSP) & TERCATAT LPJK KEMENTERIAN PUPR
-
-================================================================================
-BAB I: PENDAHULUAN DAN LANDASAN YURIDIS SERTIFIKASI JASA KONSTRUKSI
-================================================================================
-
-1.1 Urgensi Kompetensi Tenaga Kerja Konstruksi di Era Pembangunan Berkelanjutan
-Sektor jasa konstruksi merupakan pilar fundamental dalam mengakselerasi pertumbuhan ekonomi nasional dan pemerataan infrastruktur di seluruh penjuru Republik Indonesia. Pembangunan infrastruktur modern yang mencakup jalan tol, jembatan bentang panjang, jaringan irigasi sumber daya air, pelabuhan, bandar udara, fasilitas industri pengolahan, hingga gedung bertingkat tinggi menuntut standar kualitas keteknikan yang presisi, efisien, dan memiliki ketahanan struktural jangka panjang. Di wilayah {$city}, Provinsi {$province}, laju pertumbuhan investasi fisik dan penataan tata ruang daerah memerlukan ketersediaan sumber daya manusia (SDM) konstruksi yang tidak hanya memiliki ijazah akademis, melainkan memiliki bukti pengakuan formal kompetensi kerja yang terverifikasi secara sah melalui Sertifikat Kompetensi Kerja (SKK) Konstruksi.
-
-Penerapan regulasi ketat dalam rantai pasok industri konstruksi menempatkan standar kompetensi sebagai instrumen mutlak guna mengeliminasi risiko kegagalan bangunan (structural failure), kecelakaan kerja fatal di tempat kerja, serta pembengkakan anggaran (cost overrun). Tenaga ahli dan teknisi yang memegang sertifikat {$title} di {$city} memegang peranan strategis dalam menjamin bahwa setiap tahapan siklus proyek—mulai dari survei penyelidikan tanah, perancangan detail engineering design (DED), penyusunan spesifikasi teknis, pengadaan material bersertifikat SNI, pelaksanaan erection/pengecoran di lapangan, hingga pengawasan masa pemeliharaan—dilaksanakan sesuai dengan norma, standar, pedoman, dan manual (NSPM) Kementerian Pekerjaan Umum dan Perumahan Rakyat (PUPR).
-
-LSP ASTEKINDO Konstruksi Mandiri, sebagai lembaga sertifikasi profesi pihak ketiga yang telah mengantongi lisensi resmi dari Badan Nasional Sertifikasi Profesi (BNSP) dan terakreditasi oleh Lembaga Pengembangan Jasa Konstruksi (LPJK), hadir secara proaktif memberikan layanan uji kompetensi yang akuntabel, transparan, dan profesional bagi para praktisi keteknikan di {$city} dan seluruh wilayah Provinsi {$province}.
-
-1.2 Kerangka Regulasi dan Dasar Hukum Pengaturan SKK Konstruksi
-Pelaksanaan sertifikasi kompetensi kerja di bidang jasa konstruksi diatur secara komprehensif melalui hierarki perundang-undangan Republik Indonesia yang bersifat mengikat (mandatory) bagi seluruh kontraktor, konsultan, dan tenaga kerja perorangan:
-
-1. Undang-Undang Nomor 2 Tahun 2017 tentang Jasa Konstruksi
-Pasal 70 secara tegas menyatakan:
-- Ayat (1): Setiap tenaga kerja konstruksi yang bekerja di bidang Jasa Konstruksi wajib memiliki Sertifikat Kompetensi Kerja.
-- Ayat (2): Setiap Pengguna Jasa dan/atau Penyedia Jasa wajib mempekerjakan tenaga kerja konstruksi yang memiliki Sertifikat Kompetensi Kerja sebagaimana dimaksud pada ayat (1).
-- Ketentuan sanksi administratif dan denda finansial dapat dijatuhkan kepada kontraktor atau badan usaha yang mempekerjakan tenaga kerja tanpa sertifikat kompetensi sah, termasuk pembekuan izin usaha jasa konstruksi (NIB/SBU).
-
-2. Peraturan Pemerintah Nomor 14 Tahun 2021 tentang Perubahan atas PP Nomor 22 Tahun 2020 tentang Peraturan Pelaksanaan UU No. 2 Tahun 2017 tentang Jasa Konstruksi
-Mengatur tata kelola akreditasi asosiasi profesi, pembentukan Lembaga Sertifikasi Profesi (LSP), pembentukan Tempat Uji Kompetensi (TUK), serta penegasan wewenang LPJK dan BNSP dalam menyelenggarakan registrasi sertifikat kompetensi kerja terintegrasi ke dalam Sistem Informasi Pembina Jasa Konstruksi (SIPJAKI) dan Portal Integrasi SIJK PUPR.
-
-3. Peraturan Menteri PUPR Nomor 8 Tahun 2021 tentang Penilai Ahli, Kegagalan Bangunan, dan Pengesahan SKK Konstruksi
-Menetapkan klasifikasi dan subklasifikasi kompetensi tenaga kerja, pembagian 9 jenjang kualifikasi mengacu pada Kerangka Kualifikasi Nasional Indonesia (KKNI), mekanisme permohonan rekomendasi lisensi LSP, serta penetapan masa berlaku sertifikat kompetensi selama 5 (lima) tahun.
-
-4. Peraturan Menteri PUPR Nomor 10 Tahun 2021 tentang Pedoman Sistem Manajemen Keselamatan Konstruksi (SMKK)
-Mewajibkan penerapan SMKK pada setiap paket pekerjaan konstruksi, mencakup penyusunan Rencana Keselamatan Konstruksi (RKK), Identifikasi Bahaya Penilaian Risiko dan Peluang (IBPRP), penyediaan anggaran keselamatan kerja, serta keharusan adanya Ahli Keselamatan Konstruksi tersertifikasi di struktur organisasi proyek.
-
-5. Standar Kompetensi Kerja Nasional Indonesia (SKKNI) Bidang Terkait
-Menjadi rujukan baku unit-unit kompetensi inti, kompetensi pilihan, dan kompetensi umum yang diujikan dalam skema {$title}.
-
-================================================================================
-BAB II: PROFIL DAN LEGALITAS LSP ASTEKINDO KONSTRUKSI MANDIRI
-================================================================================
-
-2.1 Visi, Misi, dan Komitmen Kelembagaan
-LSP ASTEKINDO Konstruksi Mandiri didirikan dengan komitmen teguh untuk menjadi lembaga sertifikasi profesi terdepan, tepercaya, dan bereputasi tinggi di tingkat nasional dan regional ASEAN dalam menciptakan tenaga kerja konstruksi yang unggul, berdaya saing global, berintegritas, serta berwawasan K3 berkelanjutan.
-
-Visi Lembaga:
-Menjadi Lembaga Sertifikasi Profesi Jasa Konstruksi yang independen, profesional, kredibel, dan berstandar internasional dalam menjamin kompetensi tenaga kerja konstruksi Indonesia menuju pembangunan nasional yang berkualitas dan andal.
-
-Misi Lembaga:
-1. Menyelenggarakan proses uji kompetensi tenaga kerja konstruksi secara objektif, adil, transparan, dan bebas dari konflik kepentingan sesuai pedoman BNSP 201 dan BNSP 202.
-2. Mengembangkan skema sertifikasi yang adaptif terhadap kemajuan teknologi digital konstruksi, Building Information Modeling (BIM), dan material ramah lingkungan (Green Construction).
-3. Mengoptimalkan jaringan Tempat Uji Kompetensi (TUK) di seluruh 38 provinsi di Indonesia, termasuk di {$province} dan {$city}, guna mempermudah aksesibilitas asesmen bagi para calon peserta.
-4. Menjaga integritas dan profesionalisme korps asesor kompetensi melalui pembinaan berkelanjutan, audit internal periodik, dan evaluasi kinerja asesi.
-5. Membangun sinergi harmonis dengan Kementerian PUPR, LPJK, dinas pekerjaan umum daerah, perguruan tinggi teknik, BUMN karya, serta asosiasi kontraktor dan konsultan nasional.
-
-2.2 Independensi dan Manajemen Mutu BNSP ISO/IEC 17024
-LSP ASTEKINDO Konstruksi Mandiri menerapkan Sistem Manajemen Mutu berstandar ISO/IEC 17024 (Conformity assessment — General requirements for bodies operating certification of persons). Struktur organisasi dirancang independen, memisahkan secara tegas antara fungsi pengarah, fungsi sertifikasi, komite skema, manajemen pelaksana, dan asesor kompetensi lapangan. Seluruh prosedur operasi baku (SOP) pendaftaran, verifikasi berkas portofolio, penetapan TUK, penugasan asesor, pelaksanaan asesmen tertulis/lisan/praktik, hingga penerbitan blanko sertifikat diawasi secara berkala melalui surveilans BNSP dan LPJK.
-
-================================================================================
-BAB III: STRUKTUR SKEMA SERTIFIKASI & UNIT KOMPETENSI SKKNI
-================================================================================
-
-Skema {$title} dirancang secara komprehensif untuk menguji, memverifikasi, dan mengesahkan kemampuan kerja peserta yang mencakup dimensi pengetahuan (knowledge), keterampilan motorik teknis (skills), dan sikap kerja profesional (attitude) sesuai tuntutan dunia industri jasa konstruksi modern.
-
-3.1 Daftar Unit Kompetensi Baku yang Diujikan
-Berdasarkan rujukan SKKNI Keputusan Menteri Ketenagakerjaan dan Standar Khusus LPJK, skema ini mencakup unit-unit kompetensi inti sebagai berikut:
-
-1. Unit Kompetensi Umum:
-- Menerapkan Ketentuan Keselamatan dan Kesehatan Kerja serta Lingkungan (K3L) di Tempat Kerja Konstruksi.
-- Menerapkan Komunikasi dan Koordinasi Efektif di Lingkungan Kerja Proyek dengan Pengguna Jasa, Subkontraktor, dan Mandor Lapangan.
-- Mengelola Penerapan Kode Etik Profesi dan Integritas Keteknikan.
-
-2. Unit Kompetensi Inti / Fungsional:
-- Mengkaji Dokumen Kontrak, Gambar Rencana (DED), Spesifikasi Teknis, dan Bill of Quantity (BQ).
-- Menyusun Rencana Mutu Konstruksi (RMK/QAP) dan Metode Pelaksanaan Kerja (Method Statement).
-- Mengendalikan Pelaksanaan Pekerjaan Struktur, Arsitektur, atau Fasilitas Sipil Sesuai Jadwal Kurva S dan Rencana Anggaran Biaya (RAB).
-- Menginspeksi Kelayakan Material, Komponen Fabrikasi, dan Uji Laboratorium Lapangan (Slump Test, Core Drill, Uji Tarik Baja).
-- Mengidentifikasi Potensi Bahaya (IBPRP) dan Menerapkan Rencana Keselamatan Konstruksi (RKK) pada Setiap Tahap Kritis.
-- Menangani Ketidaksesuaian Mutu Pekerjaan (Non-Conformance Report / NCR) dan Melakukan Tindakan Korektif (Corrective Action).
-- Memverifikasi Perhitungan Volume Pekerjaan Bersama Konsultan Pengawas (Joint Survey / Opname Pekerjaan) untuk Penerbitan Berita Acara Pembayaran (MC/Termin).
-- Menyusun Dokumen As-Built Drawing dan Menyiapkan Berkas Serah Terima Pertama Pekerjaan (Provisional Hand Over / PHO).
-
-3.2 Dimensi Kompetensi yang Dinilai oleh Asesor
-Selama proses asesmen di {$city}, asesor kompetensi LSP ASTEKINDO akan menguji 5 (lima) dimensi kompetensi esensial:
-1. Task Skills: Kemampuan melaksanakan tugas-tugas teknis individual secara benar dan presisi.
-2. Task Management Skills: Kemampuan mengelola dan mengkoordinasikan beberapa tugas teknis sekaligus dalam satu alur kerja proyek.
-3. Contingency Management Skills: Kemampuan mengambil keputusan taktis dan mitigasi darurat saat terjadi deviasi, cuaca buruk, kegagalan alat, atau kecelakaan kerja.
-4. Job Role/Environment Skills: Kemampuan beradaptasi dengan budaya keselamatan kerja di lapangan, interaksi antar-divisi, serta kepatuhan terhadap peraturan perundangan.
-5. Transfer Skills: Kemampuan mengaplikasikan kompetensi teknis pada situasi proyek baru dengan tantangan geologis atau struktural yang berbeda.
-
-================================================================================
-BAB IV: PROSEDUR OPERASIONAL PENDAFTARAN & TAHAPAN UJI KOMPETENSI
-================================================================================
-
-4.1 Jalur Permohonan Sertifikasi
-Calon peserta di wilayah {$city} dan sekitarnya dapat mengajukan permohonan asesmen melalui dua skenario:
-1. Sertifikasi Baru: Bagi tenaga kerja konstruksi yang belum pernah memiliki SKK/SKA pada subklasifikasi dan jenjang yang dituju, atau lulusan baru pendidikan vokasi/teknik yang memenuhi syarat pengalaman.
-2. Perpanjangan / Kenaikan Jenjang: Bagi tenaga kerja pemegang SKK/SKA yang masa berlakunya akan berakhir atau ingin meningkatkan kualifikasi (misalnya dari Ahli Muda Jenjang 7 naik menjadi Ahli Madya Jenjang 8).
-
-4.2 Dokumen Persyaratan Portofolio Wajib
-Peserta wajib melengkapi berkas administrasi dan bukti portofolio kerja autentik dalam format digital (PDF) berkualitas tinggi:
-1. Identitas Diri: Fotokopi KTP elektronik yang masih berlaku dan Kartu Nomor Pokok Wajib Pajak (NPWP).
-2. Ijazah & Transkrip Akademik: Ijazah pendidikan formal keteknikan yang telah dilegalisasi oleh instansi berwenang atau perguruan tinggi penerbit.
-3. Surat Keterangan Pengalaman Kerja (Verifikasi Pengalaman): Diterbitkan oleh perusahaan kontraktor, konsultan pengawas, atau instansi dinas teknis tempat peserta pernah/sedang bertugas.
-4. Dokumen Bukti Portofolio Kerja Fisik:
-   - Salinan kontrak kerja proyek atau surat perintah kerja (SPK).
-   - Laporan harian/mingguan/bulanan yang ditandatangani oleh pemohon.
-   - Contoh dokumen teknis yang pernah disusun (RKK, JSA, RMK, gambar Shop Drawing, atau berita acara opname).
-   - Foto dokumentasi aktivitas pelaksanaan teknis di lapangan yang menampilkan wajah peserta bersama proyek yang dikerjakan.
-5. Sertifikat Pelatihan Relevan (Pelengkap): Sertifikat bimbingan teknis, workshop K3, atau sertifikat keahlian perangkat lunak teknik (AutoCAD, SAP2000, ETABS, Revit/BIM, Microsoft Project).
-6. Pasfoto Resmi: Format digital terbaru dengan pose formal berlatar belakang merah (ukuran 3x4).
-
-4.3 Tahapan Asesmen Kompetensi
-1. Verifikasi Pra-Asesmen (Asesmen Mandiri / Form APL-01 & APL-02):
-   Calon asesi mengisi formulir permohonan dan melakukan penilaian mandiri terhadap unit-unit kompetensi. Asesor pra-asesmen memeriksa kelayakan portofolio (*validitas, keaslian, keterkinian, dan kecukupan* / VATM).
-2. Penyelenggaraan Uji Kompetensi (Di TUK {$city} atau Hybrid Online):
-   - Uji Tertulis: Menguji wawasan regulasi, rumus teknis, dan standar baku keselamatan konstruksi.
-   - Uji Wawancara / Klarifikasi Bukti: Asesor melakukan tanya-jawab mendalam terkait portofolio proyek yang dilampirkan guna mengonfirmasi bahwa dokumen tersebut merupakan karya mandiri asesi.
-   - Uji Praktik / Demonstrasi / Studi Kasus: Peserta memecahkan simulasi permasalahan teknis lapangan (problem solving case) di hadapan tim asesor.
-3. Rapat Pleno Komite Teknis & Keputusan Sertifikasi:
-   Asesor merekomendasikan keputusan "Kompeten (K)" atau "Belum Kompeten (BK)". Komite teknis sertifikasi LSP ASTEKINDO memvalidasi laporan asesmen sebelum diteruskan ke sistem registrasi LPJK.
-4. Penerbitan Sertifikat & Registrasi QR-Code LPJK/BNSP:
-   Sertifikat dicetak dengan standar pengamanan blanko berhologram dan dilengkapi QR-Code resmi yang terhubung langsung ke database nasional Kementerian PUPR untuk keperluan verifikasi tender dan audit badan usaha.
-
-================================================================================
-BAB V: TANTANGAN GEOTEKNIS DAN INFRASTRUKTUR DI WILAYAH {$city}, {$province}
-================================================================================
-
-Penyelenggaraan jasa konstruksi di wilayah {$city} memiliki kekhasan kondisi geografis, topografis, dan geologis yang menuntut kompetensi tinggi dari para tenaga ahli:
-
-1. Kondisi Tanah Dasar dan Mitigasi Penurunan Struktur:
-Sebagian wilayah di {$province} memiliki variasi karakteristik tanah lunak, tanah gambut, atau endapan alluvial dengan daya dukung rendah. Tenaga ahli {$title} harus menguasai teknik investigasi geoteknik yang mendalam (Cone Penetration Test / CPT dan Standard Penetration Test / SPT) guna menentukan jenis pondasi yang tepat—apakah menggunakan tiang pancang mini, bored pile berdiameter besar, atau perbaikan tanah dasar dengan geosintetik dan prefabricated vertical drain (PVD).
-
-2. Karakteristik Hidrologi dan Sistem Drainase Terpadu:
-Curah hujan tropis yang tinggi di {$province} menuntut perancangan dimensi saluran drainase perkotaan dan talud jalan yang presisi. Perhitungan debit banjir rancangan kala ulang 10, 25, hingga 50 tahun (Q50) wajib dikuasai untuk mencegah banjir genangan yang dapat merusak struktur perkerasan jalan raya atau menggerus lereng pondasi jembatan.
-
-3. Ketahanan Gempa dan Penataan Tata Ruang:
-Wilayah Indonesia yang berada di jalur cincin api (Ring of Fire) mengharuskan seluruh perencanaan struktur gedung bertingkat di {$city} mengacu pada zonasi peta gempa nasional SNI 1726. Pengawasan pembesian balok-kolom, kerapatan sengkang di zona sendi plastis, serta kualitas mutu beton ready-mix (minimum fc' 25-30 MPa untuk struktur utama) menjadi tanggung jawab teknis yang tidak dapat dikompromikan.
-
-================================================================================
-BAB VI: MANFAAT STRATEGIS MEMILIKI SKK KONSTRUKSI LSP ASTEKINDO
-================================================================================
-
-Kepemilikan SKK Resmi dari LSP ASTEKINDO Konstruksi Mandiri memberikan nilai tambah dan keunggulan kompetitif yang nyata:
-
-1. Kepatuhan Hukum & Keabsahan Tender:
-Menjadi syarat mutlak bagi tenaga ahli yang diajukan dalam dokumen penawaran lelang tender proyek pemerintah (APBN/APBD melalui LPSE), proyek BUMN, maupun proyek swasta berskala besar.
-
-2. Pengakuan Profesionalisme Nasional & Regional ASEAN:
-Sertifikat berlogo Garuda Emas BNSP diakui secara lintas sektoral di seluruh Indonesia dan memiliki kesetaraan kompetensi di tingkat negara-negara ASEAN melalui kesepakatan Mutual Recognition Arrangement (MRA).
-
-3. Peningkatan Jenjang Karir & Remunerasi Finansial:
-Tenaga kerja konstruksi tersertifikasi memiliki posisi tawar yang jauh lebih kuat dalam penetapan standar remunerasi minimal tenaga ahli jasa konstruksi sesuai pedoman Kepmen PUPR.
-
-4. Perlindungan Hukum dari Tuduhan Kegagalan Bangunan:
-Dengan menerapkan seluruh SOP teknis dan didukung bukti sertifikasi kompetensi sah, tenaga kerja memiliki perlindungan profesional yang kuat terhadap sangkaan malpraktik keteknikan.
-
-================================================================================
-BAB VII: KESIMPULAN DAN REKOMENDASI KONSULTASI
-================================================================================
-
-Standarisasi keahlian jasa konstruksi bukan sekadar formalitas administrasi, melainkan garda terdepan dalam menjaga keselamatan jiwa manusia, efisiensi investasi publik, dan keandalan peradaban infrastruktur bangsa. LSP ASTEKINDO Konstruksi Mandiri mengundang seluruh kontraktor, konsultan, akademisi, dan tenaga profesional di {$city}, Provinsi {$province} untuk segera menyertifikasikan kompetensi kerjanya.
-
-KONSULTASI & PENDAFTARAN RESMI LSP ASTEKINDO KONSTRUKSI MANDIRI:
-- Sekretariat TUK Wilayah: {$city}, Provinsi {$province}
-- Hotline Konsultasi WhatsApp: 081399810272 / 081283624838
-- Email Layanan: info@astekindo-sertifikasi.co.id / lsp.astekindo@gmail.com
-- Status Legalitas: Lisensi Resmi BNSP & Terakreditasi LPJK Kementerian PUPR
-TEXT;
     }
 }

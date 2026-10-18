@@ -1,162 +1,319 @@
 @extends('layouts.front')
 
-@section('title', $program->title . ' di ' . $cityName . ' | LSP ASTEKINDO')
-@section('meta_description', 'Layanan Uji Kompetensi dan Asesmen SKK ' . $program->title . ' di ' . $cityName . ', Provinsi ' . $provinceName . '. Lisensi Resmi BNSP & LPJK Kementerian PUPR.')
+@section('title', $program->title . ' di ' . $cityName . ' | 200 Panduan SKK Konstruksi LSP ASTEKINDO')
+@section('meta_description', 'Direktori 200 panduan teknis dan layanan Uji Kompetensi Asesmen SKK ' . $program->title . ' di ' . $cityName . ', Provinsi ' . $provinceName . '. Lisensi Resmi BNSP & LPJK Kementerian PUPR.')
 
 @section('content')
 
-    <!-- Hero Header -->
-    <section style="background: linear-gradient(135deg, var(--primary-navy-dark), var(--primary-navy)); padding: 60px 0; color: #fff; border-bottom: 1px solid rgba(255,255,255,0.08);">
-        <div class="container">
-            <div style="display: flex; gap: 8px; font-size: 0.82rem; color: #94a3b8; margin-bottom: 16px; align-items: center; flex-wrap: wrap;">
-                <a href="{{ route('home') }}" style="color: #94a3b8; text-decoration: none;">Beranda</a>
-                <i class="bi bi-chevron-right"></i>
-                <a href="{{ route('programs') }}" style="color: #94a3b8; text-decoration: none;">Skema Sertifikasi</a>
-                <i class="bi bi-chevron-right"></i>
-                <a href="{{ route('program.detail', $program->slug) }}" style="color: #94a3b8; text-decoration: none;">{{ $program->title }}</a>
-                <i class="bi bi-chevron-right"></i>
-                <span style="color: var(--safety-gold);">{{ $cityName }}</span>
-            </div>
+<!-- Header Banner (Modern Light Blue & White) -->
+<section class="py-5" style="background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 50%, #FFFFFF 100%); border-bottom: 1px solid #BAE6FD;">
+    <div class="container py-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-2" style="font-size: 0.85rem;">
+                <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-primary text-decoration-none">Beranda</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('programs') }}" class="text-primary text-decoration-none">Skema Sertifikasi</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('program.detail', $program->slug) }}" class="text-primary text-decoration-none">{{ $program->title }}</a></li>
+                <li class="breadcrumb-item active text-dark" aria-current="page">{{ $cityName }}</li>
+            </ol>
+        </nav>
 
-            <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 12px; flex-wrap: wrap;">
-                <span style="background: rgba(245, 158, 11, 0.15); color: var(--safety-gold); font-size: 0.78rem; font-weight: 800; padding: 4px 12px; border-radius: 20px;">
-                    <i class="bi bi-geo-alt-fill"></i> TUK Wilayah {{ $cityName }}
-                </span>
-                <span style="background: rgba(37, 99, 235, 0.2); color: #60a5fa; font-size: 0.78rem; font-weight: 800; padding: 4px 12px; border-radius: 20px;">
-                    Provinsi {{ $provinceName }}
-                </span>
-                <span style="background: rgba(16, 185, 129, 0.2); color: #34d399; font-size: 0.78rem; font-weight: 800; padding: 4px 12px; border-radius: 20px;">
-                    <i class="bi bi-shield-check"></i> {{ $program->certification_body }}
-                </span>
-            </div>
-
-            <h1 style="font-size: 2.35rem; font-weight: 900; line-height: 1.25; margin-bottom: 14px; letter-spacing: -0.5px;">
-                {{ $program->title }} di {{ $cityName }}
-            </h1>
-            <p style="color: #cbd5e1; font-size: 1.02rem; max-width: 820px; line-height: 1.65;">
-                Penyelenggaraan Asesmen dan Sertifikasi Kompetensi Kerja (SKK) Konstruksi Resmi BNSP & LPJK untuk para profesional keteknikan di {{ $cityName }}, Provinsi {{ $provinceName }}.
-            </p>
+        <div class="d-flex flex-wrap gap-2 mb-3">
+            <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2 rounded-pill fw-bold">
+                <i class="bi bi-geo-alt-fill me-1"></i> TUK Wilayah {{ $cityName }}
+            </span>
+            <span class="badge bg-light text-dark border px-3 py-2 rounded-pill fw-bold">
+                Provinsi {{ $provinceName }}
+            </span>
+            <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 rounded-pill fw-bold">
+                <i class="bi bi-shield-check me-1"></i> Lisensi BNSP & LPJK PUPR
+            </span>
+            <span class="badge bg-info-subtle text-info border border-info-subtle px-3 py-2 rounded-pill fw-bold">
+                <i class="bi bi-journal-check me-1"></i> 200 Artikel Panduan Lengkap
+            </span>
         </div>
-    </section>
 
-    <!-- Content: 10 Article Cards Section -->
-    <section style="padding: 70px 0 90px;">
-        <div class="container">
-            <div style="display: grid; grid-template-columns: 2.2fr 1fr; gap: 40px;">
-                <!-- Left: 10 Article Cards -->
-                <div>
-                    <div style="margin-bottom: 30px;">
-                        <span class="section-tag"><i class="bi bi-collection-play-fill"></i> Modul Terpadu & Panduan Teknis</span>
-                        <h2 style="font-size: 1.8rem; font-weight: 900; color: var(--primary-navy); margin: 6px 0 8px;">
-                            Daftar Artikel & Panduan Teknis di {{ $cityName }}
-                        </h2>
-                        <p style="color: var(--text-muted); font-size: 0.94rem;">
-                            Setiap materi di bawah ini merupakan panduan teknis mendalam berstandar SKKNI dan regulasi keselamatan konstruksi PUPR untuk wilayah {{ $cityName }}. Klik artikel untuk membaca panduan lengkapnya.
-                        </p>
-                    </div>
+        <h1 class="display-5 fw-bold text-dark mb-2" style="letter-spacing: -0.5px;">
+            {{ $program->title }} di {{ $cityName }}
+        </h1>
+        <p class="lead text-muted mb-0" style="max-width: 850px; font-size: 1.05rem;">
+            Akses resmi 200 panduan kajian ilmiah, standar pengawasan lapangan, K3 konstruksi, dan prosedur asesmen portofolio Tempat Uji Kompetensi (TUK) di {{ $cityName }}, Provinsi {{ $provinceName }}.
+        </p>
+    </div>
+</section>
 
-                    <div style="display: flex; flex-direction: column; gap: 20px;">
-                        @foreach($articles as $index => $art)
-                            <div style="background: #ffffff; border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 26px; box-shadow: var(--shadow-subtle); transition: var(--transition);"
-                                 onmouseover="this.style.borderColor='var(--blueprint-blue)'; this.style.transform='translateY(-3px)'; this.style.boxShadow='var(--shadow-hover)'"
-                                 onmouseout="this.style.borderColor='var(--border-light)'; this.style.transform='none'; this.style.boxShadow='var(--shadow-subtle)'">
-                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
-                                    <div style="display: flex; align-items: center; gap: 8px;">
-                                        <span style="width: 26px; height: 26px; border-radius: 6px; background: var(--primary-navy); color: var(--safety-gold); font-size: 0.76rem; font-weight: 800; display: flex; align-items: center; justify-content: center;">
-                                            #{{ $index + 1 }}
-                                        </span>
-                                        <span style="font-size: 0.74rem; font-weight: 800; color: var(--blueprint-blue); background: #eff6ff; padding: 3px 8px; border-radius: 4px;">
-                                            {{ $art['category'] }}
-                                        </span>
-                                    </div>
-                                    <span style="font-size: 0.76rem; color: var(--text-muted);"><i class="bi bi-clock"></i> {{ $art['read_time'] }} menit baca</span>
-                                </div>
-
-                                <h3 style="font-size: 1.18rem; font-weight: 800; color: var(--primary-navy); margin-bottom: 10px; line-height: 1.4;">
-                                    <a href="{{ route('program.region.article', [$program->slug, $province['slug'], $kabkot['slug'], $art['slug']]) }}" style="color: inherit; text-decoration: none;">
-                                        {{ $art['title'] }}
-                                    </a>
-                                </h3>
-
-                                <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.65; margin-bottom: 18px;">
-                                    {{ $art['excerpt'] }}
-                                </p>
-
-                                <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid #f1f5f9;">
-                                    <span style="font-size: 0.76rem; font-weight: 700; color: #059669; display: flex; align-items: center; gap: 5px;">
-                                        <i class="bi bi-patch-check-fill"></i> Standar SKKNI & BNSP
-                                    </span>
-                                    <a href="{{ route('program.region.article', [$program->slug, $province['slug'], $kabkot['slug'], $art['slug']]) }}" 
-                                       class="btn-gold" style="padding: 7px 16px; font-size: 0.82rem; border-radius: 6px;">
-                                        Buka Artikel Lengkap <i class="bi bi-arrow-right"></i>
-                                    </a>
-                                </div>
+<!-- Content Body with Fast Client-Side JavaScript for 200 Articles -->
+<section class="py-5" style="background: #F8FAFC;">
+    <div class="container">
+        <div class="row g-4">
+            <!-- Left: 200 Articles with Fast JS Filter & Pagination -->
+            <div class="col-lg-8">
+                <!-- Interactive Filter Toolbar -->
+                <div class="card border-0 shadow-sm p-4 rounded-4 mb-4" style="background: #ffffff; border: 1px solid #BAE6FD !important;">
+                    <div class="row g-3 align-items-center">
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <span class="input-group-text bg-white border-end-0 text-muted ps-3"><i class="bi bi-search"></i></span>
+                                <input type="text" id="regionalSearchInput" class="form-control border-start-0 py-2" placeholder="Cari dari 200 topik teknis di {{ $cityName }}...">
                             </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex flex-wrap gap-2" id="regionalCatGroup">
+                                <button class="btn btn-sm btn-primary rounded-pill px-3 py-1 reg-cat-btn active" data-cat="all">Semua (200)</button>
+                                <button class="btn btn-sm btn-outline-secondary rounded-pill px-3 py-1 reg-cat-btn" data-cat="K3 Konstruksi">K3</button>
+                                <button class="btn btn-sm btn-outline-secondary rounded-pill px-3 py-1 reg-cat-btn" data-cat="Gedung & Sipil">Gedung</button>
+                                <button class="btn btn-sm btn-outline-secondary rounded-pill px-3 py-1 reg-cat-btn" data-cat="Jalan & Jembatan">Jalan</button>
+                                <button class="btn btn-sm btn-outline-secondary rounded-pill px-3 py-1 reg-cat-btn" data-cat="Manajemen Proyek">Manajemen</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Articles Dynamic Container -->
+                <div id="regionalArticlesList" class="d-flex flex-column gap-3 mb-4">
+                    <!-- Rendered by JavaScript for instant, zero-lag performance -->
+                </div>
+
+                <!-- Client-Side Pagination -->
+                <div id="regionalPagination" class="d-flex justify-content-center align-items-center gap-2 mb-5">
+                    <!-- Rendered by JS -->
+                </div>
+
+                <!-- Kecamatan Coverage Section -->
+                @if(count($sampleKecamatan) > 0)
+                <div class="card border-0 shadow-sm p-4 rounded-4" style="background: #ffffff; border: 1px solid #E2E8F0 !important;">
+                    <h4 class="fw-bold text-dark mb-2" style="font-size: 1.15rem;">
+                        <i class="bi bi-geo-alt-fill text-primary me-2"></i>Cakupan Wilayah Kecamatan di {{ $cityName }}
+                    </h4>
+                    <p class="text-muted small mb-3">
+                        Layanan konsultasi berkas portofolio dan jadwal uji kompetensi LSP ASTEKINDO menjangkau seluruh kecamatan di {{ $cityName }}:
+                    </p>
+                    <div class="d-flex flex-wrap gap-2">
+                        @foreach($sampleKecamatan as $kec)
+                        <span class="badge bg-light text-secondary border px-3 py-2 rounded-pill small">
+                            Kec. {{ $kec }}
+                        </span>
                         @endforeach
                     </div>
-
-                    <!-- Kecamatan Coverage Box -->
-                    @if(count($sampleKecamatan) > 0)
-                        <div style="background: #ffffff; border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 30px; margin-top: 35px;">
-                            <h4 style="font-size: 1.15rem; font-weight: 800; color: var(--primary-navy); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
-                                <i class="bi bi-pin-map-fill" style="color: var(--safety-gold-dark);"></i> Cakupan Wilayah Kecamatan di {{ $cityName }}
-                            </h4>
-                            <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 16px;">
-                                Layanan sertifikasi dan konsultasi portofolio mencakup seluruh kecamatan di wilayah {{ $cityName }}:
-                            </p>
-                            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-                                @foreach($sampleKecamatan as $kec)
-                                    <span style="background: var(--bg-light); border: 1px solid var(--border-light); padding: 4px 10px; border-radius: 6px; font-size: 0.82rem; color: #334155; font-weight: 600;">
-                                        Kec. {{ $kec }}
-                                    </span>
-                                @endforeach
-                            </div>
-                        </div>
-                    @endif
                 </div>
+                @endif
+            </div>
 
-                <!-- Right Sidebar -->
-                <div>
-                    <div style="position: sticky; top: 100px; display: flex; flex-direction: column; gap: 24px;">
-                        <!-- Registration Card -->
-                        <div style="background: linear-gradient(135deg, var(--primary-navy), var(--primary-navy-dark)); color: #fff; padding: 30px; border-radius: var(--radius-lg); box-shadow: var(--shadow-card);">
-                            <span style="color: var(--safety-gold); font-size: 0.74rem; font-weight: 800; text-transform: uppercase;">Layanan TUK Resmi</span>
-                            <h4 style="font-size: 1.25rem; font-weight: 800; margin: 6px 0 12px; color: #fff;">Daftar di {{ $cityName }}</h4>
-                            <p style="color: #94a3b8; font-size: 0.88rem; line-height: 1.6; margin-bottom: 20px;">
-                                Tim verifikator berkas TUK {{ $cityName }} siap membantu pengecekan kelengkapan portofolio Anda secara gratis sebelum diajukan ke uji kompetensi.
-                            </p>
-                            <a href="https://api.whatsapp.com/send?phone=6281399810272&text=Halo%20LSP%20ASTEKINDO,%20saya%20ingin%20daftar%20uji%20SKK%20{{ urlencode($program->title) }}%20di%20{{ urlencode($cityName) }}" target="_blank" class="btn-gold" style="width: 100%; justify-content: center; margin-bottom: 12px;">
-                                <i class="bi bi-whatsapp"></i> Chat WhatsApp TUK
-                            </a>
-                            <a href="{{ route('program.detail', $program->slug) }}" class="btn-outline-white" style="width: 100%; justify-content: center; font-size: 0.86rem;">
-                                <i class="bi bi-arrow-left"></i> Ganti Wilayah Lain
-                            </a>
-                        </div>
+            <!-- Right Sidebar -->
+            <div class="col-lg-4">
+                <div class="d-flex flex-column gap-4" style="position: sticky; top: 100px;">
+                    <!-- Registration Card -->
+                    <div class="card border-0 shadow-sm p-4 rounded-4 text-white" style="background: linear-gradient(135deg, #0284C7, #0EA5E9);">
+                        <span class="badge bg-white text-primary px-3 py-1 rounded-pill fw-bold mb-2 align-self-start">Tempat Uji Kompetensi</span>
+                        <h4 class="fw-bold mb-2">Daftar di {{ $cityName }}</h4>
+                        <p class="text-white-50 small mb-4" style="line-height: 1.6;">
+                            Tim verifikator TUK {{ $cityName }}, Provinsi {{ $provinceName }} siap membantu pengecekan portofolio teknis Anda secara gratis sebelum jadwal asesmen.
+                        </p>
+                        <a href="https://api.whatsapp.com/send?phone=6281399810272&text={{ urlencode('Halo LSP ASTEKINDO, saya ingin daftar uji kompetensi ' . $program->title . ' di ' . $cityName) }}" target="_blank" class="btn btn-warning text-dark fw-bold rounded-pill py-2 mb-2 shadow-sm">
+                            <i class="bi bi-whatsapp me-2"></i> Chat WhatsApp TUK
+                        </a>
+                        <a href="{{ route('program.detail', $program->slug) }}" class="btn btn-outline-light rounded-pill py-2 small fw-semibold">
+                            <i class="bi bi-arrow-left me-1"></i> Pilih Kota / Wilayah Lain
+                        </a>
+                    </div>
 
-                        <!-- Skema Summary Box -->
-                        <div style="background: #ffffff; padding: 26px; border-radius: var(--radius-lg); border: 1px solid var(--border-light); box-shadow: var(--shadow-subtle);">
-                            <h4 style="font-size: 1.05rem; font-weight: 800; color: var(--primary-navy); margin-bottom: 14px; border-bottom: 2px solid var(--safety-gold); padding-bottom: 8px;">
-                                Ringkasan Skema
-                            </h4>
-                            <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.86rem;">
-                                <div>
-                                    <span style="color: var(--text-muted); display: block;">Jenjang Kualifikasi:</span>
-                                    <strong style="color: var(--blueprint-blue);">{{ $program->jenjang }}</strong>
-                                </div>
-                                <div>
-                                    <span style="color: var(--text-muted); display: block;">Kategori / Bidang:</span>
-                                    <strong>{{ $program->category }}</strong>
-                                </div>
-                                <div>
-                                    <span style="color: var(--text-muted); display: block;">Badan Sertifikasi:</span>
-                                    <strong style="color: #059669;">{{ $program->certification_body }}</strong>
-                                </div>
-                            </div>
+                    <!-- Program Summary -->
+                    <div class="card border-0 shadow-sm p-4 rounded-4" style="background: #ffffff; border: 1px solid #E2E8F0 !important;">
+                        <h5 class="fw-bold text-dark mb-3 border-bottom pb-2">Informasi Skema</h5>
+                        <ul class="list-unstyled small mb-0 d-flex flex-column gap-2 text-muted">
+                            <li><strong class="text-dark">Kode Skema:</strong> {{ $program->code ?? '-' }}</li>
+                            <li><strong class="text-dark">Kategori:</strong> {{ $program->category }}</li>
+                            <li><strong class="text-dark">Jenjang KKNI:</strong> {{ $program->jenjang }}</li>
+                            <li><strong class="text-dark">Durasi:</strong> {{ $program->duration ?: '3 Hari' }}</li>
+                            <li><strong class="text-dark">Lisensi:</strong> BNSP & LPJK PUPR</li>
+                        </ul>
+                    </div>
+
+                    <!-- Hotline Support -->
+                    <div class="card border-0 shadow-sm p-4 rounded-4" style="background: #ffffff; border: 1px solid #E2E8F0 !important;">
+                        <h6 class="fw-bold text-dark mb-2">Bantuan Konsultasi</h6>
+                        <p class="text-muted small mb-3">Layanan konsultasi asesmen via telepon dan WhatsApp resmi:</p>
+                        <div class="d-flex flex-column gap-2">
+                            <a href="https://api.whatsapp.com/send?phone=6281399810272" target="_blank" class="btn btn-sm btn-outline-success rounded-pill py-2">
+                                <i class="bi bi-whatsapp me-2"></i>0813-9981-0272 (Hotline 1)
+                            </a>
+                            <a href="https://api.whatsapp.com/send?phone=6281283624838" target="_blank" class="btn btn-sm btn-outline-success rounded-pill py-2">
+                                <i class="bi bi-whatsapp me-2"></i>0812-8362-4838 (Hotline 2)
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<!-- Client-Side Vanilla JS: Instant, Zero Server Lag for 200 Articles -->
+@push('scripts')
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const rawArticles = @json($articles);
+    let filtered = [...rawArticles];
+    let currentPage = 1;
+    const perPage = 12;
+    let selectedCat = 'all';
+    let searchQuery = '';
+
+    const listContainer = document.getElementById('regionalArticlesList');
+    const pagination = document.getElementById('regionalPagination');
+    const searchInput = document.getElementById('regionalSearchInput');
+    const catButtons = document.querySelectorAll('.reg-cat-btn');
+
+    function filterData() {
+        const query = searchQuery.trim().toLowerCase();
+        filtered = rawArticles.filter(item => {
+            const matchCat = (selectedCat === 'all') || (item.category === selectedCat);
+            const matchQuery = (!query) ||
+                (item.title && item.title.toLowerCase().includes(query)) ||
+                (item.category && item.category.toLowerCase().includes(query));
+            return matchCat && matchQuery;
+        });
+
+        currentPage = 1;
+        render();
+    }
+
+    function render() {
+        if (filtered.length === 0) {
+            listContainer.innerHTML = `
+                <div class="card border-0 shadow-sm p-5 text-center rounded-4 bg-white">
+                    <i class="bi bi-file-earmark-x display-4 text-muted mb-3"></i>
+                    <h5 class="fw-bold text-dark">Topik Panduan Tidak Ditemukan</h5>
+                    <p class="text-muted small">Coba ubah kata kunci pencarian atau pilih kategori lain.</p>
+                </div>
+            `;
+            pagination.innerHTML = '';
+            return;
+        }
+
+        const start = (currentPage - 1) * perPage;
+        const end = start + perPage;
+        const pageItems = filtered.slice(start, end);
+
+        let html = '';
+        pageItems.forEach((art, idx) => {
+            const articleUrl = `{{ url('/skema-sertifikasi/' . $program->slug . '/wilayah/' . $province['slug'] . '/' . $kabkot['slug']) }}/${art.slug}`;
+            html += `
+            <div class="card border-0 shadow-sm p-4 rounded-4" style="background: #ffffff; border: 1px solid #E2E8F0 !important; transition: all 0.25s ease;"
+                 onmouseover="this.style.borderColor='#BAE6FD'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 12px 28px rgba(2,132,199,0.1)'"
+                 onmouseout="this.style.borderColor='#E2E8F0'; this.style.transform='none'; this.style.boxShadow='0 4px 20px -2px rgba(2,132,199,0.06)'">
+                <div class="d-flex justify-content-between align-items-center mb-2 flex-wrap gap-2">
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="badge bg-primary text-white rounded-pill px-2 py-1" style="font-size: 0.72rem; background: #0284C7 !important;">
+                            #${art.id}
+                        </span>
+                        <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-2 py-1 rounded-pill" style="font-size: 0.72rem;">
+                            ${escapeHtml(art.category)}
+                        </span>
+                    </div>
+                    <span class="text-muted small" style="font-size: 0.75rem;"><i class="bi bi-clock me-1 text-primary"></i>${escapeHtml(art.read_time)}</span>
+                </div>
+
+                <h4 class="fw-bold mb-2" style="font-size: 1.15rem; line-height: 1.45;">
+                    <a href="${articleUrl}" class="text-dark text-decoration-none hover-primary">
+                        ${escapeHtml(art.title)}
+                    </a>
+                </h4>
+
+                <p class="text-muted small mb-3" style="line-height: 1.6;">
+                    ${escapeHtml(art.excerpt)}
+                </p>
+
+                <div class="pt-3 border-top d-flex justify-content-between align-items-center">
+                    <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1 rounded-pill" style="font-size: 0.72rem;">
+                        <i class="bi bi-shield-check me-1"></i> Standar SKKNI & SMKK PUPR
+                    </span>
+                    <a href="${articleUrl}" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 fw-bold">
+                        Buka Panduan Lengkap <i class="bi bi-arrow-right ms-1"></i>
+                    </a>
+                </div>
+            </div>`;
+        });
+
+        listContainer.innerHTML = html;
+        renderPagination();
+    }
+
+    function renderPagination() {
+        const totalPages = Math.ceil(filtered.length / perPage);
+        if (totalPages <= 1) {
+            pagination.innerHTML = '';
+            return;
+        }
+
+        let pgn = '';
+        pgn += `
+            <button class="btn btn-outline-secondary btn-sm rounded-pill px-3 ${currentPage === 1 ? 'disabled' : ''}" 
+                onclick="window.goToRegPage(${currentPage - 1})">
+                <i class="bi bi-chevron-left me-1"></i> Sebelumnya
+            </button>
+        `;
+
+        const maxButtons = 5;
+        let startPage = Math.max(1, currentPage - 2);
+        let endPage = Math.min(totalPages, startPage + maxButtons - 1);
+        if (endPage - startPage < maxButtons - 1) {
+            startPage = Math.max(1, endPage - maxButtons + 1);
+        }
+
+        for (let i = startPage; i <= endPage; i++) {
+            pgn += `
+                <button class="btn btn-sm rounded-circle ${i === currentPage ? 'btn-primary text-white fw-bold' : 'btn-outline-light text-dark'}" 
+                    style="width: 34px; height: 34px; padding: 0; ${i === currentPage ? 'background: #0284C7; border-color: #0284C7;' : ''}"
+                    onclick="window.goToRegPage(${i})">${i}</button>
+            `;
+        }
+
+        pgn += `
+            <button class="btn btn-outline-secondary btn-sm rounded-pill px-3 ${currentPage === totalPages ? 'disabled' : ''}" 
+                onclick="window.goToRegPage(${currentPage + 1})">
+                Berikutnya <i class="bi bi-chevron-right ms-1"></i>
+            </button>
+        `;
+
+        pagination.innerHTML = pgn;
+    }
+
+    window.goToRegPage = function(page) {
+        currentPage = page;
+        render();
+        window.scrollTo({ top: listContainer.offsetTop - 120, behavior: 'smooth' });
+    };
+
+    if (searchInput) {
+        searchInput.addEventListener('input', function(e) {
+            searchQuery = e.target.value;
+            filterData();
+        });
+    }
+
+    catButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            catButtons.forEach(b => {
+                b.classList.remove('active', 'btn-primary');
+                b.classList.add('btn-outline-secondary');
+            });
+            this.classList.add('active', 'btn-primary');
+            this.classList.remove('btn-outline-secondary');
+
+            selectedCat = this.getAttribute('data-cat');
+            filterData();
+        });
+    });
+
+    function escapeHtml(text) {
+        if (!text) return '';
+        const map = { '&': '&amp;', '<': '&lt;', ' ': ' ', '"': '&quot;', "'": '&#039;' };
+        return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+    }
+
+    render();
+});
+</script>
+@endpush
 
 @endsection

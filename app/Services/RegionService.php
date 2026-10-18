@@ -418,6 +418,11 @@ class RegionService
         return $all[$slug] ?? null;
     }
 
+    public static function findProvinceBySlug(string $slug): ?array
+    {
+        return static::findProvince($slug);
+    }
+
     public static function findKabkot(string $provinceSlug, string $kabkotSlug): ?array
     {
         $province = static::findProvince($provinceSlug);
@@ -438,6 +443,16 @@ class RegionService
         }
 
         return null;
+    }
+
+    public static function findKabkotBySlug(string $provinceSlug, string $citySlug): ?array
+    {
+        return static::findKabkot($provinceSlug, $citySlug);
+    }
+
+    public static function getSampleKecamatan(string $regionName): array
+    {
+        return static::getKecamatanForRegion($regionName);
     }
 
     public static function getKecamatanForRegion(string $regionName): array
