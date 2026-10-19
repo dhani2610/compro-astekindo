@@ -88,4 +88,61 @@
         </div>
     </form>
 </div>
+
+{{-- XML Sitemap Card --}}
+<div class="card border-0 shadow-sm rounded-4 p-4 mt-4" style="background: #ffffff;">
+    <div class="d-flex align-items-center gap-3 mb-4 border-bottom pb-3">
+        <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(2, 132, 199, 0.1); color: #0284c7; display: flex; align-items: center; justify-content: center; font-size: 1.4rem;">
+            <i class="bi bi-diagram-3"></i>
+        </div>
+        <div>
+            <h5 class="fw-bold mb-1" style="color: #0F172A;">XML Sitemap Generator (Google Search Console)</h5>
+            <p class="text-muted small mb-0">Kelola dan perbarui berkas peta situs <code>public/sitemap.xml</code> untuk integrasi SEO Google.</p>
+        </div>
+    </div>
+
+    @php
+        $sitemapPath = public_path('sitemap.xml');
+        $exists = file_exists($sitemapPath);
+    @endphp
+
+    <div class="p-3 rounded-3 mb-4" style="background: #F8FAFC; border: 1px solid #E2E8F0;">
+        <div class="row g-2 text-sm" style="font-size: 0.88rem;">
+            <div class="col-sm-3 fw-bold text-secondary">Status Sitemap:</div>
+            <div class="col-sm-9">
+                @if($exists)
+                    <span class="badge bg-success-subtle text-success border border-success px-2 py-1">
+                        <i class="bi bi-check-circle-fill me-1"></i> File Tersedia (public/sitemap.xml)
+                    </span>
+                @else
+                    <span class="badge bg-danger-subtle text-danger border border-danger px-2 py-1">
+                        <i class="bi bi-x-circle-fill me-1"></i> Belum Digenerate
+                    </span>
+                @endif
+            </div>
+
+            @if($exists)
+                <div class="col-sm-3 fw-bold text-secondary">Terakhir Diperbarui:</div>
+                <div class="col-sm-9 text-muted">{{ date('d M Y H:i:s', filemtime($sitemapPath)) }} WIB</div>
+
+                <div class="col-sm-3 fw-bold text-secondary">Ukuran Berkas:</div>
+                <div class="col-sm-9 text-muted">{{ round(filesize($sitemapPath) / 1024, 2) }} KB</div>
+
+                <div class="col-sm-3 fw-bold text-secondary">Akses URL:</div>
+                <div class="col-sm-9">
+                    <a href="{{ url('/sitemap.xml') }}" target="_blank" class="fw-bold text-primary text-decoration-none">
+                        {{ url('/sitemap.xml') }} <i class="bi bi-box-arrow-up-right small"></i>
+                    </a>
+                </div>
+            @endif
+        </div>
+    </div>
+
+    <form action="{{ route('admin.sitemap.generate') }}" method="POST">
+        @csrf
+        <button type="submit" class="btn btn-primary fw-bold px-4 py-2 rounded-pill shadow-sm" style="background: #0284c7; border-color: #0284c7;">
+            <i class="bi bi-arrow-repeat me-1"></i> {{ $exists ? 'Generate Ulang XML Sitemap' : 'Generate XML Sitemap Sekarang' }}
+        </button>
+    </form>
+</div>
 @endsection

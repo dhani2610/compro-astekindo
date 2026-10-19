@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\ProgramController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\SitemapController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,7 @@ Route::get('/api/articles-catalog', [FrontController::class, 'apiArticles'])->na
 
 Route::get('/kontak', [FrontController::class, 'contact'])->name('contact');
 Route::post('/kontak', [FrontController::class, 'contactSubmit'])->name('contact.submit');
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
 
 
 /*
@@ -66,5 +68,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
         // Messages
         Route::resource('contacts', ContactController::class)->only(['index', 'show', 'destroy']);
+
+        // XML Sitemap Generator
+        Route::post('/sitemap/generate', [SitemapController::class, 'generateAdmin'])->name('sitemap.generate');
     });
 });

@@ -7,7 +7,18 @@
     <meta name="description" content="@yield('meta_description', 'Layanan Training K3 Konstruksi dan Sertifikasi Kompetensi Kerja (SKK) Konstruksi resmi berlisensi BNSP & terdaftar LPJK untuk Tenaga Ahli dan Pelaksana Lapangan se-Indonesia.')">
     <meta name="keywords" content="Training K3 Konstruksi, SKK Konstruksi, sertifikasi BNSP, LPJK, sertifikasi insinyur sipil, ahli K3 konstruksi, manajemen proyek konstruksi, SMKK, jasa konstruksi Indonesia">
     <meta name="author" content="Training K3 Konstruksi">
+    <meta name="google-site-verification" content="ooZO5VdE23r5H2V4HEk_x-LCnQydONWBZ5ElBWqwTvQ" />
     <link rel="canonical" href="{{ url()->current() }}">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QRRWT8GZ4Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-QRRWT8GZ4Q');
+    </script>
 
     <!-- Google Fonts: Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
